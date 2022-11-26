@@ -9,4 +9,10 @@
     android:orientation="vertical"
     android:background="#000">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BACK"
+        android:onClick="BackButton"/>
+
 </LinearLayout>

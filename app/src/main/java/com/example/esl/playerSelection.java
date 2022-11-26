@@ -2,6 +2,7 @@ package com.example.esl;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -18,6 +19,7 @@ public class playerSelection extends AppCompatActivity {
     }
 
     public void BackButton(View v){
-
+        Intent intent = new Intent(this, NBA_Sim.class);
+        startActivity(intent);
     }
 }
