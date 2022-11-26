@@ -19,7 +19,12 @@ public class Home extends AppCompatActivity {
     }
 
     public void LogOut(View v){
-        Intent intent = new Intent(this, Main.class);
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void nbaSim(View v){
+        Intent intent = new Intent(this, NBA_Sim.class);
         startActivity(intent);
     }
 }

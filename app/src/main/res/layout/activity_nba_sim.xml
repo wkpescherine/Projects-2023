@@ -136,5 +136,119 @@
                 android:textColor="#fff"/>
         </LinearLayout>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PLAYER"
+            android:textColor="#fff"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guard 1 - Pick player"
+            android:textColor="#fff"
+            android:padding="3dp"
+            android:gravity="center"
+            android:onClick="playerNBA"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guard 2 - Pick player"
+            android:textColor="#fff"
+            android:padding="3dp"
+            android:gravity="center"
+            android:onClick="playerNBA"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forward 1 - Pick player"
+            android:textColor="#fff"
+            android:padding="3dp"
+            android:gravity="center"
+            android:onClick="playerNBA"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forward 2 - Pick player"
+            android:textColor="#fff"
+            android:padding="3dp"
+            android:gravity="center"
+            android:onClick="playerNBA"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Center - Pick player"
+            android:textColor="#fff"
+            android:padding="3dp"
+            android:gravity="center"
+            android:onClick="playerNBA"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CPU"
+            android:textColor="#fff"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guard 1 - Pick player"
+            android:textColor="#fff"
+            android:padding="3dp"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guard 2 - Pick player"
+            android:textColor="#fff"
+            android:padding="3dp"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forward 1 - Pick player"
+            android:textColor="#fff"
+            android:padding="3dp"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forward 2 - Pick player"
+            android:textColor="#fff"
+            android:padding="3dp"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Center - Pick player"
+            android:textColor="#fff"
+            android:padding="3dp"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Game"
+        android:layout_margin="25dp"
+        android:onClick="StartGame"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to Sleection"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:onClick="BackToSelection"/>
 
 </LinearLayout>
