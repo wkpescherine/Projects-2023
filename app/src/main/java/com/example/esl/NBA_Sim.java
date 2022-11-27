@@ -19,7 +19,10 @@ public class NBA_Sim extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
-    public void playerNBA(){}
+    public void playerNBA(View v){
+        Intent intent = new Intent(this, playerSelection.class);
+        startActivity(intent);
+    }
 
     public void StartGame(){}
 

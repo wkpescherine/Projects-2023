@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 public class Home extends AppCompatActivity {
+    GamePlayerConfig gameConfig=  new GamePlayerConfig();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,14 @@ public class Home extends AppCompatActivity {
     }
 
     public void nbaSim(View v){
+        gameConfig.League = "NBA";
         Intent intent = new Intent(this, NBA_Sim.class);
+        startActivity(intent);
+    }
+
+    public void nflSim(View v){
+        gameConfig.League = "NBA";
+        Intent intent = new Intent(this, NFL_Sim.class);
         startActivity(intent);
     }
 }

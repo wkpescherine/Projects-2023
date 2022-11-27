@@ -8,13 +8,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:exported="false"
         android:theme="@style/Theme.ESL">
-        <activity android:name=".playerSelection"></activity>
+        <activity android:name=".NFL_Sim"></activity>
+        <activity android:name=".playerSelection" />
         <activity android:name=".NBA_Sim" />
         <activity android:name=".Home" />
         <activity android:name=".Create" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
