@@ -1,11 +1,12 @@
-import React from "react"
 import { View, Text, Button } from "react-native"
+import React from "react"
 
-export default function Main(){
+const App = () =>{
     return(
         <View>
             <Text>Main</Text>
-            <Button></Button>
         </View>
     )
 }
+
+export default App;

@@ -1,10 +1,9 @@
 import { View, Text, Button } from "react-native"
 
-export default function Profile(){
+export default App = () =>{
     return(
         <View>
             <Text>Profile</Text>
-            <Button></Button>
         </View>
     )
 }
