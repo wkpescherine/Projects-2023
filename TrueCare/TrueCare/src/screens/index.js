@@ -1,6 +1,6 @@
 import Main from "./main";
 import Home from "./home";
-import Patient from "./createPatient"
-import Medical from "./createMedical"
+import Create from "./createAccount"
+import Login from "./logIn"
 
-export { Main , Home , Patient , Medical };
+export { Main , Home , Create , Login };

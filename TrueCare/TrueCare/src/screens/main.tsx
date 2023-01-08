@@ -9,8 +9,8 @@ const App : FC = () => {
         <View>
             <Text>This is the main page</Text>
             <Button title="Home" onPress={()=> navigation.navigate("home")}/>
-            <Button title="Create Patient Account" />
-            <Button title="Create Medical Account" />
+            <Button title="Create Account" onPress={()=>navigation.navigate("create")}/>
+            <Button title="Log-In" onPress={()=>navigation.navigate("login")}/>
         </View>
     )
 }
