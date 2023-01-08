@@ -1,7 +1,10 @@
 import React , { FC } from "react";
-import { View , Text, TextInput} from "react-native";
+import { View , Text , Button , TextInput} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const App : FC = () => {
+    const navigation = useNavigation();
+
     return(
         <View>
             <Text>Username</Text>
@@ -12,6 +15,8 @@ const App : FC = () => {
             <TextInput
                 placeholder="Enter password" 
             />
+            <Button title="Create Account" onPress={()=>navigation.navigate("home")}/>
+            <Button title="Back" onPress={()=>navigation.navigate("main")}/>
         </View>
     )
 }

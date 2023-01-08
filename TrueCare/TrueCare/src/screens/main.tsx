@@ -7,8 +7,7 @@ const App : FC = () => {
 
     return(
         <View>
-            <Text>This is the main page</Text>
-            <Button title="Home" onPress={()=> navigation.navigate("home")}/>
+            <Text>TrueCare</Text>
             <Button title="Create Account" onPress={()=>navigation.navigate("create")}/>
             <Button title="Log-In" onPress={()=>navigation.navigate("login")}/>
         </View>

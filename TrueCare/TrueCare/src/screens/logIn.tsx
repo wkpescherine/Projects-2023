@@ -1,7 +1,10 @@
 import React , { FC } from "react";
-import { View , Text, TextInput} from "react-native";
+import { View , Text, TextInput, Button} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const App : FC = () => {
+    const navigation = useNavigation();
+
     return(
         <View>
             <TextInput
@@ -10,6 +13,8 @@ const App : FC = () => {
             <TextInput
                 placeholder="Enter password" 
             />
+            <Button title="Log-In" onPress={()=>navigation.navigate("home")}/>
+            <Button title="Back" onPress={()=>navigation.navigate("main")}/>
         </View>
     )
 }
