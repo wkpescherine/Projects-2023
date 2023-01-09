@@ -7,7 +7,7 @@ const App : FC = () => {
     const [client,setClient] = useState("Patient");
     const [rate,setRate] = useState("Monthly");
 
-    const handleClient = () => {
+    function handleClient(){
         if(client==="Patient"){
             setClient("Medical")
         }else{
@@ -15,11 +15,15 @@ const App : FC = () => {
         }
     }
 
-    const handleRate = () => {
+    function handleRate(){
         if(rate === "Monthly"){
             setRate("Quarterly")
         }else if (rate === "Quarterly"){
             setRate("Semi-Annually")
+        }else if (rate === "Semi-Annually"){
+            setRate("Yearly")
+        }else{
+            setRate("Monthly")
         }
     }
 
@@ -33,10 +37,10 @@ const App : FC = () => {
             <TextInput
                 placeholder="Enter password" 
             />
-            <Button onPress={()=>handleClient} title={client} />
+            <Button onPress={()=>handleClient()} title={client} />
             <View>
                 <Text>Rate :</Text>
-                <Button title={rate} />
+                <Button title={rate} onPress={()=>handleRate()} />
             </View>
             <Button title="Create Account" onPress={()=>navigation.navigate("home")}/>
             <Button title="Back" onPress={()=>navigation.navigate("main")}/>
