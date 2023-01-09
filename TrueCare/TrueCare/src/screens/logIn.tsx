@@ -1,12 +1,12 @@
 import React , { FC } from "react";
-import { View , Text, TextInput, Button} from "react-native";
+import { View , TextInput , Button , StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const App : FC = () => {
     const navigation = useNavigation();
 
     return(
-        <View>
+        <View style={styles.container}>
             <TextInput
                 placeholder="Enter username" 
             />
@@ -18,5 +18,12 @@ const App : FC = () => {
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container:{
+        justifyContent: "center",
+        alignItems: "center",
+    }
+})
 
 export default App;
