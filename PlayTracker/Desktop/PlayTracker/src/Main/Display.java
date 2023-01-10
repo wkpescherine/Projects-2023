@@ -90,7 +90,7 @@ public class Display implements ActionListener {
         teamOnOff.setText(config.offense);
         teamOnDef.setText(config.defense);
         qtrNum.setText(config.quarter);
-        minNum.setText(config.minute);
+        minNum.setText(Config.MINUTE);
         downValue.setText(config.down);
         yardsValue.setText(config.yards);
     }

@@ -369,9 +369,9 @@ public class Teams implements ActionListener {
         ARI.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "ARI";
-                    }else{ config.defense= "ARI";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "ARI";
+                    }else{ Config.defense= "ARI";}
 				}
 			}
 		);
