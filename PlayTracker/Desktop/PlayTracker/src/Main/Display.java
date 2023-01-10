@@ -12,33 +12,31 @@ public class Display implements ActionListener {
     JLabel defensiveTeam = new JLabel("Defense");
     JLabel quarter = new JLabel("Qtr");
     JLabel minute = new JLabel("Min");
-    JLabel teamOnOff = new JLabel("");
-    JLabel teamOnDef = new JLabel("");
-    JLabel qtrNum = new JLabel("");
-    JLabel minNum = new JLabel("");
+    static JLabel teamOnOff = new JLabel("");
+    static JLabel teamOnDef = new JLabel("");
+    static JLabel qtrNum = new JLabel("");
+    static JLabel minNum = new JLabel("");
     JLabel divider1 = new JLabel(":");
     JLabel divider2 = new JLabel(":");
     JLabel divider3 = new JLabel(":");
     JLabel divider4 = new JLabel(":");
     JLabel down = new JLabel("down");
     JLabel divider5 = new JLabel(":");
-    JLabel downValue = new JLabel("");
+    static JLabel downValue = new JLabel("");
     JLabel yards = new JLabel("Yrds");
     JLabel divider6 = new JLabel(":");
-    JLabel yardsValue = new JLabel("");
+    static JLabel yardsValue = new JLabel("");
     JButton update = new JButton("Update");
     JButton changePoss = new JButton("Change of Poss");
 
-    Config config = new Config();
-
-    Display(){
+    public Display(){
         update.addActionListener(this);
         changePoss.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    String tempTeam = config.offense;
-                    config.offense = config.defense;
-                    config.defense = tempTeam;
+                    String tempTeam = Config.offense;
+                    Config.offense = Config.defense;
+                    Config.defense = tempTeam;
                     updateUI();
 				}
 			}
@@ -86,13 +84,13 @@ public class Display implements ActionListener {
         results.add(changePoss);
     }
 
-    public void updateUI(){
-        teamOnOff.setText(config.offense);
-        teamOnDef.setText(config.defense);
-        qtrNum.setText(config.quarter);
+    public static void updateUI(){
+        teamOnOff.setText(Config.offense);
+        teamOnDef.setText(Config.defense);
+        qtrNum.setText(Config.quarter);
         minNum.setText(Config.minute);
-        downValue.setText(config.down);
-        yardsValue.setText(config.yards);
+        downValue.setText(Config.down);
+        yardsValue.setText(Config.yards);
     }
 
     public void actionPerformed(ActionEvent e){

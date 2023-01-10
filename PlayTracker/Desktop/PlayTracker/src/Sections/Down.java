@@ -3,6 +3,7 @@ package src.Sections;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import src.Main.Display;
 
 public class Down implements ActionListener{
     JButton first = new JButton("1st");
@@ -10,6 +11,8 @@ public class Down implements ActionListener{
     JButton third = new JButton("3rd");
     JButton fourth = new JButton("4th");
     public JPanel downs = new JPanel();
+
+    //Display display = new Display();
     
     public Down(){
         first.addActionListener(this);
@@ -17,6 +20,7 @@ public class Down implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.down = "2nd";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -24,6 +28,7 @@ public class Down implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.down = "3rd";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -31,6 +36,7 @@ public class Down implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.down = "4th";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -49,6 +55,7 @@ public class Down implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Config.down = "1st";   
+        Config.down = "1st"; 
+        Display.updateUI();  
     }
 }

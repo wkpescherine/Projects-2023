@@ -3,6 +3,7 @@ package src.Sections;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import src.Main.Display;
 
 public class Minutes implements ActionListener{
     //Config config = new Config();
@@ -32,6 +33,7 @@ public class Minutes implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.minute = "01";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -39,6 +41,7 @@ public class Minutes implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.minute = "02";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -46,6 +49,7 @@ public class Minutes implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.minute = "03";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -53,6 +57,7 @@ public class Minutes implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.minute = "04";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -60,6 +65,7 @@ public class Minutes implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.minute = "05";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -67,6 +73,7 @@ public class Minutes implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.minute = "06";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -74,6 +81,7 @@ public class Minutes implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.minute = "07";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -81,6 +89,55 @@ public class Minutes implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.minute = "08";
+                    Display.updateUI();
+				}
+			}
+		);
+          m9.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+                    Config.minute = "09";
+                    Display.updateUI();
+				}
+			}
+		);
+          m10.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+                    Config.minute = "10";
+                    Display.updateUI();
+				}
+			}
+		);
+          m11.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+                    Config.minute = "11";
+                    Display.updateUI();
+				}
+			}
+		);
+          m12.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+                    Config.minute = "12";
+                    Display.updateUI();
+				}
+			}
+		);
+          m13.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+                    Config.minute = "13";
+                    Display.updateUI();
+				}
+			}
+		);
+          m14.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+                    Config.minute = "14";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -121,5 +178,6 @@ public class Minutes implements ActionListener{
 
     public void actionPerformed(ActionEvent e){
         Config.minute = "00";
+        Display.updateUI();
 	}
 }

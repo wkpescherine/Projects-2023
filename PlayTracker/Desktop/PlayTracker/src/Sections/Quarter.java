@@ -3,6 +3,7 @@ package src.Sections;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import src.Main.Display;
 
 public class Quarter implements ActionListener{
     JButton Q1 = new JButton("Q1");
@@ -18,6 +19,7 @@ public class Quarter implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.quarter = "2";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -25,6 +27,7 @@ public class Quarter implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.quarter = "3";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -32,6 +35,7 @@ public class Quarter implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.quarter = "4";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -39,6 +43,7 @@ public class Quarter implements ActionListener{
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.quarter = "OT";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -58,5 +63,6 @@ public class Quarter implements ActionListener{
     }
     public void actionPerformed(ActionEvent e){
         Config.quarter = "1";
+        Display.updateUI();
 	}
 }

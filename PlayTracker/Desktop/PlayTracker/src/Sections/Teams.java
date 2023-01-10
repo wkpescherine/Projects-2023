@@ -5,8 +5,6 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Teams implements ActionListener {
-    Config config = new Config();
-
     JButton offense =  new JButton("OFF");
     JButton defense =  new JButton("DEF");
     JButton BUF = new JButton("Buf");
@@ -51,7 +49,7 @@ public class Teams implements ActionListener {
         defense.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.off_def = "def";
+                    Config.off_def = "def";
 				}
 			}
 		);
@@ -59,9 +57,9 @@ public class Teams implements ActionListener {
         BUF.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "BUF";
-                    }else{ config.defense= "BUF";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "BUF";
+                    }else{ Config.defense= "BUF";}
 				}
 			}
 		);
@@ -69,9 +67,9 @@ public class Teams implements ActionListener {
         MIA.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "MIA";
-                    }else{ config.defense= "MIA";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "MIA";
+                    }else{ Config.defense= "MIA";}
 				}
 			}
 		);
@@ -79,9 +77,9 @@ public class Teams implements ActionListener {
         NYJ.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "NYJ";
-                    }else{ config.defense= "NYJ";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "NYJ";
+                    }else{ Config.defense= "NYJ";}
 				}
 			}
 		);
