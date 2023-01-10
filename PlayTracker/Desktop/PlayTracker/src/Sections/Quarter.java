@@ -5,8 +5,6 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Quarter implements ActionListener{
-    Config config = new Config();
-
     JButton Q1 = new JButton("Q1");
     JButton Q2 = new JButton("Q2");
     JButton Q3 = new JButton("Q3");
@@ -19,28 +17,28 @@ public class Quarter implements ActionListener{
         Q2.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.quarter = "2";
+                    Config.quarter = "2";
 				}
 			}
 		);
         Q3.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.quarter = "3";
+                    Config.quarter = "3";
 				}
 			}
 		);
         Q4.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.quarter = "4";
+                    Config.quarter = "4";
 				}
 			}
 		);
         OT.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.quarter = "OT";
+                    Config.quarter = "OT";
 				}
 			}
 		);
@@ -59,6 +57,6 @@ public class Quarter implements ActionListener{
         qtr.setLayout(new FlowLayout());
     }
     public void actionPerformed(ActionEvent e){
-        config.quarter = "1";
+        Config.quarter = "1";
 	}
 }

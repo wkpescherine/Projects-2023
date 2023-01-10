@@ -15,60 +15,58 @@ public class Distance implements ActionListener {
     JButton y21over = new JButton("21+");
     public JPanel distance = new JPanel();
 
-    Config config = new Config();
-
     public Distance(){
         less1.addActionListener(this);
         y1to3.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.yards = "1-3";
+                    Config.yards = "1-3";
 				}
 			}
 		);
         y4to6.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.yards = "4-6";
+                    Config.yards = "4-6";
 				}
 			}
 		);
         y7to9.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.yards = "7-9";
+                    Config.yards = "7-9";
 				}
 			}
 		);
         y10.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.yards = "10";
+                    Config.yards = "10";
 				}
 			}
 		);
         y11to15.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.yards = "11-15";
+                    Config.yards = "11-15";
 				}
 			}
 		);
         y16to20.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.yards = "16-20";
+                    Config.yards = "16-20";
 				}
 			}
 		);
         y21over.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    config.yards = "21+";
+                    Config.yards = "21+";
 				}
 			}
 		);
-        distance.setPreferredSize(new Dimension (490,40));
+        distance.setPreferredSize(new Dimension (530,35));
         less1.setPreferredSize(new Dimension (60,25));
         y1to3.setPreferredSize(new Dimension (60,25));
         y4to6.setPreferredSize(new Dimension (60,25));
@@ -88,6 +86,6 @@ public class Distance implements ActionListener {
         distance.add(y21over);
     }
     public void actionPerformed(ActionEvent e) {
-        config.distance = "<1";   
+        Config.yards = "<1";   
     }
 }

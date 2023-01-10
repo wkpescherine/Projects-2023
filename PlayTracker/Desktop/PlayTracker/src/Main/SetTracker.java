@@ -52,7 +52,7 @@ public class SetTracker implements ActionListener{
             FileWriter myWriter = new FileWriter("/Users/wkpescherine/Desktop/Languages/Java/PlayTracker/src/Main/GameData.txt", true);
             BufferedWriter bWriter = new BufferedWriter(myWriter);
             PrintWriter pWriter = new PrintWriter(bWriter);
-                pWriter.write(config.offense+","+config.defense+","+config.quarter+","+config.minute+","+config.down+","+config.distance+"\r");
+                pWriter.write(config.offense+","+config.defense+","+config.quarter+","+Config.minute+","+config.down+","+config.distance+"\r");
                 pWriter.close();
         }catch(IOException err){
             err.printStackTrace();

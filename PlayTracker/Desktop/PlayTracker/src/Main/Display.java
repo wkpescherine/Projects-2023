@@ -56,10 +56,10 @@ public class Display implements ActionListener {
         teamOnDef.setPreferredSize(new Dimension (40,25));
         qtrNum.setPreferredSize(new Dimension (40,25));
         minNum.setPreferredSize(new Dimension (40,25));
-        down.setPreferredSize(new Dimension (40,25));
+        down.setPreferredSize(new Dimension (60,25));
         divider5.setPreferredSize(new Dimension (20,25));
         downValue.setPreferredSize(new Dimension (40,25));
-        yards.setPreferredSize(new Dimension (40,25));
+        yards.setPreferredSize(new Dimension (60,25));
         divider6.setPreferredSize(new Dimension (20,25));
         yardsValue.setPreferredSize(new Dimension (40,25));
 
@@ -90,7 +90,7 @@ public class Display implements ActionListener {
         teamOnOff.setText(config.offense);
         teamOnDef.setText(config.defense);
         qtrNum.setText(config.quarter);
-        minNum.setText(Config.MINUTE);
+        minNum.setText(Config.minute);
         downValue.setText(config.down);
         yardsValue.setText(config.yards);
     }

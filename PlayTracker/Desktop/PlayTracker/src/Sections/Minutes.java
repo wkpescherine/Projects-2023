@@ -31,56 +31,56 @@ public class Minutes implements ActionListener{
         m1.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    Config.MINUTES = "01";
+                    Config.minute = "01";
 				}
 			}
 		);
         m2.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    Config.MINUTES = "02";
+                    Config.minute = "02";
 				}
 			}
 		);
         m3.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    Config.MINUTES = "03";
+                    Config.minute = "03";
 				}
 			}
 		);
         m4.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    Config.MINUTES = "04";
+                    Config.minute = "04";
 				}
 			}
 		);
         m5.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    Config.MINUTES = "05";
+                    Config.minute = "05";
 				}
 			}
 		);
         m6.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    Config.MINUTES = "06";
+                    Config.minute = "06";
 				}
 			}
 		);
         m7.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    Config.MINUTES = "07";
+                    Config.minute = "07";
 				}
 			}
 		);
         m8.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    Config.MINUTES = "08";
+                    Config.minute = "08";
 				}
 			}
 		);
@@ -120,6 +120,6 @@ public class Minutes implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e){
-        Config.MINUTE = "00";
+        Config.minute = "00";
 	}
 }
