@@ -13,6 +13,7 @@ import src.Sections.Teams;
 import src.Sections.Quarter;
 import src.Sections.Config;
 import src.Sections.Minutes;
+import src.Sections.Placeholder;
 import src.Sections.Down;
 import src.Sections.Distance;
 
@@ -28,6 +29,7 @@ public class SetTracker implements ActionListener{
     Minutes minutes = new Minutes();
     Down down = new Down();
     Distance distance = new Distance();
+    Placeholder holder = new Placeholder();
 
     SetTracker(){
         save.setPreferredSize(new Dimension (720,25));
@@ -39,6 +41,7 @@ public class SetTracker implements ActionListener{
         main.add(minutes.min);
         main.add(down.downs);
         main.add(distance.distance);
+        main.add(holder.holder);
         main.add(AnalyzeO);
         main.add(AnalyzeD);
         main.add(save);
