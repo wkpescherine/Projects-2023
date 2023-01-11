@@ -3,6 +3,7 @@ package src.Sections;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import src.Main.Display;
 
 public class Teams implements ActionListener {
     JButton offense =  new JButton("OFF");
@@ -60,6 +61,7 @@ public class Teams implements ActionListener {
 					if(Config.off_def.equals("off")){
                         Config.offense = "BUF";
                     }else{ Config.defense= "BUF";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -70,6 +72,7 @@ public class Teams implements ActionListener {
 					if(Config.off_def.equals("off")){
                         Config.offense = "MIA";
                     }else{ Config.defense= "MIA";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -80,6 +83,7 @@ public class Teams implements ActionListener {
 					if(Config.off_def.equals("off")){
                         Config.offense = "NYJ";
                     }else{ Config.defense= "NYJ";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -87,9 +91,10 @@ public class Teams implements ActionListener {
         NE.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "NE";
-                    }else{ config.defense= "NE";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "NE";
+                    }else{ Config.defense= "NE";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -97,9 +102,10 @@ public class Teams implements ActionListener {
         PIT.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "PIT";
-                    }else{ config.defense= "PIT";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "PIT";
+                    }else{ Config.defense= "PIT";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -107,9 +113,10 @@ public class Teams implements ActionListener {
         BAL.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "BAL";
-                    }else{ config.defense= "BAL";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "BAL";
+                    }else{ Config.defense= "BAL";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -117,9 +124,10 @@ public class Teams implements ActionListener {
         CLE.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "CLE";
-                    }else{ config.defense= "CLE";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "CLE";
+                    }else{ Config.defense= "CLE";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -127,9 +135,10 @@ public class Teams implements ActionListener {
         CIN.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "CIN";
-                    }else{ config.defense= "CIN";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "CIN";
+                    }else{ Config.defense= "CIN";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -137,9 +146,10 @@ public class Teams implements ActionListener {
         KC.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "KC";
-                    }else{ config.defense= "KC";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "KC";
+                    }else{ Config.defense= "KC";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -147,9 +157,10 @@ public class Teams implements ActionListener {
         LV.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "LV";
-                    }else{ config.defense= "LV";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "LV";
+                    }else{ Config.defense= "LV";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -157,9 +168,10 @@ public class Teams implements ActionListener {
         DEN.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "DEN";
-                    }else{ config.defense= "DEN";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "DEN";
+                    }else{ Config.defense= "DEN";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -167,9 +179,10 @@ public class Teams implements ActionListener {
         LAC.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "LAC";
-                    }else{ config.defense= "LAC";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "LAC";
+                    }else{ Config.defense= "LAC";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -177,9 +190,10 @@ public class Teams implements ActionListener {
         IND.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "IND";
-                    }else{ config.defense= "IND";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "IND";
+                    }else{ Config.defense= "IND";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -187,9 +201,10 @@ public class Teams implements ActionListener {
         JAX.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "JAX";
-                    }else{ config.defense= "JAX";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "JAX";
+                    }else{ Config.defense= "JAX";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -197,9 +212,10 @@ public class Teams implements ActionListener {
         HOU.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "HOU";
-                    }else{ config.defense= "HOU";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "HOU";
+                    }else{ Config.defense= "HOU";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -207,9 +223,10 @@ public class Teams implements ActionListener {
         TEN.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "TEN";
-                    }else{ config.defense= "TEN";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "TEN";
+                    }else{ Config.defense= "TEN";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -217,9 +234,10 @@ public class Teams implements ActionListener {
         DAL.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "DAL";
-                    }else{ config.defense= "DAL";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "DAL";
+                    }else{ Config.defense= "DAL";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -227,9 +245,10 @@ public class Teams implements ActionListener {
         NYG.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "NYG";
-                    }else{ config.defense= "NYG";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "NYG";
+                    }else{ Config.defense= "NYG";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -237,9 +256,10 @@ public class Teams implements ActionListener {
         PHI.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "PHI";
-                    }else{ config.defense= "PHI";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "PHI";
+                    }else{ Config.defense= "PHI";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -247,9 +267,10 @@ public class Teams implements ActionListener {
         WAS.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "WAS";
-                    }else{ config.defense= "WAS";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "WAS";
+                    }else{ Config.defense= "WAS";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -257,9 +278,10 @@ public class Teams implements ActionListener {
         GB.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "GB";
-                    }else{ config.defense= "GB";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "GB";
+                    }else{ Config.defense= "GB";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -267,9 +289,10 @@ public class Teams implements ActionListener {
         MIN.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "MIN";
-                    }else{ config.defense= "MIN";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "MIN";
+                    }else{ Config.defense= "MIN";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -277,9 +300,10 @@ public class Teams implements ActionListener {
         DET.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "DET";
-                    }else{ config.defense= "DET";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "DET";
+                    }else{ Config.defense= "DET";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -287,9 +311,10 @@ public class Teams implements ActionListener {
         CHI.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "CHI";
-                    }else{ config.defense= "CHI";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "CHI";
+                    }else{ Config.defense= "CHI";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -297,9 +322,10 @@ public class Teams implements ActionListener {
         TB.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "TB";
-                    }else{ config.defense= "TB";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "TB";
+                    }else{ Config.defense= "TB";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -307,9 +333,10 @@ public class Teams implements ActionListener {
         NO.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "NO";
-                    }else{ config.defense= "NO";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "NO";
+                    }else{ Config.defense= "NO";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -317,9 +344,10 @@ public class Teams implements ActionListener {
         CAR.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "CAR";
-                    }else{ config.defense= "CAR";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "CAR";
+                    }else{ Config.defense= "CAR";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -327,9 +355,10 @@ public class Teams implements ActionListener {
         ATL.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "ATL";
-                    }else{ config.defense= "ATL";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "ATL";
+                    }else{ Config.defense= "ATL";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -337,9 +366,10 @@ public class Teams implements ActionListener {
         SF.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "SF";
-                    }else{ config.defense= "SF";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "SF";
+                    }else{ Config.defense= "SF";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -347,9 +377,10 @@ public class Teams implements ActionListener {
         SEA.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "SEA";
-                    }else{ config.defense= "SEA";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "SEA";
+                    }else{ Config.defense= "SEA";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -357,9 +388,10 @@ public class Teams implements ActionListener {
         LAR.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-					if(config.off_def.equals("off")){
-                        config.offense = "LAR";
-                    }else{ config.defense= "LAR";}
+					if(Config.off_def.equals("off")){
+                        Config.offense = "LAR";
+                    }else{ Config.defense= "LAR";}
+                    Display.updateUI();
 				}
 			}
 		);
@@ -412,6 +444,6 @@ public class Teams implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e){
-        config.off_def = "off";
+        Config.off_def = "off";
 	}
 }

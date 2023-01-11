@@ -11,9 +11,7 @@ public class Down implements ActionListener{
     JButton third = new JButton("3rd");
     JButton fourth = new JButton("4th");
     public JPanel downs = new JPanel();
-
-    //Display display = new Display();
-    
+        
     public Down(){
         first.addActionListener(this);
         second.addActionListener(
