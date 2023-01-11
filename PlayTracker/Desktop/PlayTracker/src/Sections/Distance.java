@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import src.Main.Display;
+
 public class Distance implements ActionListener {
     JButton less1 = new JButton("<1");
     JButton y1to3 = new JButton("1-3");
@@ -21,6 +23,7 @@ public class Distance implements ActionListener {
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.yards = "1-3";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -28,6 +31,7 @@ public class Distance implements ActionListener {
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.yards = "4-6";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -35,6 +39,7 @@ public class Distance implements ActionListener {
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.yards = "7-9";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -42,6 +47,7 @@ public class Distance implements ActionListener {
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.yards = "10";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -49,6 +55,7 @@ public class Distance implements ActionListener {
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.yards = "11-15";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -56,6 +63,7 @@ public class Distance implements ActionListener {
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.yards = "16-20";
+                    Display.updateUI();
 				}
 			}
 		);
@@ -63,19 +71,24 @@ public class Distance implements ActionListener {
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
                     Config.yards = "21+";
+                    Display.updateUI();
 				}
 			}
 		);
-        distance.setPreferredSize(new Dimension (530,35));
-        less1.setPreferredSize(new Dimension (60,25));
-        y1to3.setPreferredSize(new Dimension (60,25));
-        y4to6.setPreferredSize(new Dimension (60,25));
-        y7to9.setPreferredSize(new Dimension (60,25));
-        y10.setPreferredSize(new Dimension (60,25));
-        y11to15.setPreferredSize(new Dimension (60,25));
-        y16to20.setPreferredSize(new Dimension (60,25));
-        y21over.setPreferredSize(new Dimension (60,25));
-        distance.setLayout(new FlowLayout());
+        distance.setPreferredSize(new Dimension (385,35));
+        //Previouds total was 480 width
+        less1.setPreferredSize(new Dimension (20,25));
+        less1.setBounds(5,5,30,25);
+        y1to3.setPreferredSize(new Dimension (50,25));
+        y1to3.setBounds(40,5,50,25);
+        y4to6.setPreferredSize(new Dimension (50,25));
+        y7to9.setPreferredSize(new Dimension (50,25));
+        y10.setPreferredSize(new Dimension (45,25));
+        y11to15.setPreferredSize(new Dimension (65,25));
+        y16to20.setPreferredSize(new Dimension (65,25));
+        y21over.setPreferredSize(new Dimension (65,25));
+        //distance.setLayout(new FlowLayout());
+        distance.setLayout(null);
         distance.add(less1);
         distance.add(y1to3);
         distance.add(y4to6);
