@@ -17,7 +17,6 @@ import src.Sections.Placeholder;
 import src.Sections.PlayResult;
 import src.Sections.Down;
 import src.Sections.Distance;
-import src.Sections.PlayResult;
 
 public class SetTracker implements ActionListener{
     JPanel main = new JPanel();
