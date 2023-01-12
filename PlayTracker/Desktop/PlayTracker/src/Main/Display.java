@@ -100,6 +100,12 @@ public class Display implements ActionListener {
         resultPlay.setText(Config.play_result);
     }
 
+    public static void changePoss(){
+        String tempTeam = Config.offense;
+        Config.offense = Config.defense;
+        Config.defense = tempTeam;
+    }
+
     public void actionPerformed(ActionEvent e){
         updateUI();
 	}
