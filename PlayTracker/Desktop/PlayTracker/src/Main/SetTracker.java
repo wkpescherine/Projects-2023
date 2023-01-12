@@ -14,8 +14,10 @@ import src.Sections.Quarter;
 import src.Sections.Config;
 import src.Sections.Minutes;
 import src.Sections.Placeholder;
+import src.Sections.PlayResult;
 import src.Sections.Down;
 import src.Sections.Distance;
+import src.Sections.PlayResult;
 
 public class SetTracker implements ActionListener{
     JPanel main = new JPanel();
@@ -29,6 +31,7 @@ public class SetTracker implements ActionListener{
     Minutes minutes = new Minutes();
     Down down = new Down();
     Distance distance = new Distance();
+    PlayResult playresults = new PlayResult();
     Placeholder holder = new Placeholder();
 
     SetTracker(){
@@ -42,6 +45,7 @@ public class SetTracker implements ActionListener{
         main.add(down.downs);
         main.add(distance.distance);
         main.add(holder.holder);
+        main.add(playresults.playresult);
         main.add(AnalyzeO);
         main.add(AnalyzeD);
         main.add(save);

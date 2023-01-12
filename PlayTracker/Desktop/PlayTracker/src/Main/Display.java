@@ -26,6 +26,9 @@ public class Display implements ActionListener {
     JLabel yards = new JLabel("Yrds");
     JLabel divider6 = new JLabel(":");
     static JLabel yardsValue = new JLabel("");
+    JLabel playsResult = new JLabel("Play Result");
+    JLabel divider7 = new JLabel(":");
+    static JLabel resultPlay = new JLabel("");
     JButton update = new JButton("Update");
     JButton changePoss = new JButton("Change of Poss");
 
@@ -80,6 +83,9 @@ public class Display implements ActionListener {
         results.add(yards);
         results.add(divider6);
         results.add(yardsValue);
+        results.add(playsResult);
+        results.add(divider7);
+        results.add(resultPlay);
         results.add(update);
         results.add(changePoss);
     }
@@ -91,6 +97,7 @@ public class Display implements ActionListener {
         minNum.setText(Config.minute);
         downValue.setText(Config.down);
         yardsValue.setText(Config.yards);
+        resultPlay.setText(Config.play_result);
     }
 
     public void actionPerformed(ActionEvent e){

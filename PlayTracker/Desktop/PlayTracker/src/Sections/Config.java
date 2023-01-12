@@ -10,4 +10,5 @@ public class Config {
     public static String yards = "None";
     public static String side = "None";
     public static String yardLine = "None";
+    public static String play_result = "None";
 }
