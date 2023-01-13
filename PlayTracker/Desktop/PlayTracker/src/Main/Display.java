@@ -9,28 +9,31 @@ import src.Sections.Config;
 public class Display implements ActionListener {
     JPanel results = new JPanel();
     JLabel offensiveTeam = new JLabel("Offense");
-    JLabel defensiveTeam = new JLabel("Defense");
-    JLabel quarter = new JLabel("Qtr");
-    JLabel minute = new JLabel("Min");
-    static JLabel teamOnOff = new JLabel("");
-    static JLabel teamOnDef = new JLabel("");
-    static JLabel qtrNum = new JLabel("");
-    static JLabel minNum = new JLabel("");
     JLabel divider1 = new JLabel(":");
+    static JLabel teamOnOff = new JLabel("");
+    JLabel defensiveTeam = new JLabel("Defense");
     JLabel divider2 = new JLabel(":");
+    static JLabel teamOnDef = new JLabel("");
+    JLabel quarter = new JLabel("Qtr");
     JLabel divider3 = new JLabel(":");
+    static JLabel qtrNum = new JLabel("");
+    JLabel minute = new JLabel("Min");
     JLabel divider4 = new JLabel(":");
+    static JLabel minNum = new JLabel("");
     JLabel down = new JLabel("down");
     JLabel divider5 = new JLabel(":");
     static JLabel downValue = new JLabel("");
     JLabel yards = new JLabel("Yrds");
     JLabel divider6 = new JLabel(":");
     static JLabel yardsValue = new JLabel("");
-    JLabel playsResult = new JLabel("Play Result");
+    JLabel playsResult = new JLabel("Result");
     JLabel divider7 = new JLabel(":");
     static JLabel resultPlay = new JLabel("");
     JButton update = new JButton("Update");
     JButton changePoss = new JButton("Change of Poss");
+    JLabel yard_line = new JLabel("Yard Line");
+    JLabel divider8 = new JLabel(":");
+    static JLabel side_yard = new JLabel("");
 
     public Display(){
         update.addActionListener(this);
@@ -63,6 +66,12 @@ public class Display implements ActionListener {
         yards.setPreferredSize(new Dimension (60,25));
         divider6.setPreferredSize(new Dimension (20,25));
         yardsValue.setPreferredSize(new Dimension (40,25));
+        playsResult.setPreferredSize(new Dimension (60,25));
+        divider7.setPreferredSize(new Dimension (20,25));
+        resultPlay.setPreferredSize(new Dimension (40,25));
+        yard_line.setPreferredSize(new Dimension (60,25));
+        divider8.setPreferredSize(new Dimension (20,25));
+        side_yard.setPreferredSize(new Dimension (40,25));
 
         results.setPreferredSize(new Dimension (290,520));
         results.add(offensiveTeam);
@@ -86,6 +95,9 @@ public class Display implements ActionListener {
         results.add(playsResult);
         results.add(divider7);
         results.add(resultPlay);
+        results.add(yard_line);
+        results.add(divider8);
+        results.add(side_yard);
         results.add(update);
         results.add(changePoss);
     }
@@ -98,6 +110,7 @@ public class Display implements ActionListener {
         downValue.setText(Config.down);
         yardsValue.setText(Config.yards);
         resultPlay.setText(Config.play_result);
+        side_yard.setText(Config.side_of_field + Config.yard_line);
     }
 
     public static void changePoss(){

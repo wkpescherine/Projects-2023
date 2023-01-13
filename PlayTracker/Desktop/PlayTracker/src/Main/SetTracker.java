@@ -17,6 +17,7 @@ import src.Sections.Placeholder;
 import src.Sections.PlayResult;
 import src.Sections.Down;
 import src.Sections.Distance;
+import src.Sections.FieldPosition;;
 
 public class SetTracker implements ActionListener{
     JPanel main = new JPanel();
@@ -31,6 +32,7 @@ public class SetTracker implements ActionListener{
     Down down = new Down();
     Distance distance = new Distance();
     PlayResult playresults = new PlayResult();
+    FieldPosition fieldpos = new FieldPosition();
     Placeholder holder = new Placeholder();
 
     SetTracker(){
@@ -45,6 +47,7 @@ public class SetTracker implements ActionListener{
         main.add(distance.distance);
         main.add(holder.holder);
         main.add(playresults.playresult);
+        main.add(fieldpos.field_pos);
         main.add(AnalyzeO);
         main.add(AnalyzeD);
         main.add(save);
