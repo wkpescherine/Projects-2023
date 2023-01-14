@@ -122,7 +122,7 @@ public class PlayResult implements ActionListener{
         touchdown.setPreferredSize(new Dimension (39,25));
         safety.setPreferredSize(new Dimension (39,25));
 
-        playresult.setPreferredSize(new Dimension (347,35));
+        playresult.setPreferredSize(new Dimension (365,35));
         playresult.setLayout(new FlowLayout());
         playresult.add(completion);
         playresult.add(incomplete);
