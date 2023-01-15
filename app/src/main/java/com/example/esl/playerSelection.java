@@ -17,7 +17,11 @@ public class playerSelection extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+
+        setPlayers();
     }
+
+    public void setPlayers(){}
 
     public void BackButton(View v){
         Intent intent = new Intent(this, NBA_Sim.class);

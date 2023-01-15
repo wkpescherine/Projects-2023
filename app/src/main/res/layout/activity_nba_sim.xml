@@ -150,7 +150,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guard 1 - Pick player"
+            android:text="Pick player"
             android:textColor="#fff"
             android:padding="3dp"
             android:gravity="center"
@@ -158,7 +158,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guard 2 - Pick player"
+            android:text="Pick player"
             android:textColor="#fff"
             android:padding="3dp"
             android:gravity="center"
@@ -166,7 +166,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Forward 1 - Pick player"
+            android:text="Pick player"
             android:textColor="#fff"
             android:padding="3dp"
             android:gravity="center"
@@ -174,7 +174,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Forward 2 - Pick player"
+            android:text="Pick player"
             android:textColor="#fff"
             android:padding="3dp"
             android:gravity="center"
@@ -182,7 +182,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Center - Pick player"
+            android:text="Pick player"
             android:textColor="#fff"
             android:padding="3dp"
             android:gravity="center"
@@ -202,35 +202,35 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guard 1 - Pick player"
+            android:text="CPU Pick"
             android:textColor="#fff"
             android:padding="3dp"
             android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guard 2 - Pick player"
+            android:text="CPU Pick"
             android:textColor="#fff"
             android:padding="3dp"
             android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Forward 1 - Pick player"
+            android:text="CPU Pick"
             android:textColor="#fff"
             android:padding="3dp"
             android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Forward 2 - Pick player"
+            android:text="CPU Pick"
             android:textColor="#fff"
             android:padding="3dp"
             android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Center - Pick player"
+            android:text="CPU Pick"
             android:textColor="#fff"
             android:padding="3dp"
             android:gravity="center"/>
