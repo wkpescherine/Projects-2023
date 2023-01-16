@@ -16,6 +16,7 @@ public class PlayResult implements ActionListener{
     JButton fieldGoal = new JButton("FG");
     JButton touchdown = new JButton("TD");
     JButton safety = new JButton("SAF");
+    JButton sack = new JButton("SAC");
     public JPanel playresult = new JPanel();
     
     public PlayResult(){
@@ -80,7 +81,7 @@ public class PlayResult implements ActionListener{
         fieldGoal.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    Config.play_result = "PNT";
+                    Config.play_result = "FG";
                     Display.changePoss();
                     Config.down="1st";
                     Config.yards = "10";
@@ -91,7 +92,7 @@ public class PlayResult implements ActionListener{
         touchdown.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    Config.play_result = "PNT";
+                    Config.play_result = "TD";
                     Display.changePoss();
                     Config.down="1st";
                     Config.yards = "10";
@@ -102,10 +103,19 @@ public class PlayResult implements ActionListener{
         safety.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    Config.play_result = "PNT";
+                    Config.play_result = "SAF";
                     Display.changePoss();
                     Config.down="1st";
                     Config.yards = "10";
+                    Display.updateUI();
+				}
+			}
+		);
+          sack.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+                    Config.play_result = "SAF";
+                    Config.down="2nd";
                     Display.updateUI();
 				}
 			}
@@ -122,7 +132,7 @@ public class PlayResult implements ActionListener{
         touchdown.setPreferredSize(new Dimension (39,25));
         safety.setPreferredSize(new Dimension (39,25));
 
-        playresult.setPreferredSize(new Dimension (365,35));
+        playresult.setPreferredSize(new Dimension (700,35));
         playresult.setLayout(new FlowLayout());
         playresult.add(completion);
         playresult.add(incomplete);
