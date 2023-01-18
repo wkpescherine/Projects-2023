@@ -3,9 +3,9 @@ package src.Sections;
 import java.awt.*;
 import javax.swing.*;
 
-public class Placeholder {
+public class Placeholder3 {
     public JPanel holder = new JPanel();
-    public Placeholder(){
-        holder.setPreferredSize(new Dimension (205,35));
+    public Placeholder3(){
+        holder.setPreferredSize(new Dimension (700,35));
     }
 }

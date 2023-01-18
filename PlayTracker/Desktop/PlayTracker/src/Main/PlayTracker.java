@@ -5,7 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class PlayTracker{
-	JLabel version = new JLabel("version 0.5");
+	JLabel version = new JLabel("version 0.8");
     JFrame window = new JFrame("PlayTracker");
 
 	Display display = new Display();

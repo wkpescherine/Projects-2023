@@ -14,6 +14,8 @@ import src.Sections.Quarter;
 import src.Sections.Config;
 import src.Sections.Minutes;
 import src.Sections.Placeholder;
+import src.Sections.Placeholder2;
+import src.Sections.Placeholder3;
 import src.Sections.PlayResult;
 import src.Sections.Down;
 import src.Sections.Distance;
@@ -34,6 +36,8 @@ public class SetTracker implements ActionListener{
     PlayResult playresults = new PlayResult();
     FieldPosition fieldpos = new FieldPosition();
     Placeholder holder = new Placeholder();
+    Placeholder2 holder2 = new Placeholder2();
+    Placeholder3 holder3 = new Placeholder3();
 
     SetTracker(){
         save.setPreferredSize(new Dimension (720,25));
@@ -48,6 +52,8 @@ public class SetTracker implements ActionListener{
         main.add(holder.holder);
         main.add(playresults.playresult);
         main.add(fieldpos.field_pos);
+        main.add(holder2.holder);
+        main.add(holder3.holder);
         main.add(AnalyzeO);
         main.add(AnalyzeD);
         main.add(save);
