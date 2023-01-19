@@ -12,4 +12,9 @@ public class Config {
     public static String yard_line = "";
     public static String side_of_field = "";
     public static String play_result = "";
+    public static String TeamA = "TeamA";
+    public static String TeamB = "TeamB";
+
+    public static int TeamAScore = 0;
+    public static int TeamBScore = 0;
 }

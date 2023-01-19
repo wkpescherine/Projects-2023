@@ -19,7 +19,8 @@ import src.Sections.Placeholder3;
 import src.Sections.PlayResult;
 import src.Sections.Down;
 import src.Sections.Distance;
-import src.Sections.FieldPosition;;
+import src.Sections.FieldPosition;
+import src.Sections.Scoreboard;
 
 public class SetTracker implements ActionListener{
     JPanel main = new JPanel();
@@ -35,6 +36,7 @@ public class SetTracker implements ActionListener{
     Distance distance = new Distance();
     PlayResult playresults = new PlayResult();
     FieldPosition fieldpos = new FieldPosition();
+    Scoreboard score = new Scoreboard();
     Placeholder holder = new Placeholder();
     Placeholder2 holder2 = new Placeholder2();
     Placeholder3 holder3 = new Placeholder3();
@@ -53,6 +55,7 @@ public class SetTracker implements ActionListener{
         main.add(playresults.playresult);
         main.add(fieldpos.field_pos);
         main.add(holder2.holder);
+        main.add(score.scoreboard);
         main.add(holder3.holder);
         main.add(AnalyzeO);
         main.add(AnalyzeD);

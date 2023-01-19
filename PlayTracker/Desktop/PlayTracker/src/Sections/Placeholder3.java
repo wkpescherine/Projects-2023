@@ -6,6 +6,6 @@ import javax.swing.*;
 public class Placeholder3 {
     public JPanel holder = new JPanel();
     public Placeholder3(){
-        holder.setPreferredSize(new Dimension (700,35));
+        holder.setPreferredSize(new Dimension (590,35));
     }
 }
