@@ -5,9 +5,12 @@ import java.awt.event.*;
 import javax.swing.*;
 
 import src.Sections.Config;
+import src.Sections.Scoreboard;
 
 public class Display implements ActionListener {
     JPanel results = new JPanel();
+
+    Scoreboard score = new Scoreboard();
     
     JLabel offensiveTeam = new JLabel("Offense");
     JLabel divider1 = new JLabel(":");
@@ -112,6 +115,7 @@ public class Display implements ActionListener {
         yardsValue.setText(Config.yards);
         resultPlay.setText(Config.play_result);
         side_yard.setText(Config.side_of_field + Config.yard_line);
+        //score.updateScore();
     }
 
     public static void changePoss(){

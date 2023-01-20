@@ -14,11 +14,14 @@ public class Scoreboard{
         updateScore();
         scoreboard.setPreferredSize(new Dimension (100,35));
         scoreboard.setLayout(new FlowLayout());
+        scoreboard.add(TeamAScore);
+        scoreboard.add(TeamBScore);
     }
 
     public void updateScore(){
-        TeamAScore.setText(Config.TeamA +":"+TeamAScore);
-        TeamBScore.setText(Config.TeamB +":"+TeamBScore);
+        //TeamAScore.setText(Config.TeamA +":"+TeamAScore);
+        //TeamBScore.setText(Config.TeamB +":"+TeamBScore);
+        TeamAScore.setText(Config.TeamA);
     }
 
 }
