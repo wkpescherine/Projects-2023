@@ -86,6 +86,7 @@ public class PlayResult implements ActionListener{
                     Config.down="1st";
                     Config.yards = "10";
                     Display.updateUI();
+
 				}
 			}
 		);
@@ -150,4 +151,16 @@ public class PlayResult implements ActionListener{
         Config.play_result = "COMP";
         Display.updateUI();
 	}
+
+     public void calculatePoints(String scoreResult){
+          if(Config.TeamA == Config.offense){
+               if(scoreResult == "TD"){
+                    Config.TeamAScore += 6;
+               }else if(scoreResult == "PAT"){
+                    Config.TeamAScore += 1;
+               }else if(scoreResult == "FG"){
+                    Config.TeamAScore += 3;
+               }
+          }
+     }
 }

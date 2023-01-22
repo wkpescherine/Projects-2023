@@ -10,7 +10,7 @@ public class Scoreboard{
     JLabel TeamBScore = new JLabel("");
     public JPanel scoreboard = new JPanel();
 
-    public Scoreboard(){
+    public Scoreboard(){`
         updateScore();
         scoreboard.setPreferredSize(new Dimension (100,35));
         scoreboard.setLayout(new FlowLayout());
@@ -19,9 +19,7 @@ public class Scoreboard{
     }
 
     public void updateScore(){
-        TeamAScore.setText(Config.TeamA +":"+Config.TeamAScore);
-        //TeamBScore.setText(Config.TeamB +":"+TeamBScore);
-        //TeamAScore.setText(Config.TeamA);
+        TeamAScore.setText(Config.TeamA +":"+String.valueOf(Config.TeamAScore));
     }
 
 }
