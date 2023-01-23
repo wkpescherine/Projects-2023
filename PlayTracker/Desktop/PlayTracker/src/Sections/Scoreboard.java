@@ -10,7 +10,7 @@ public class Scoreboard{
     JLabel TeamBScore = new JLabel("");
     public JPanel scoreboard = new JPanel();
 
-    public Scoreboard(){`
+    public Scoreboard(){
         updateScore();
         scoreboard.setPreferredSize(new Dimension (100,35));
         scoreboard.setLayout(new FlowLayout());
