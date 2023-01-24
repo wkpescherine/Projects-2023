@@ -6,6 +6,7 @@ const App : FC = () => {
     const navigation = useNavigation();
     const [client,setClient] = useState("Patient");
     const [rate,setRate] = useState("Monthly");
+    const [cost, setCost] = useState(0);
 
     function handleClient(){
         if(client==="Patient"){
@@ -28,7 +29,7 @@ const App : FC = () => {
     }
 
     return(
-        <View>
+        <View style={styles.container}>
             <Text>Username</Text>
             <TextInput
                 placeholder="Enter username" 
@@ -39,13 +40,24 @@ const App : FC = () => {
             />
             <Button onPress={()=>handleClient()} title={client} />
             <View>
-                <Text>Rate :</Text>
+                <Text>Rate : </Text>
                 <Button title={rate} onPress={()=>handleRate()} />
+            </View>
+            <View>
+                <Text>Cost: ${cost}</Text>
             </View>
             <Button title="Create Account" onPress={()=>navigation.navigate("home")}/>
             <Button title="Back" onPress={()=>navigation.navigate("main")}/>
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container:{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    }
+})
 
 export default App;
