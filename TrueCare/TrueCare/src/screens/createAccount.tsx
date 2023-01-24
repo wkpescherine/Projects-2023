@@ -1,5 +1,5 @@
 import React , { FC, useState } from "react";
-import { View , Text , Button , TextInput} from "react-native";
+import { View , Text , Button , TextInput, StyleSheet} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 const App : FC = () => {
