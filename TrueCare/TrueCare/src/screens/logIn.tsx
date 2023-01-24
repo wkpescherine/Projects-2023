@@ -1,6 +1,7 @@
 import React , { FC } from "react";
 import { View , TextInput , Button , StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import styles from "../Stylesheets/containers"
 
 const App : FC = () => {
     const navigation = useNavigation();
@@ -18,13 +19,5 @@ const App : FC = () => {
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    }
-})
 
 export default App;

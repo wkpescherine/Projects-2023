@@ -8,6 +8,9 @@ export default StyleSheet.create({
     },
     horizontal:{
         padding: 5,
-        fontSize: 32,
+    },
+    horizontalText:{
+        padding: 5,
+        fontSize: 48,
     }
 })

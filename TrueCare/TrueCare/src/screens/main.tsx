@@ -8,7 +8,7 @@ const App : FC = () => {
 
     return(
         <View style={styles.container}>
-            <Text style={styles.horizontal} >TrueCare</Text>
+            <Text style={styles.horizontalText} >TrueCare</Text>
             <View style={styles.horizontal}>
                 <Button title="Create Account" onPress={()=>navigation.navigate("create")}/>
             </View>
