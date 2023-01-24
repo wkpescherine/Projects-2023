@@ -7,9 +7,8 @@ const App : FC = () => {
 
     return(
         <View style={styles.container}>
-            <Text>Welcome to TrueCare</Text>
-            <Button title="Log-Out" onPress={()=>navigation.navigate("main")}/>
-            <Button title="Profile" onPress={()=>navigation.navigate("profile")}/>
+            <Text>UserName </Text>
+            <Button title="Back to Main" onPress={()=>navigation.navigate("home")}/>
         </View>
     )
 }

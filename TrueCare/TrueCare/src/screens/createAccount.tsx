@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 const App : FC = () => {
     const navigation = useNavigation();
     const [client,setClient] = useState("Patient");
-    const [rate,setRate] = useState("Monthly");
+    const [rate,setRate] = useState("Slow");
     const [cost, setCost] = useState(0);
 
     function handleClient(){
@@ -17,14 +17,14 @@ const App : FC = () => {
     }
 
     function handleRate(){
-        if(rate === "Monthly"){
-            setRate("Quarterly")
-        }else if (rate === "Quarterly"){
-            setRate("Semi-Annually")
-        }else if (rate === "Semi-Annually"){
-            setRate("Yearly")
+        if(rate === "Slow"){
+            setRate("Normal")
+        }else if (rate === "Normal"){
+            setRate("Increased")
+        }else if (rate === "Increased"){
+            setRate("Rapid")
         }else{
-            setRate("Monthly")
+            setRate("Slow")
         }
     }
 
