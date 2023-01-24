@@ -1,25 +1,22 @@
 import React , { FC } from "react";
 import { View , Text, Button, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import styles from "../Stylesheets/containers"
 
 const App : FC = () => {
     const navigation = useNavigation();
 
     return(
         <View style={styles.container}>
-            <Text>TrueCare</Text>
-            <Button title="Create Account" onPress={()=>navigation.navigate("create")}/>
-            <Button title="Log-In" onPress={()=>navigation.navigate("login")}/>
+            <Text style={styles.horizontal} >TrueCare</Text>
+            <View style={styles.horizontal}>
+                <Button title="Create Account" onPress={()=>navigation.navigate("create")}/>
+            </View>
+            <View style={styles.horizontal}>
+                <Button title="Log-In" onPress={()=>navigation.navigate("login")}/>
+            </View>
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-    }
-})
 
 export default App;
