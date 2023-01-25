@@ -42,18 +42,19 @@ const App : FC = () => {
 
     return(
         <View style={styles.container}>
-            <View>
+            <View style={styles.horizonFlow}>
                 <Text>Username:</Text>
                 <TextInput placeholder="Enter username" />
             </View>
-            <View >
+            <View style={styles.horizonFlow}>
                 <Text>Email:</Text>
                 <TextInput placeholder="Enter Email"/>
             </View>
-            <View>
-                <Text>Age:</Text>
-                <Text>{age}</Text>
+            <View style={styles.horizonFlow}>
+                <Text style={styles.spacing}>Age:</Text>
+                <Text style={styles.spacing}>{age}</Text>
                 <Button title="+" onPress={()=>handleAge("+")}/>
+                <Text style={styles.spacing} />
                 <Button title="-" onPress={()=>handleAge("-")}/>
             </View>
             <Text>Password</Text>

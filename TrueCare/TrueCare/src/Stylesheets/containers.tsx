@@ -12,5 +12,14 @@ export default StyleSheet.create({
     horizontalText:{
         padding: 5,
         fontSize: 48,
+    },
+    horizonFlow:{
+        padding: 5,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    spacing:{
+        padding: 5,
     }
 })
