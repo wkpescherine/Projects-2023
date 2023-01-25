@@ -8,6 +8,7 @@ const App : FC = () => {
     const [client,setClient] = useState("Patient");
     const [rate,setRate] = useState("Slow");
     const [cost, setCost] = useState(0);
+    const [age, setAge] = useState(0);
 
     function handleClient(){
         if(client==="Patient"){
@@ -29,12 +30,32 @@ const App : FC = () => {
         }
     }
 
+    function handleAge(sign){
+        if(sign === "+"){
+            let tempValue = age+1;
+            setAge(tempValue)
+        }else if( sign ==="-" && age>0){
+            let TempValueSub = age-1;
+            setAge(TempValueSub)
+        }
+    }
+
     return(
         <View style={styles.container}>
-            <Text>Username</Text>
-            <TextInput
-                placeholder="Enter username" 
-            />
+            <View>
+                <Text>Username:</Text>
+                <TextInput placeholder="Enter username" />
+            </View>
+            <View >
+                <Text>Email:</Text>
+                <TextInput placeholder="Enter Email"/>
+            </View>
+            <View>
+                <Text>Age:</Text>
+                <Text>{age}</Text>
+                <Button title="+" onPress={()=>handleAge("+")}/>
+                <Button title="-" onPress={()=>handleAge("-")}/>
+            </View>
             <Text>Password</Text>
             <TextInput
                 placeholder="Enter password" 
