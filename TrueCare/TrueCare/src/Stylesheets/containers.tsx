@@ -14,6 +14,12 @@ export default StyleSheet.create({
         padding: 5,
         fontSize: 48,
     },
+    inputContainer:{
+        backgroundColor: "#ffffff",
+        margin: 5,
+        width: "50%",
+        justifyContent: "center",
+    },
     horizonFlow:{
         padding: 5,
         flexDirection: "row",
