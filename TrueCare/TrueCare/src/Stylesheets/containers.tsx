@@ -7,6 +7,10 @@ export default StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#000000",//This gets me black
     },
+    container90:{
+        padding: 5,
+        width: "90%"
+    },
     horizontal:{
         padding: 5,
     },

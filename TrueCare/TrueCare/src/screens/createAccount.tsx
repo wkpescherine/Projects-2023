@@ -2,6 +2,8 @@ import React , { FC, useState } from "react";
 import { View , Text , Button , TextInput, StyleSheet} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../Stylesheets/containers"
+import containers from "../Stylesheets/containers";
+import texts from "../Stylesheets/texts"
 
 const App : FC = () => {
     const navigation = useNavigation();
@@ -42,13 +44,20 @@ const App : FC = () => {
 
     return(
         <View style={styles.container}>
-            <View style={styles.horizonFlow}>
-                <Text>Username:</Text>
-                <TextInput placeholder="Enter username" />
+            <View style={containers.container90}>
+                <Button onPress={()=>handleClient()} title={client} />    
             </View>
-            <View style={styles.horizonFlow}>
-                <Text>Email:</Text>
-                <TextInput placeholder="Enter Email"/>
+            <View style={containers.horizonFlow}>
+                <Text style={texts.basicText}>Username:</Text>
+                <TextInput style={containers.inputContainer} placeholder="Enter username" />
+            </View>
+            <View style={containers.horizonFlow}>
+                <Text style={texts.basicText}>Email:</Text>
+                <TextInput style={containers.inputContainer} placeholder="Enter Email"/>
+            </View>
+            <View style={containers.horizonFlow}>
+                <Text style={texts.basicText}>Password</Text>
+                <TextInput style={containers.inputContainer} placeholder="Enter password" />
             </View>
             <View style={styles.horizonFlow}>
                 <Text style={styles.spacing}>Age:</Text>
@@ -56,13 +65,6 @@ const App : FC = () => {
                 <Button title="+" onPress={()=>handleAge("+")}/>
                 <Text style={styles.spacing} />
                 <Button title="-" onPress={()=>handleAge("-")}/>
-            </View>
-            <Text>Password</Text>
-            <TextInput
-                placeholder="Enter password" 
-            />
-            <Button onPress={()=>handleClient()} title={client} />
-            <View>
                 <Text>Rate : </Text>
                 <Button title={rate} onPress={()=>handleRate()} />
             </View>
