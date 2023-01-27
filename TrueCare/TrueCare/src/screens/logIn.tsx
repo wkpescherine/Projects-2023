@@ -2,7 +2,6 @@ import React , { FC } from "react";
 import { View , TextInput , Button , StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import container from "../Stylesheets/containers"
-import { StatusBar } from "expo-status-bar";
 
 const App : FC = () => {
     const navigation = useNavigation();
