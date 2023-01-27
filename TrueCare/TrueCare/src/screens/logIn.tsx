@@ -2,24 +2,25 @@ import React , { FC } from "react";
 import { View , TextInput , Button , StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import container from "../Stylesheets/containers"
-import texts from "../Stylesheets/texts"
+import { StatusBar } from "expo-status-bar";
 
 const App : FC = () => {
     const navigation = useNavigation();
 
     return(
         <View style={container.container}>
-            <View style={container.horizonFlow}>
-
-            </View>
             <TextInput style={container.inputContainer}
                 placeholder="Username" 
             />
             <TextInput style={container.inputContainer}
                 placeholder="Password" 
             />
-            <Button title="Log-In" onPress={()=>navigation.navigate("home")}/>
-            <Button title="Back" onPress={()=>navigation.navigate("main")}/>
+            <View style={container.horizontal}>
+                <Button title="Log-In" onPress={()=>navigation.navigate("home")}/>
+            </View>
+            <View style={container.horizontal}>
+                <Button title="Back" onPress={()=>navigation.navigate("main")}/>
+            </View>
         </View>
     )
 }

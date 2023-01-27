@@ -9,8 +9,7 @@ const App : FC = () => {
     const navigation = useNavigation();
 
     return(
-        <>
-        <StatusBar hidden />
+        <><StatusBar hidden />
             <View style={containers.container}>
                 <Text style={texts.basicTitle}>TrueCare</Text>
                 <View style={containers.horizontal}>

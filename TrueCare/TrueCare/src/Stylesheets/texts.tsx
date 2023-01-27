@@ -3,6 +3,9 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     basicTitle:{
         fontSize: 48,
-        color: "#ffffff",
+        color: "#ffffff",//white
+    },
+    basicText:{
+        color:"#ffffff"//white
     }
 })
