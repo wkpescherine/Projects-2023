@@ -6,6 +6,7 @@ export default StyleSheet.create({
         color: "#ffffff",//white
     },
     basicText:{
-        color:"#ffffff"//white
+        color:"#ffffff",//white
+        padding: 5,
     }
 })

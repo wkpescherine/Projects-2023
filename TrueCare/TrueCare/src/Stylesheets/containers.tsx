@@ -11,6 +11,18 @@ export default StyleSheet.create({
         padding: 5,
         width: "90%"
     },
+    container60:{
+        padding: 5,
+        width: "90%"
+    },
+    container45:{
+        padding: 5,
+        width: "45%"
+    },
+    container30:{
+        padding: 5,
+        width: "30%"
+    },
     horizontal:{
         padding: 5,
     },
