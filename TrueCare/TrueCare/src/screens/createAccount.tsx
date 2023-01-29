@@ -6,6 +6,8 @@ import containers from "../Stylesheets/containers";
 import texts from "../Stylesheets/texts"
 import States1 from "../components/states1"
 import States2 from "../components/states2"
+import States3 from "../components/states3"
+import Doctors1 from "../components/doctors1"
 
 const App : FC = () => {
     const navigation = useNavigation();
@@ -46,29 +48,38 @@ const App : FC = () => {
 
     return(
         <View style={containers.container}>
+            {/* Client medical picker*/}
             <View style={containers.container90}>
                 <Button onPress={()=>handleClient()} title={client} />    
             </View>
+            {/* User naming section */}
             <View style={containers.horizonFlow}>
                 <View style={containers.container30}>
                     <Text style={texts.basicText}>Username:</Text>
                 </View>
                 <TextInput style={containers.inputContainer} placeholder="Enter username" />
             </View>
+            {/* User email section */}
             <View style={containers.horizonFlow}>
                 <View style={containers.container30}>
                     <Text style={texts.basicText}>Email:</Text>
                 </View>
                 <TextInput style={containers.inputContainer} placeholder="Enter Email"/>
             </View>
+            {/* User password section */}
             <View style={containers.horizonFlow}>
                 <View style={containers.container30}>
                     <Text style={texts.basicText}>Password:</Text>
                 </View>
                 <TextInput style={containers.inputContainer} placeholder="Enter password" />
             </View>
+            {/* List fo states section */}
             <States1 />
             <States2 />
+            <States3 />
+            {/* List of medical doctors supported or setting up*/}
+            <Doctors1 />
+            {/* Age and rate of growth section */}
             <View style={containers.horizonFlow}>
                 <Text style={texts.basicText}>Age:</Text>
                 <Text style={texts.basicText}>{age}</Text>
@@ -78,9 +89,11 @@ const App : FC = () => {
                 <Text style={texts.basicText}>Rate : </Text>
                 <Button title={rate} onPress={()=>handleRate()} />
             </View>
+            {/* Cost section */}
             <View>
                 <Text style={texts.basicText}>Cost: ${cost}</Text>
             </View>
+            {/* Action buttons */}
             <View style={containers.container90}>
                 <Button title="Create Account" onPress={()=>navigation.navigate("home")}/>
             </View>

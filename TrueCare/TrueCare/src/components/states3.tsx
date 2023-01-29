@@ -5,29 +5,26 @@ import containers from "../Stylesheets/containers"
 const App : FC = () => {
     return(
         <View style={containers.horizonFlow}>
-             <View style={containers.containerButton}>
-                <Button title="NC"/>
-            </View>
-             <View style={containers.containerButton}>
-                <Button title="NJ"/>
-            </View>
-            <View style={containers.containerButton}>
-                <Button title="NY"/>
-            </View>
-            <View style={containers.containerButton}>
-                <Button title="PA"/>
-            </View>
-            <View style={containers.containerButton}>
-                <Button title="RI"/>
-            </View>
-            <View style={containers.containerButton}>
-                <Button title="SC"/>
-            </View>
-            <View style={containers.containerButton}>
-                <Button title="TN"/>
-            </View>
             <View style={containers.containerButton}>
                 <Button title="TX"/>
+            </View>
+            <View style={containers.containerButton}>
+                <Button title="UT"/>
+            </View>
+            <View style={containers.containerButton}>
+                <Button title="VA"/>
+            </View>
+            <View style={containers.containerButton}>
+                <Button title="VT"/>
+            </View>
+            <View style={containers.containerButton}>
+                <Button title="WA"/>
+            </View>
+            <View style={containers.containerButton}>
+                <Button title="WI"/>
+            </View>
+            <View style={containers.containerButton}>
+                <Button title="WY"/>
             </View>
         </View>
     )
