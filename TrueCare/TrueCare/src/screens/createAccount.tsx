@@ -4,7 +4,8 @@ import { useNavigation } from "@react-navigation/native";
 //import styles from "../Stylesheets/containers"
 import containers from "../Stylesheets/containers";
 import texts from "../Stylesheets/texts"
-import States from "../components/states"
+import States1 from "../components/states1"
+import States2 from "../components/states2"
 
 const App : FC = () => {
     const navigation = useNavigation();
@@ -66,7 +67,8 @@ const App : FC = () => {
                 </View>
                 <TextInput style={containers.inputContainer} placeholder="Enter password" />
             </View>
-            <States />
+            <States1 />
+            <States2 />
             <View style={containers.horizonFlow}>
                 <Text style={texts.basicText}>Age:</Text>
                 <Text style={texts.basicText}>{age}</Text>

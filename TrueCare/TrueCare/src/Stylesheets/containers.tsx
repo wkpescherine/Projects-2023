@@ -23,6 +23,9 @@ export default StyleSheet.create({
         padding: 5,
         width: "30%"
     },
+    containerButton:{
+        padding: 5
+    },
     horizontal:{
         padding: 5,
     },
