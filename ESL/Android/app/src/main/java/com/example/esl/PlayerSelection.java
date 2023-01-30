@@ -7,26 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-public class NBA_Sim extends AppCompatActivity {
+public class PlayerSelection extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nba_sim);
+        setContentView(R.layout.activity_player_selection);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+
+        setPlayers();
     }
 
-    public void playerNBA(View v){
-        Intent intent = new Intent(this, PlayerSelection.class);
-        startActivity(intent);
-    }
+    public void setPlayers(){}
 
-    public void StartGame(){}
-
-    public void BackToSelection(View v){
-        Intent intent = new Intent(this, Home.class);
+    public void BackButton(View v){
+        Intent intent = new Intent(this, NBA_Sim.class);
         startActivity(intent);
     }
 }
