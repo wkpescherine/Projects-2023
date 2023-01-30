@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 public class PlayerSelection extends AppCompatActivity {
+    GameConfig config = new GameConfig();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +21,16 @@ public class PlayerSelection extends AppCompatActivity {
         setPlayers();
     }
 
-    public void setPlayers(){}
+    public void setPlayers(){
+        if(config.League.equals("NBA")){ buildUI();}
+    }
 
     public void BackButton(View v){
         Intent intent = new Intent(this, NBA_Sim.class);
         startActivity(intent);
+    }
+
+    public void buildUI(){
+
     }
 }

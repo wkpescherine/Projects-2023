@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 public class NBA_Sim extends AppCompatActivity {
+    GameConfig config = new GameConfig();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
