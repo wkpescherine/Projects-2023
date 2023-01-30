@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ESL">
-        <activity android:name=".Create"></activity>
+        <activity android:name=".NFL_Sim"></activity>
+        <activity android:name=".NBA_Sim" />
+        <activity android:name=".Create" />
         <activity android:name=".Home" />
         <activity android:name=".MainActivity">
             <intent-filter>

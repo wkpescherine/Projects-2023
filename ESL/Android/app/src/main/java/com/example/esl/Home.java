@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 public class Home extends AppCompatActivity {
+    GameConfig gameConfig=  new GameConfig();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
