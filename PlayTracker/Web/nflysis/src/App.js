@@ -14,6 +14,7 @@ function App() {
             <Route exact path="/" element={ <Main />} />
             <Route exact path="/dashboard" element={ <Dashboard />} />
           </Routes>
+        <p>version 0.1</p>
       </div>
     </Router>
   );
