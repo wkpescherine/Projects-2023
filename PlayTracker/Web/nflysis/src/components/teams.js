@@ -1,5 +1,5 @@
 import React from 'react';
-//import './App.css';
+import '../../src';
 import { useNavigate} from 'react-router-dom'
 
 function Teams (){
@@ -10,7 +10,7 @@ function Teams (){
     }
 
     return (
-        <div>
+        <div className='divBack'>
             <div>
                 <button onClick={RedirectTo}>NE</button> 
                 <button onClick={RedirectTo}>MIA</button>
