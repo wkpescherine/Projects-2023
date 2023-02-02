@@ -2,7 +2,7 @@ import React from 'react';
 import '../../src';
 import { useNavigate} from 'react-router-dom'
 
-function Teams (){
+function Quarter (){
     let navigate = useNavigate();
     
     function RedirectTo(){
@@ -23,4 +23,4 @@ function Teams (){
     );
 }
 
-export default  Teams;
+export default  Quarter;
