@@ -52,3 +52,21 @@ p, h1, h2, h5 {
     transform: rotate(360deg);
   }
 }
+
+#wrapper {
+  width: 980px;
+  border: 1px solid white;
+  overflow: hidden;
+}
+
+#dashboard {
+  width: 665px;
+  border: 1px solid white;
+  float: left;
+}
+
+#display {
+  width: 305px;
+  border: 1px solid white;
+  float: left;
+}
