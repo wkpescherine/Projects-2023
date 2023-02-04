@@ -55,18 +55,18 @@ p, h1, h2, h5 {
 
 #wrapper {
   width: 980px;
-  border: 1px solid white;
+  border: 3px solid black;
   overflow: hidden;
 }
 
 #dashboard {
   width: 665px;
-  border: 1px solid white;
+  border: 3px solid black;
   float: left;
 }
 
 #display {
-  width: 305px;
-  border: 1px solid white;
+  width: 300px;
+  border: 3px solid black;
   float: left;
 }
