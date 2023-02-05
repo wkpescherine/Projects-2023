@@ -18,16 +18,16 @@ const App : FC = () => {
                 <Button title="AZ"/>
             </View>
             <View style={containers.containerButton}>
+                <Button title="CA"/>
+            </View>
+            <View style={containers.containerButton}>
+                <Button title="CO"/>
+            </View>
+            <View style={containers.containerButton}>
                 <Button title="CT"/>
             </View>
             <View style={containers.containerButton}>
                 <Button title="DE"/>
-            </View>
-            <View style={containers.containerButton}>
-                <Button title="MA"/>
-            </View>
-            <View style={containers.containerButton}>
-                <Button title="NH"/>
             </View>
         </View>
     )

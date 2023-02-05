@@ -6,25 +6,25 @@ const App : FC = () => {
     return(
         <View style={containers.horizonFlow}>
             <View style={containers.containerButton}>
-                <Button title="TX"/>
+                <Button title="KS"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="UT"/>
+                <Button title="KY"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="VA"/>
+                <Button title="LA"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="VT"/>
+                <Button title="MA"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="WA"/>
+                <Button title="ME"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="WI"/>
+                <Button title="MD"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="WY"/>
+                <Button title="MO"/>
             </View>
         </View>
     )

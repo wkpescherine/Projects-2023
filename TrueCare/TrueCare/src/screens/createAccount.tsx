@@ -7,6 +7,10 @@ import texts from "../Stylesheets/texts"
 import States1 from "../components/states1"
 import States2 from "../components/states2"
 import States3 from "../components/states3"
+import States4 from "../components/states4"
+import States5 from "../components/states5"
+import States6 from "../components/states6"
+import States7 from "../components/states7"
 import Doctors1 from "../components/doctors1"
 
 const App : FC = () => {
@@ -77,6 +81,10 @@ const App : FC = () => {
             <States1 />
             <States2 />
             <States3 />
+            <States4 />
+            <States5 />
+            <States6 />
+            <States7 />
             {/* List of medical doctors supported or setting up*/}
             <Doctors1 />
             {/* Age and rate of growth section */}

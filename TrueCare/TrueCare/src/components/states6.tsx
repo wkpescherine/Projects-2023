@@ -6,28 +6,26 @@ const App : FC = () => {
     return(
         <View style={containers.horizonFlow}>
             <View style={containers.containerButton}>
-                <Button title="FL"/>
+                <Button title="OK"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="GA"/>
+                <Button title="PA"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="HI"/>
+                <Button title="RI"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="IA"/>
+                <Button title="SC"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="ID"/>
+                <Button title="SD"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="IL"/>
+                <Button title="TN"/>
             </View>
             <View style={containers.containerButton}>
-                <Button title="IN"/>
+                <Button title="TX"/>
             </View>
         </View>
     )
 }
-
-export default App;
