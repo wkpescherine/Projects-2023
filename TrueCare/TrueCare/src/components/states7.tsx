@@ -29,3 +29,5 @@ const App : FC = () => {
         </View>
     )
 }
+
+export default App;
