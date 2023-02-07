@@ -10,7 +10,7 @@ const App : FC = () => {
 
     return(
         <><StatusBar hidden />
-            <View>
+            <View style={mainStyle.container}>
                 <Text style={mainStyle.basicText}>Dashboard</Text>
                 <Button title="Logout" onPress={() => navigation.navigate("main")}/>
             </View>
