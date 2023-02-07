@@ -1,1 +1,4 @@
-temp file for all screens
+import Main from "./main";
+import Dashboard from "./dashboard"
+
+export { Main , Dashboard };
