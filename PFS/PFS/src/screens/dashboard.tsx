@@ -17,7 +17,12 @@ const App : FC = () => {
                 <View style={mainStyle.spacer} />
                 <Stocks />
                 <View style={mainStyle.spacer} />
-                <Button title="Logout" onPress={() => navigation.navigate("main")}/>
+                <View style={mainStyle.horizonFlow}>
+                    <View style={{padding: 5,}}>
+                        <Button title="Logout" onPress={() => navigation.navigate("main")}/>
+                    </View>
+                    <Button title="Setting" onPress={() => navigation.navigate("settings")}/>
+                </View>
             </View>
         </>
     )

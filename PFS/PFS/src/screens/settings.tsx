@@ -12,7 +12,7 @@ const App : FC = () => {
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
-                <Text style={mainStyle.basicText}>Stock Market Section</Text>
+                <Text style={mainStyle.basicText}>Settings Screen</Text>
                 <Button title="Back to Dashboard" onPress={() => navigation.navigate("dashboard")}/>
             </View>
         </>
