@@ -12,12 +12,8 @@ const App : FC = () => {
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
-                <Text style={mainStyle.basicText}>Dashboard</Text>
-                <Text style={mainStyle.basicText}>Username</Text>
-                <View style={mainStyle.spacer} />
-                <Stocks />
-                <View style={mainStyle.spacer} />
-                <Button title="Logout" onPress={() => navigation.navigate("main")}/>
+                <Text style={mainStyle.basicText}>Stock Market Section</Text>
+                <Button title="Logout" onPress={() => navigation.navigate("dashboard")}/>
             </View>
         </>
     )

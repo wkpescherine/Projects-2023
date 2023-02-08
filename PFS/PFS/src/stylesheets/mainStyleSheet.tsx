@@ -15,4 +15,16 @@ export default StyleSheet.create({
         alignItems: "center",
         backgroundColor: "#000000",//This gets me black
     },
+    spacer:{
+        backgroundColor: "#ffffff",
+        width: "100%",
+        height: 1,
+        margin: 15,
+    },
+    horizonFlow:{
+        padding: 5,
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
+    },
 })

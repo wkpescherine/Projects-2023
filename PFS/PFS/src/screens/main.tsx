@@ -1,5 +1,5 @@
 import React , { FC } from "react";
-import { View , Text, Button } from "react-native";
+import { View , Text, Button, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 //import containers from "../Stylesheets/containers"
 //import texts from "../Stylesheets/texts"
@@ -15,6 +15,8 @@ const App : FC = () => {
                 <Text style={mainStyle.basicTitle}>Personal</Text>
                 <Text style={mainStyle.basicTitle}>Finance</Text>
                 <Text style={mainStyle.basicTitle}>Simulator</Text>
+                <TextInput placeholder="Username" />
+                <TextInput placeholder="password" />
                 <Button title="Start" onPress={() => navigation.navigate("dashboard")}/>
             </View>
         </>
