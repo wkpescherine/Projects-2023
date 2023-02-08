@@ -1,5 +1,5 @@
 import React , { FC } from "react";
-import { View , Text, Button } from "react-native";
+import { View , Text, Button, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import containers from "../Stylesheets/containers"
 import texts from "../Stylesheets/texts"
@@ -12,6 +12,8 @@ const App : FC = () => {
         <><StatusBar hidden />
             <View style={containers.container}>
                 <Text style={texts.basicTitle}>TrueCare</Text>
+                <TextInput placeholder="Enter Userame"></TextInput>
+                <TextInput placeholder="Enter Passwrod"></TextInput>
                 <View style={containers.horizontal}>
                     <Button title="Create Account" onPress={() => navigation.navigate("create")} />
                 </View>
