@@ -1,4 +1,4 @@
-import React , { FC } from "react";
+import React , { FC, useState } from "react";
 import { View , Text, Button, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 //import containers from "../Stylesheets/containers"
@@ -9,15 +9,38 @@ import { StatusBar } from "expo-status-bar";
 const App : FC = () => {
     const navigation = useNavigation();
 
+    const [username, setUserName] = useState("")
+    const [password,setPassword] = useState("")
+
+    function validAccount(){
+        if(username ==="test" && password ==="test"){
+            navigation.navigate("dashboard")
+            setUserName("")
+            setPassword("")   
+        }else{
+            setUserName("")
+            setPassword("")
+        }
+    }
+
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
                 <Text style={mainStyle.basicTitle}>Personal</Text>
                 <Text style={mainStyle.basicTitle}>Finance</Text>
                 <Text style={mainStyle.basicTitle}>Simulator</Text>
-                <TextInput placeholder="Username" />
-                <TextInput placeholder="password" />
-                <Button title="Start" onPress={() => navigation.navigate("dashboard")}/>
+                <TextInput 
+                    style={mainStyle.inputTextStyle}
+                    placeholder="Username" 
+                    onChangeText={text=>setUserName(text)}
+                    value={username}
+                    />
+                <TextInput 
+                    style={mainStyle.inputTextStyle}
+                    placeholder="password" 
+                    onChangeText={text=>setPassword(text)}
+                    value={password}/>
+                <Button title="Start" onPress={() => validAccount()}/>
             </View>
         </>
     )
