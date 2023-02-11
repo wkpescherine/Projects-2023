@@ -5,6 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 //import texts from "../Stylesheets/texts"
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
+import localStorage from "../localStorage/localStorage"
 
 const App : FC = () => {
     const navigation = useNavigation();
@@ -16,7 +17,8 @@ const App : FC = () => {
         if(username ==="test" && password ==="test"){
             navigation.navigate("dashboard")
             setUserName("")
-            setPassword("")   
+            setPassword("")
+            localStorage(username)   
         }else{
             setUserName("")
             setPassword("")
