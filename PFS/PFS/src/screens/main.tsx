@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 //import texts from "../Stylesheets/texts"
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
-import localStorage from "../localStorage/localStorage"
+//import localStorage from "../localStorage/localStorage"
 
 const App : FC = () => {
     const navigation = useNavigation();
@@ -18,7 +18,7 @@ const App : FC = () => {
             navigation.navigate("dashboard")
             setUserName("")
             setPassword("")
-            localStorage(username)   
+            //localStorage(username)   
         }else{
             setUserName("")
             setPassword("")
