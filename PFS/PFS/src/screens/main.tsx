@@ -6,19 +6,30 @@ import { useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
 //import localStorage from "../localStorage/localStorage"
+import AsyncStorage from "@react-native-async-storage/async-storage"
+//import { AsyncStorage } from "@react-native-community/async-storage"
 
 const App : FC = () => {
     const navigation = useNavigation();
 
-    const [username, setUserName] = useState("")
+    const [username,setUserName] = useState("")
     const [password,setPassword] = useState("")
+
+    const saveData = async(username) =>{
+        try{
+            console.log("was here")
+            await AsyncStorage.setItem('@username', username);
+        }catch (e) {
+            alert("Failed")
+        }
+    }
 
     function validAccount(){
         if(username ==="test" && password ==="test"){
             navigation.navigate("dashboard")
             setUserName("")
             setPassword("")
-            //localStorage(username)   
+            saveData()
         }else{
             setUserName("")
             setPassword("")
