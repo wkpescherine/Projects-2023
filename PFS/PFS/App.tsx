@@ -9,10 +9,8 @@ const store = configStore()
 
 export default function App() {
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <AppStack />
-      </NavigationContainer>
-    </Provider>
+    <NavigationContainer>
+      <AppStack />
+    </NavigationContainer>
   );
 }
