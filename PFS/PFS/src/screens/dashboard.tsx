@@ -1,7 +1,6 @@
 import React , { FC , useState} from "react";
 import { View , Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-//import containers from "../Stylesheets/containers"
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
 import { Stocks } from "./components"
