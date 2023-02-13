@@ -11,10 +11,11 @@ const App : FC = () => {
     const [username,setUserName] = useState("")
     const [password,setPassword] = useState("")
 
-    const saveData = async(username) =>{
+    const saveData = async(value) =>{
         try{
             console.log("was here")
-            await AsyncStorage.setItem('@username', username);
+            await AsyncStorage.setItem('@username', value);
+            console.log("This is afetr the data should be saved")
         }catch (e) {
             alert("Failed")
         }
@@ -22,10 +23,10 @@ const App : FC = () => {
 
     function validAccount(){
         if(username ==="test" && password ==="test"){
-            navigation.navigate("dashboard")
+            saveData(username)
             setUserName("")
             setPassword("")
-            saveData()
+            navigation.navigate("dashboard")
         }else{
             setUserName("")
             setPassword("")
