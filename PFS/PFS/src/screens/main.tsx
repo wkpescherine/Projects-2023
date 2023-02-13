@@ -1,13 +1,9 @@
 import React , { FC, useState } from "react";
 import { View , Text, Button, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-//import containers from "../Stylesheets/containers"
-//import texts from "../Stylesheets/texts"
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
-//import localStorage from "../localStorage/localStorage"
 import AsyncStorage from "@react-native-async-storage/async-storage"
-//import { AsyncStorage } from "@react-native-community/async-storage"
 
 const App : FC = () => {
     const navigation = useNavigation();
