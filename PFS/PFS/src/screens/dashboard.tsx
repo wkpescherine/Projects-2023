@@ -1,4 +1,4 @@
-import React , { FC , useState} from "react";
+import React , { FC , useEffect, useState} from "react";
 import { View , Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
@@ -11,16 +11,22 @@ const App : FC = () => {
 
     const [name,setName] = useState("")
 
-    const getData = async() =>{
+    const getData = async () => {
         try{
             const value = await AsyncStorage.getItem('username')
-            setName(value);
+            if( value !== null){
+                setName(value);
+            }else {
+                alert("Value was null")
+            }
         }catch (e) {
             //alert("dashboard Failed")
         }
     }
 
-    getData()
+    useEffect(() =>{
+        getData();
+    },[]);
 
     return(
         <><StatusBar hidden />
