@@ -1,7 +1,8 @@
 import React , { FC } from "react";
 import { View , Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import mainStyle from "../../stylesheets/mainStyleSheet"
+//import containers from "../Stylesheets/containers"
+import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
 
 const App : FC = () => {
@@ -9,9 +10,9 @@ const App : FC = () => {
 
     return(
         <><StatusBar hidden />
-            <View style={mainStyle.horizonFlow}>
-                <Text style={mainStyle.basicText}>Stock Market</Text>
-                <Button title=">" onPress={() => navigation.navigate("stockmarket")}/>
+            <View style={mainStyle.container}>
+                <Text style={mainStyle.basicText}>Bank Section</Text>
+                <Button title="Back to Dashboard" onPress={() => navigation.navigate("dashboard")}/>
             </View>
         </>
     )

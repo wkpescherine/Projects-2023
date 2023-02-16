@@ -10,8 +10,8 @@ const App : FC = () => {
     return(
         <><StatusBar hidden />
             <View style={mainStyle.horizonFlow}>
-                <Text style={mainStyle.basicText}>Stock Market</Text>
-                <Button title=">" onPress={() => navigation.navigate("stockmarket")}/>
+                <Text style={mainStyle.basicText}>Bank</Text>
+                <Button title=">" onPress={() => navigation.navigate("bankacct")}/>
             </View>
         </>
     )

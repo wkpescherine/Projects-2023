@@ -1,3 +1,4 @@
 import Stocks from "./stockMarketWidget";
+import Bank from "./bankWidget"
 
-export { Stocks };
+export { Stocks , Bank};

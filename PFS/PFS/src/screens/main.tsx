@@ -15,7 +15,7 @@ const App : FC = () => {
         try{
             console.log("was here")
             await AsyncStorage.setItem('@username', value);
-            console.log("This is afetr the data should be saved")
+            console.log("This is after the data should be saved")
         }catch (e) {
             alert("Failed")
         }
