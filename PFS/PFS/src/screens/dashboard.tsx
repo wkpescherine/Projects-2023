@@ -3,13 +3,14 @@ import { View , Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
-import { Stocks , Bank } from "./components"
+import { Stocks , Bank , Occupation } from "./components"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
 const App : FC = () => {
     const navigation = useNavigation();
 
     const [name,setName] = useState("")
+    const [score,setScore] = useState(0)
 
     const getData = async () => {
         try{
@@ -34,9 +35,13 @@ const App : FC = () => {
                 <Text style={mainStyle.basicText}>Dashboard</Text>
                 <Text style={mainStyle.basicText}>{name}</Text>
                 <View style={mainStyle.spacer} />
+                <Occupation />
+                <View style={mainStyle.spacer} />
                 <Bank />
                 <View style={mainStyle.spacer} />
                 <Stocks />
+                <View style={mainStyle.spacer} />
+                <View style={mainStyle.basicText}> {score} </View>
                 <View style={mainStyle.spacer} />
                 <View style={mainStyle.horizonFlow}>
                     <View style={{padding: 5,}}>
