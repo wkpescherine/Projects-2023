@@ -1,4 +1,4 @@
-import React , { FC, useState } from "react";
+import React , { FC, useState , useEffect } from "react";
 import { View , Text, Button, TextInput } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
@@ -10,6 +10,25 @@ const App : FC = () => {
 
     const [username,setUserName] = useState("")
     const [password,setPassword] = useState("")
+    const [account,setAccount] = useState("None")
+
+    const checkAccount = async () => {
+        try{
+            const value = await AsyncStorage.getItem('username')
+            if( value !== null){
+                setAccount("Active");
+            }else {
+                setAccount("Non-Active")
+            }
+        }catch (e) {
+            console.log(e)
+        }
+    }
+
+    useEffect(() =>{
+        checkAccount();
+    },[]);
+
 
     const saveData = async(value) =>{
         try{
@@ -51,6 +70,11 @@ const App : FC = () => {
                     onChangeText={text=>setPassword(text)}
                     value={password}/>
                 <Button title="Start" onPress={() => validAccount()}/>
+                {account ==="Non-Active" &&
+                    <View>
+                        <Button title="Create Account"/>
+                    </View>
+                }
             </View>
         </>
     )
