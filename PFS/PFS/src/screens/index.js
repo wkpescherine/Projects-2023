@@ -4,5 +4,6 @@ import StockMarket from "./stockmarket"
 import BankAcct from "./bank"
 import Setting from "./settings"
 import CreditCards from "./creditCards"
+import CreateAccount from "./createAccount"
 
-export { Main , Dashboard , StockMarket , BankAcct, Setting, CreditCards};
+export { Main , Dashboard , StockMarket , BankAcct, Setting, CreditCards , CreateAccount};

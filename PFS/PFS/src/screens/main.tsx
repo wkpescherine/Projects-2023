@@ -10,15 +10,15 @@ const App : FC = () => {
 
     const [username,setUserName] = useState("")
     const [password,setPassword] = useState("")
-    const [account,setAccount] = useState("None")
+    const [account,setAccount] = useState("Non-Active")
 
     const checkAccount = async () => {
+        console.log("Account:"+ account )
         try{
             const value = await AsyncStorage.getItem('username')
-            if( value !== null){
+            console.log(value+":"+account )
+            if( value !== null && value !=="Non-Active"){
                 setAccount("Active");
-            }else {
-                setAccount("Non-Active")
             }
         }catch (e) {
             console.log(e)
@@ -76,7 +76,8 @@ const App : FC = () => {
                 }
                 {account ==="Non-Active" &&
                     <View>
-                        <Button title="Create Account"/>
+                        <Button title="Create Account" onPress={ () => navigation.navigate("create")
+ }/>
                     </View>
                 }
             </View>
