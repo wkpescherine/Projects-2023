@@ -43,7 +43,7 @@ const App : FC = () => {
                 <View style={mainStyle.spacer} />
                 <Stocks />
                 <View style={mainStyle.spacer} />
-                <View style={mainStyle.basicText}> {score} </View>
+                <Text style={mainStyle.basicText}> {score} </Text>
                 <View style={mainStyle.spacer} />
                 <View style={mainStyle.horizonFlow}>
                     <View style={{padding: 5,}}>
