@@ -58,18 +58,22 @@ const App : FC = () => {
                 <Text style={mainStyle.basicTitle}>Personal</Text>
                 <Text style={mainStyle.basicTitle}>Finance</Text>
                 <Text style={mainStyle.basicTitle}>Simulator</Text>
-                <TextInput 
-                    style={mainStyle.inputTextStyle}
-                    placeholder="Username" 
-                    onChangeText={text=>setUserName(text)}
-                    value={username}
-                    />
-                <TextInput 
-                    style={mainStyle.inputTextStyle}
-                    placeholder="password" 
-                    onChangeText={text=>setPassword(text)}
-                    value={password}/>
-                <Button title="Start" onPress={() => validAccount()}/>
+                { account ==="Active" &&
+                    <View>
+                        <TextInput 
+                            style={mainStyle.inputTextStyle}
+                            placeholder="Username" 
+                            onChangeText={text=>setUserName(text)}
+                            value={username}
+                            />
+                        <TextInput 
+                            style={mainStyle.inputTextStyle}
+                            placeholder="password" 
+                            onChangeText={text=>setPassword(text)}
+                            value={password}/>
+                        <Button title="Start" onPress={() => validAccount()}/>
+                    </View>
+                }
                 {account ==="Non-Active" &&
                     <View>
                         <Button title="Create Account"/>
