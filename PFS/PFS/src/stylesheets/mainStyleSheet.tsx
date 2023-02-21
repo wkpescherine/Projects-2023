@@ -28,7 +28,7 @@ export default StyleSheet.create({
         alignItems: "center",
     },
     inputTextStyle:{
-        width: 100,
+        width: 150,
         justifyContent: "center",
         textAlign:"center",
         margin: 5,
