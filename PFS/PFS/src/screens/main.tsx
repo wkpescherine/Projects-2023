@@ -8,6 +8,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 const App : FC = () => {
     const navigation = useNavigation();
 
+    const isFocused = useIsFocused();
+
     const [username,setUserName] = useState("")
     const [password,setPassword] = useState("")
     //const [account,setAccount] = useState("Non-Active")
@@ -22,7 +24,7 @@ const App : FC = () => {
             const value3 = await AsyncStorage.getItem('status')
             setSavedUser(value1)
             setSavedPass(value2)
-            setAccountStatus(value3)
+            if(value3 !== null){setAccountStatus(value3)}
             //if( value1 !== null){
             //    setAccount("Active");
             //    console.log(value1+":"+account )

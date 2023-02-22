@@ -14,7 +14,7 @@ const App : FC = () => {
     const [confirmUsername, setConfirmUserName] = useState("")
     const [confirmPassworc, setConfirmPassword] = useState("")
 
-    const saveData = async(value) =>{
+    const saveData = async() =>{
         try{
             console.log("was here")
             await AsyncStorage.setItem('username', newUserName);

@@ -7,7 +7,7 @@ const { Navigator , Screen } = createStackNavigator();
 const appStack : FC = () => {
     return (
         <Navigator>
-            <Screen name="main" component={ Main } options={{headerShown: false}} />
+            <Screen name="main" component={ Main } options={{headerShown: false }} />
             <Screen name="dashboard" component={ Dashboard } options={{headerShown: false}} />
             <Screen name="stockmarket" component={ StockMarket } options={{headerShown: false}} />
             <Screen name="bankacct" component={ BankAcct } options={{headerShown: false}} />
