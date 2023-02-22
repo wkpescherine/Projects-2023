@@ -11,12 +11,15 @@ const App : FC = () => {
 
     const [name,setName] = useState("")
     const [score,setScore] = useState(0)
+    const [wealth, setWealth] = useState("")
 
     const getData = async () => {
         try{
-            const value = await AsyncStorage.getItem('username')
-            if( value !== null){
-                setName(value);
+            const value1 = await AsyncStorage.getItem('username')
+            const value2 = await AsyncStorage.getItem('wealth')
+            if( value1 !== null){
+                setName(value1);
+                setWealth(value2);
             }else {
                 alert("Value was null")
             }
@@ -34,6 +37,7 @@ const App : FC = () => {
             <View style={mainStyle.container}>
                 <Text style={mainStyle.basicText}>Dashboard</Text>
                 <Text style={mainStyle.basicText}>{name}</Text>
+                <Text style={mainStyle.basicText}>Wealth: {wealth}</Text>
                 <View style={mainStyle.spacer} />
                 <CreditCards />
                 <View style={mainStyle.spacer} />

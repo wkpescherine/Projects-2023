@@ -19,6 +19,8 @@ const App : FC = () => {
             console.log("was here")
             await AsyncStorage.setItem('username', newUserName);
             await AsyncStorage.setItem('password', newPassword);
+            await AsyncStorage.setItem('wealth', "0" );
+            await AsyncStorage.setItem('status', "Active" );
             navigation.navigate("dashboard")
         }catch (e) {
             alert("Failed")

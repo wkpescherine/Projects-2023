@@ -2,7 +2,7 @@ import React , { FC, useState , useEffect } from "react";
 import { View , Text, Button, TextInput } from "react-native";
 import { useIsFocused, useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
-import { StatusBar } from "expo-status-bar";
+import { setStatusBarBackgroundColor, StatusBar } from "expo-status-bar";
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
 const App : FC = () => {
@@ -10,20 +10,23 @@ const App : FC = () => {
 
     const [username,setUserName] = useState("")
     const [password,setPassword] = useState("")
-    const [account,setAccount] = useState("Non-Active")
+    //const [account,setAccount] = useState("Non-Active")
     const [savedUser, setSavedUser] = useState("")
     const [savedPass, setSavedPass] = useState("")
+    const [accountStatus, setAccountStatus] = useState("Non-Active")
 
     const checkAccount = async () => {
         try{
             const value1 = await AsyncStorage.getItem('username')
             const value2 = await AsyncStorage.getItem('password')
+            const value3 = await AsyncStorage.getItem('status')
             setSavedUser(value1)
             setSavedPass(value2)
-            if( value1 !== null){
-                setAccount("Active");
-                console.log(value1+":"+account )
-            }
+            setAccountStatus(value3)
+            //if( value1 !== null){
+            //    setAccount("Active");
+            //    console.log(value1+":"+account )
+            //}
         }catch (e) {
             console.log(e)
         }
@@ -44,8 +47,8 @@ const App : FC = () => {
     //}
 
     function validAccount(){
-        if(username ==="test" && password ==="test"){
-            saveData(username)
+        if(username === savedUser && password === savedPass){
+            //saveData(username)
             setUserName("")
             setPassword("")
             navigation.navigate("dashboard")
@@ -56,7 +59,7 @@ const App : FC = () => {
     }
 
     function resetAccount(){
-        setAccount("Non-Active")
+        setAccountStatus("Non-Active")
     }
 
     return(
@@ -65,7 +68,7 @@ const App : FC = () => {
                 <Text style={mainStyle.basicTitle}>Personal</Text>
                 <Text style={mainStyle.basicTitle}>Finance</Text>
                 <Text style={mainStyle.basicTitle}>Simulator</Text>
-                { account ==="Active" &&
+                { accountStatus ==="Active" &&
                     <View>
                         <TextInput 
                             style={mainStyle.inputTextStyle}
@@ -84,7 +87,7 @@ const App : FC = () => {
                         </View>
                     </View>
                 }
-                {account ==="Non-Active" &&
+                {accountStatus ==="Non-Active" &&
                     <View>
                         <Button title="Create Account" onPress={ () => navigation.navigate("create")}/>
                     </View>
