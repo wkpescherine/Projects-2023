@@ -29,12 +29,6 @@ const App : FC = () => {
         }
     }
 
-    //if(isFocused == true){
-    //    useEffect(() =>{
-    //        checkAccount();
-    //    },[]);
-    //}
-
     useEffect(() =>{
         checkAccount();
     },[]);
@@ -51,7 +45,6 @@ const App : FC = () => {
     }
 
     function resetAccount(){
-        //setAccountStatus("Non-Active")
         const saveReset = async() =>{
             try{
                 console.log("Reset")

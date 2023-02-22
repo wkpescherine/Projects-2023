@@ -24,7 +24,7 @@ const App : FC = () => {
                 alert("Value was null")
             }
         }catch (e) {
-            //alert("dashboard Failed")
+            console.log(e)
         }
     }
 
