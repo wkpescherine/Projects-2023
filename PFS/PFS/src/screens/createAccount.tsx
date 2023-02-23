@@ -32,35 +32,42 @@ const App : FC = () => {
             <View style={mainStyle.container}>
                 <Text style={mainStyle.basicText}>Create New Account</Text>
                 <View>
+                    <View style={mainStyle.horizonFlow}>
+                        <Text style={mainStyle.basicText}>Username:</Text>
                         <TextInput 
                             style={mainStyle.inputTextStyle}
                             placeholder="Enter new username" 
                             onChangeText={text=>setNewUserName(text)}
                             value={newUserName}
                             />
+                    </View>
+                    <View style={mainStyle.horizonFlow}>
+                        <Text style={mainStyle.basicText}>Username:</Text>
                         <TextInput 
                             style={mainStyle.inputTextStyle}
                             placeholder="Enter new password" 
                             onChangeText={text=>setNewPassword(text)}
                             value={newPassword}/>
-                        <TextInput 
-                            style={mainStyle.inputTextStyle}
-                            placeholder="Confirm new username" 
-                            onChangeText={text=>setConfirmUserName(text)}
-                            value={confirmUsername}
-                            />
-                        <TextInput 
-                            style={mainStyle.inputTextStyle}
-                            placeholder="Confirm new password" 
-                            onChangeText={text=>setConfirmPassword(text)}
-                            value={confirmPassworc}/>
                     </View>
+                    <TextInput 
+                        style={mainStyle.inputTextStyle}                            placeholder="Confirm new username" 
+                        onChangeText={text=>setConfirmUserName(text)}
+                        value={confirmUsername}
+                        />
+                    <TextInput 
+                        style={mainStyle.inputTextStyle}
+                        placeholder="Confirm new password" 
+                        onChangeText={text=>setConfirmPassword(text)}
+                        value={confirmPassworc}/>
+                </View>
                 {newUserName === confirmUsername &&
                 newPassword === confirmPassworc &&
                 newPassword !== "" &&
                     <Button title="Create Account" onPress={() => saveData()}/>
                 }
-                <Button title="Back to Main" onPress={() => navigation.navigate("main")}/>
+                <View style={{marginTop: 5}}>
+                    <Button title="Back to Main" onPress={() => navigation.navigate("main")}/>
+                </View>
             </View>
         </>
     )
