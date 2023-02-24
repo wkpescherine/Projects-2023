@@ -9,14 +9,17 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 const App : FC = () => {
     const navigation = useNavigation();
 
+    //Log in and account related information
     const [newUserName, setNewUserName] = useState("")
     const [newPassword, setNewPassword] = useState("")
     const [confirmUsername, setConfirmUserName] = useState("")
     const [confirmPassworc, setConfirmPassword] = useState("")
 
+    //Game Data will be here actually
     const [timeRate,setTimeRate] = useState("24")
+    const [wealth, setWealth] = useState(0)
 
-    const setTimeRate = () => {
+    const setRateOfTime = () => {
         if(timeRate === "24"){setTimeRate("12")}
         else if (timeRate === "12"){setTimeRate("6")}
         else if (timeRate === "6"){setTimeRate("4")}
@@ -29,8 +32,9 @@ const App : FC = () => {
             console.log("was here")
             await AsyncStorage.setItem('username', newUserName);
             await AsyncStorage.setItem('password', newPassword);
-            await AsyncStorage.setItem('wealth', "0" );
+            await AsyncStorage.setItem('wealth', wealth );
             await AsyncStorage.setItem('status', "Active" );
+            await AsyncStorage.setItem('timeRate', timeRate );
             navigation.navigate("dashboard")
         }catch (e) {
             alert("Failed")
@@ -77,7 +81,7 @@ const App : FC = () => {
                             value={confirmPassworc}/>
                     </View>
                     <View style={mainStyle.horizonFlow}>
-                        <Button title="Time Rate : " onPress={() => setTimeRate()}/>
+                        <Button title="Time Rate : " onPress={() => setRateOfTime()}/>
                         <Text style={mainStyle.basicText}>{timeRate}</Text>
                     </View>
                 </View>
