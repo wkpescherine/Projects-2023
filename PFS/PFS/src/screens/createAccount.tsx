@@ -14,6 +14,16 @@ const App : FC = () => {
     const [confirmUsername, setConfirmUserName] = useState("")
     const [confirmPassworc, setConfirmPassword] = useState("")
 
+    const [timeRate,setTimeRate] = useState("24")
+
+    const setTimeRate = () => {
+        if(timeRate === "24"){setTimeRate("12")}
+        else if (timeRate === "12"){setTimeRate("6")}
+        else if (timeRate === "6"){setTimeRate("4")}
+        else if (timeRate === "4"){setTimeRate("2")}
+        else if (timeRate === "2"){setTimeRate("24")}
+    }
+
     const saveData = async() =>{
         try{
             console.log("was here")
@@ -42,23 +52,34 @@ const App : FC = () => {
                             />
                     </View>
                     <View style={mainStyle.horizonFlow}>
-                        <Text style={mainStyle.basicText}>Username:</Text>
+                        <Text style={mainStyle.basicText}>Password:</Text>
                         <TextInput 
                             style={mainStyle.inputTextStyle}
                             placeholder="Enter new password" 
                             onChangeText={text=>setNewPassword(text)}
                             value={newPassword}/>
                     </View>
-                    <TextInput 
-                        style={mainStyle.inputTextStyle}                            placeholder="Confirm new username" 
-                        onChangeText={text=>setConfirmUserName(text)}
-                        value={confirmUsername}
-                        />
-                    <TextInput 
-                        style={mainStyle.inputTextStyle}
-                        placeholder="Confirm new password" 
-                        onChangeText={text=>setConfirmPassword(text)}
-                        value={confirmPassworc}/>
+                    <View style={mainStyle.horizonFlow}>
+                        <Text style={mainStyle.basicText}>Username: </Text>
+                        <TextInput 
+                            style={mainStyle.inputTextStyle}                            
+                            placeholder="Confirm new username" 
+                            onChangeText={text=>setConfirmUserName(text)}
+                            value={confirmUsername}
+                            />
+                    </View>
+                    <View style={mainStyle.horizonFlow}>
+                        <Text style={mainStyle.basicText}>Password:</Text>                    
+                        <TextInput 
+                            style={mainStyle.inputTextStyle}
+                            placeholder="Confirm new password" 
+                            onChangeText={text=>setConfirmPassword(text)}
+                            value={confirmPassworc}/>
+                    </View>
+                    <View style={mainStyle.horizonFlow}>
+                        <Button title="Time Rate : " onPress={() => setTimeRate()}/>
+                        <Text style={mainStyle.basicText}>{timeRate}</Text>
+                    </View>
                 </View>
                 {newUserName === confirmUsername &&
                 newPassword === confirmPassworc &&
