@@ -18,6 +18,8 @@ const App : FC = () => {
     //Game Data will be here actually
     const [timeRate,setTimeRate] = useState("24")
     const [wealth, setWealth] = useState(0)
+    const [educationLevel, setEducationLevel] = useState("HS Dropout")
+    const [income, setIncome] = useState(0)
 
     const setRateOfTime = () => {
         if(timeRate === "24"){setTimeRate("12")}
@@ -25,6 +27,26 @@ const App : FC = () => {
         else if (timeRate === "6"){setTimeRate("4")}
         else if (timeRate === "4"){setTimeRate("2")}
         else if (timeRate === "2"){setTimeRate("24")}
+    }
+
+    const setEducation = () => {
+        if(educationLevel === "HS Dropout"){setEducationLevel("GED")}
+        else if (educationLevel === "GED"){setEducationLevel("HS Grad")}
+        else if (educationLevel === "HS Grad"){setEducationLevel("PT College")}
+        else if (educationLevel === "PT College"){setEducationLevel("FT College")}
+        else if (educationLevel === "FT College"){setEducationLevel("2yr Grad")}
+        else if (educationLevel === "2yr Grad"){setEducationLevel("4yr Grad")}
+        else if (educationLevel === "4yr Grad"){setEducationLevel("Masters")}
+        else if (educationLevel === "Masters"){setEducationLevel("PhD")}
+        else if (educationLevel === "PhD"){setEducationLevel("HS Dropout")}
+    }
+
+    const setInitIncome = () => {
+        if(educationLevel==="HS Dropout"){setIncome(100)}
+        else if (educationLevel==="GED" || educationLevel==="HS Grad"){setIncome(500)}
+        else if (educationLevel==="PT College" || educationLevel==="FT College"){setIncome(1500)}
+        else if (educationLevel==="2yr Grad" || educationLevel==="4yr Grad"){setIncome(3000)}
+        else if (educationLevel==="Masters" || educationLevel==="PhD"){setIncome(7500)}
     }
 
     const saveData = async() =>{
@@ -83,6 +105,13 @@ const App : FC = () => {
                     <View style={mainStyle.horizonFlow}>
                         <Button title="Time Rate : " onPress={() => setRateOfTime()}/>
                         <Text style={mainStyle.basicText}>{timeRate}</Text>
+                    </View>
+                    <View style={mainStyle.horizonFlow}>
+                        <Button title="Education : " onPress={() => setEducation()}/>
+                        <Text style={mainStyle.basicText}>{educationLevel}</Text>
+                    </View>
+                    <View style={mainStyle.horizonFlow}>
+                        <Text style={mainStyle.basicText}>Initial Income: {income}</Text>
                     </View>
                 </View>
                 {newUserName === confirmUsername &&
