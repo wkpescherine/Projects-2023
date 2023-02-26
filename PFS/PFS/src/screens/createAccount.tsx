@@ -1,6 +1,6 @@
 import React , { FC, useState } from "react";
 import { View , Text, Button, TextInput } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useIsFocused ,useNavigation } from "@react-navigation/native";
 //import containers from "../Stylesheets/containers"
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
@@ -8,6 +8,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 
 const App : FC = () => {
     const navigation = useNavigation();
+    const isFocused = useIsFocused();
 
     //Log in and account related information
     const [newUserName, setNewUserName] = useState("")
@@ -17,9 +18,9 @@ const App : FC = () => {
 
     //Game Data will be here actually
     const [timeRate,setTimeRate] = useState("24")
-    const [wealth, setWealth] = useState(0)
+    const [wealth, setWealth] = useState("100")
     const [educationLevel, setEducationLevel] = useState("HS Dropout")
-    const [income, setIncome] = useState(0)
+    const [employment, SetEmployment] = useState("Unemployed")
 
     const setRateOfTime = () => {
         if(timeRate === "24"){setTimeRate("12")}
@@ -30,38 +31,33 @@ const App : FC = () => {
     }
 
     const setEducation = () => {
-        if(educationLevel === "HS Dropout"){setEducationLevel("GED")}
-        else if (educationLevel === "GED"){setEducationLevel("HS Grad")}
-        else if (educationLevel === "HS Grad"){setEducationLevel("PT College")}
-        else if (educationLevel === "PT College"){setEducationLevel("FT College")}
-        else if (educationLevel === "FT College"){setEducationLevel("2yr Grad")}
-        else if (educationLevel === "2yr Grad"){setEducationLevel("4yr Grad")}
-        else if (educationLevel === "4yr Grad"){setEducationLevel("Masters")}
-        else if (educationLevel === "Masters"){setEducationLevel("PhD")}
-        else if (educationLevel === "PhD"){setEducationLevel("HS Dropout")}
-    }
-
-    const setInitIncome = () => {
-        if(educationLevel==="HS Dropout"){setIncome(100)}
-        else if (educationLevel==="GED" || educationLevel==="HS Grad"){setIncome(500)}
-        else if (educationLevel==="PT College" || educationLevel==="FT College"){setIncome(1500)}
-        else if (educationLevel==="2yr Grad" || educationLevel==="4yr Grad"){setIncome(3000)}
-        else if (educationLevel==="Masters" || educationLevel==="PhD"){setIncome(7500)}
+        if(educationLevel === "HS Dropout"){setEducationLevel("GED", setWealth("500"))}
+        else if (educationLevel === "GED"){setEducationLevel("HS Grad", setWealth("500"))}
+        else if (educationLevel === "HS Grad"){setEducationLevel("PT College", setWealth("1500"))}
+        else if (educationLevel === "PT College"){setEducationLevel("FT College", setWealth("1500"))}
+        else if (educationLevel === "FT College"){setEducationLevel("2yr Grad", setWealth("3000"))}
+        else if (educationLevel === "2yr Grad"){setEducationLevel("4yr Grad", setWealth("3000"))}
+        else if (educationLevel === "4yr Grad"){setEducationLevel("Masters", setWealth("7500"))}
+        else if (educationLevel === "Masters"){setEducationLevel("PhD", setWealth("7500"))}
+        else if (educationLevel === "PhD"){setEducationLevel("HS Dropout", setWealth("100"))}
     }
 
     const saveData = async() =>{
         try{
-            console.log("was here")
+            console.log("Main:savedData")
             await AsyncStorage.setItem('username', newUserName);
             await AsyncStorage.setItem('password', newPassword);
             await AsyncStorage.setItem('wealth', wealth );
             await AsyncStorage.setItem('status', "Active" );
             await AsyncStorage.setItem('timeRate', timeRate );
+            await AsyncStorage.setItem('employment', employment );
             navigation.navigate("dashboard")
         }catch (e) {
             alert("Failed")
         }
     }
+
+
 
     return(
         <><StatusBar hidden />
@@ -111,7 +107,7 @@ const App : FC = () => {
                         <Text style={mainStyle.basicText}>{educationLevel}</Text>
                     </View>
                     <View style={mainStyle.horizonFlow}>
-                        <Text style={mainStyle.basicText}>Initial Income: {income}</Text>
+                        <Text style={mainStyle.basicText}>Initial Wealth: ${wealth}</Text>
                     </View>
                 </View>
                 {newUserName === confirmUsername &&

@@ -17,7 +17,7 @@ const App : FC = () => {
         try{
             const value1 = await AsyncStorage.getItem('username')
             const value2 = await AsyncStorage.getItem('wealth')
-            if( value1 !== null){
+            if( value1 !== null && value2 !== null){
                 setName(value1);
                 setWealth(value2);
             }else {
@@ -37,7 +37,7 @@ const App : FC = () => {
             <View style={mainStyle.container}>
                 <Text style={mainStyle.basicText}>Dashboard</Text>
                 <Text style={mainStyle.basicText}>{name}</Text>
-                <Text style={mainStyle.basicText}>Wealth: {wealth}</Text>
+                <Text style={mainStyle.basicText}>Wealth: ${wealth}</Text>
                 <View style={mainStyle.spacer} />
                 <CreditCards />
                 <View style={mainStyle.spacer} />
