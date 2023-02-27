@@ -37,7 +37,8 @@ const App : FC = () => {
             <View style={mainStyle.container}>
                 <Text style={mainStyle.basicText}>Dashboard</Text>
                 <Text style={mainStyle.basicText}>{name}</Text>
-                <Text style={mainStyle.basicText}>Wealth: ${wealth}</Text>
+                <Text style={mainStyle.basicText}> Total Wealth: ${wealth}</Text>
+                <Text style={mainStyle.basicText}> Cash On Hand: ${wealth}</Text>
                 <View style={mainStyle.spacer} />
                 <CreditCards />
                 <View style={mainStyle.spacer} />
