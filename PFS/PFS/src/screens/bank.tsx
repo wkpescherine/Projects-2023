@@ -9,6 +9,8 @@ const App : FC = () => {
     const navigation = useNavigation();
 
     const [chaseDeposit, setChaseDeposit] = useState(0)
+    const [boaDeposit, setBoADeposit] = useState(0)
+
 
     return(
         <><StatusBar hidden />
@@ -18,8 +20,32 @@ const App : FC = () => {
                     <Image source={require("../images/chasebank.png")} style={{width: 120, height: 120}} />
                     <View>
                         <View style={mainStyle.horizonFlow}>
-                            <Text style={mainStyle.basicText}> Chase Bank</Text>
+                            <Text style={mainStyle.basicText}> Chase </Text>
                             <Text style={mainStyle.basicText}> ${chaseDeposit}</Text>
+                        </View>
+                        <View>
+                           <TextInput                             
+                                style={mainStyle.inputTextStyle}
+                                onChangeText={text=>setChaseDeposit(text)}
+                                value={chaseDeposit}
+                                keyboardType= {"number-pad"}
+                            ></TextInput>
+                        </View>
+                        <View>
+                            <View style={mainStyle.horizonFlow}>
+                                <Button title="Withdrawal" />
+                                <View style={{padding:5}}></View>
+                                <Button title="Deposit" />
+                            </View>
+                        </View>
+                    </View>
+                </View>
+                <View style={mainStyle.horizonFlow}>
+                    <Image source={require("../images/bankofAmerica.png")} style={{width: 120, height: 120}} />
+                    <View>
+                        <View style={mainStyle.horizonFlow}>
+                            <Text style={mainStyle.basicText}> Bank of America</Text>
+                            <Text style={mainStyle.basicText}> ${boaDeposit}</Text>
                         </View>
                         <View>
                            <TextInput                             
@@ -35,7 +61,6 @@ const App : FC = () => {
                         </View>
                     </View>
                 </View>
-
                 <Button title="Back to Dashboard" onPress={() => navigation.navigate("dashboard")}/>
             </View>
         </>
