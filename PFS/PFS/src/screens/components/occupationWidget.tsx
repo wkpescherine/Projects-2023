@@ -30,7 +30,7 @@ const App : FC = () => {
     return(
         <><StatusBar hidden />
             <View style={mainStyle.horizonFlow}>
-                <Text style={mainStyle.basicText}>Occupation</Text>
+                <Text style={mainStyle.basicText}>Occupation: {job}</Text>
                 <Button title=">" onPress={() => navigation.navigate("occupation")}/>
             </View>
         </>

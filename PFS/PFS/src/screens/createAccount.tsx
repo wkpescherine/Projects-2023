@@ -5,6 +5,7 @@ import { useIsFocused ,useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
 import AsyncStorage from "@react-native-async-storage/async-storage"
+import { States } from "./components"
 
 const App : FC = () => {
     const navigation = useNavigation();
@@ -44,7 +45,6 @@ const App : FC = () => {
 
     const saveData = async() =>{
         try{
-            console.log("Main:savedData")
             await AsyncStorage.setItem('username', newUserName);
             await AsyncStorage.setItem('password', newPassword);
             await AsyncStorage.setItem('wealth', wealth );
@@ -110,6 +110,7 @@ const App : FC = () => {
                         <Text style={mainStyle.basicText}>Initial Wealth: ${wealth}</Text>
                     </View>
                 </View>
+                <States />
                 {newUserName === confirmUsername &&
                 newPassword === confirmPassworc &&
                 newPassword !== "" &&
