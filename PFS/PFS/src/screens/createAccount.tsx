@@ -1,7 +1,6 @@
 import React , { FC, useState } from "react";
 import { View , Text, Button, TextInput } from "react-native";
-import { useIsFocused ,useNavigation } from "@react-navigation/native";
-//import containers from "../Stylesheets/containers"
+import { useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
 import AsyncStorage from "@react-native-async-storage/async-storage"
@@ -9,7 +8,6 @@ import { States } from "./components"
 
 const App : FC = () => {
     const navigation = useNavigation();
-    const isFocused = useIsFocused();
 
     //Log in and account related information
     const [newUserName, setNewUserName] = useState("")

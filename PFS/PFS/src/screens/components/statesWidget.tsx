@@ -3,6 +3,7 @@ import { View , Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import mainStyle from "../../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
+import AsyncStorage from "@react-native-async-storage/async-storage"
 
 const App : FC = () => {
     const navigation = useNavigation();
@@ -12,14 +13,28 @@ const App : FC = () => {
 
     const statesUSA = ["AK","AL","AZ","CO","CT","DE","FL","GA","HI","KA","KY","LA","MO","MN","NE","NJ","NM","NY","OK","OR","PA","RI","SC","SD","TN","TX","UT","VA","VT","WA",];
 
+    const saveStateData = async() =>{
+        try{
+            await AsyncStorage.setItem('state', state);
+        }catch (e) {
+            alert("Failed")
+        }
+    }
+
     const nextState = () => {
-        setLocationValue(locationValue+1)
-        setState(statesUSA[locationValue])
+        if(locationValue < 29){
+            setLocationValue(locationValue+1)
+            setState(statesUSA[locationValue])
+            saveStateData()
+        }
     }
 
     const prevState = () => {
-        setLocationValue(locationValue-1)
-        setState(statesUSA[locationValue])
+        if(locationValue >0){
+            setLocationValue(locationValue-1)
+            setState(statesUSA[locationValue])
+            saveStateData()
+        }
     }
 
     return(
