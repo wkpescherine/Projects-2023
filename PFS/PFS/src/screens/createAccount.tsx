@@ -20,6 +20,7 @@ const App : FC = () => {
     const [wealth, setWealth] = useState("100")
     const [educationLevel, setEducationLevel] = useState("HS Dropout")
     const [employment, SetEmployment] = useState("Unemployed")
+    const [cashOnHand,setCashOnHand] = useState(wealth)
 
     const setRateOfTime = () => {
         if(timeRate === "24"){setTimeRate("12")}
@@ -49,6 +50,9 @@ const App : FC = () => {
             await AsyncStorage.setItem('status', "Active" );
             await AsyncStorage.setItem('timeRate', timeRate );
             await AsyncStorage.setItem('employment', employment );
+            await AsyncStorage.setItem('cashOnHand', cashOnHand );
+            await AsyncStorage.setItem('chaseAccount', 0 );
+            await AsyncStorage.setItem('boaAccount', 0 );
             navigation.navigate("dashboard")
         }catch (e) {
             alert("Failed")
