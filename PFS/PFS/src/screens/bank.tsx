@@ -7,19 +7,35 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const App : FC = () => {
     const navigation = useNavigation();
-
-    const [chaseDeposit, setChaseDeposit] = useState(0)
-    const [boaDeposit, setBoADeposit] = useState(0)
+    
     const [cashOnHand,setCashOnHand] = useState(0)
+    const [chaseValue, setChaseValue] = useState(0)
+    const [chaseAmount,setChaseAmount] = useState(0)
+    const [boaValue, setBoAValue] = useState(0)
+    const [boaAmount,setBoAAmount] = useState(0)
 
     const depositIntoAccount = (bank, amount) => {
         if(amount <= cashOnHand){
-            if(bank ==="boa"){saveData()}
-            if(bank="chase"){saveData()}
+            if(bank ==="boa"){setBoAValue(amount);saveData(); setBoAAmount(0)}
+            if(bank ==="chase"){setChaseValue(amount);saveData(); setChaseAmount(0)}
+            setCashOnHand(0)
         }else{
-            alert("The amoutn you have entered is greater then cash on hand")
-            if(bank==="boa"){setBoADeposit(cashOnHand)}
-            if(bank==="chase"){setChaseDeposit(cashOnHand)}
+            alert("The amount you have entered is greater then cash on hand")
+            if(bank==="boa"){setBoAAmount(cashOnHand)}
+            if(bank==="chase"){setChaseAmount(cashOnHand)}
+        }
+    }
+
+    const withdrawFromAccount = (bank, amount) =>{
+        if(bank === "boa"){
+            if(boaAmount <= boaValue){
+                setCashOnHand(cashOnHand-boaAmount)
+                setBoAValue(boaValue-boaAmount)
+                setBoAAmount(0)
+            }else{
+                alert("The withdrawl amount is greater then amount in account")
+                setBoAAmount(boaValue)
+            }
         }
     }
 
@@ -27,8 +43,8 @@ const App : FC = () => {
     const saveData = async() =>{
         try{
             await AsyncStorage.setItem('cashOnHand', cashOnHand );
-            await AsyncStorage.setItem('chaseAccount', chaseDeposit );
-            await AsyncStorage.setItem('boaAccount', boaDeposit );
+            await AsyncStorage.setItem('chaseAccount', chaseAmount );
+            await AsyncStorage.setItem('boaAccount', boaAmount );
         }catch (e) {
             alert("Failed")
         }
@@ -40,8 +56,8 @@ const App : FC = () => {
             const value2 = await AsyncStorage.getItem('chaseAccount')
             const value3 = await AsyncStorage.getItem('boaAccount')
             setCashOnHand(value1)
-            setChaseDeposit(value2)
-            setBoADeposit(value3)
+            setChaseAmount(value2)
+            setBoAAmount(value3)
         }catch (e) {
             console.log(e)
         }
@@ -55,18 +71,20 @@ const App : FC = () => {
         <><StatusBar hidden />
             <View style={mainStyle.container}>
                 <Text style={mainStyle.basicTitle}>Banking</Text>
+                <Text style={mainStyle.basicText}>${cashOnHand}</Text>
                 <View style={mainStyle.horizonFlow}>
                     <Image source={require("../images/chasebank.png")} style={{width: 120, height: 120}} />
                     <View>
                         <View style={mainStyle.horizonFlow}>
                             <Text style={mainStyle.basicText}> Chase </Text>
-                            <Text style={mainStyle.basicText}> ${chaseDeposit}</Text>
+                            <Text style={mainStyle.basicText}> ${chaseValue}</Text>
                         </View>
                         <View>
                            <TextInput                             
                                 style={mainStyle.inputTextStyle}
-                                onChangeText={text=>setChaseDeposit(text)}
-                                value={chaseDeposit}
+                                onChangeText={text=>setChaseAmount(text)}
+                                maxLength={6}
+                                value={chaseAmount}
                                 keyboardType= {"number-pad"}
                             ></TextInput>
                         </View>
@@ -74,7 +92,7 @@ const App : FC = () => {
                             <View style={mainStyle.horizonFlow}>
                                 <Button title="Withdrawal" />
                                 <View style={{padding:5}}></View>
-                                <Button title="Deposit" />
+                                <Button title="Deposit" onPress={()=>depositIntoAccount("chase", chaseAmount)}/>
                             </View>
                         </View>
                     </View>
@@ -84,13 +102,14 @@ const App : FC = () => {
                     <View>
                         <View style={mainStyle.horizonFlow}>
                             <Text style={mainStyle.basicText}> Bank of America</Text>
-                            <Text style={mainStyle.basicText}> ${boaDeposit}</Text>
+                            <Text style={mainStyle.basicText}> ${boaValue}</Text>
                         </View>
                         <View>
                            <TextInput                             
                                 style={mainStyle.inputTextStyle}
-                                onChangeText={text=>setBoADeposit(text)}
-                                value={boaDeposit}
+                                onChangeText={text=>setBoAAmount(text)}
+                                maxLength={6}
+                                value={boaAmount}
                                 keyboardType= {"number-pad"}
                             ></TextInput>
                         </View>
@@ -98,7 +117,7 @@ const App : FC = () => {
                             <View style={mainStyle.horizonFlow}>
                                 <Button title="Withdrawal" />
                                 <View style={{padding:5}}></View>
-                                <Button title="Deposit" onPress={()=> depositIntoAccount("boa", boaDeposit)}/>
+                                <Button title="Deposit" onPress={()=> depositIntoAccount("boa", boaAmount)}/>
                             </View>
                         </View>
                     </View>
