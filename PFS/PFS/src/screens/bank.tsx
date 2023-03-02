@@ -22,6 +22,7 @@ const App : FC = () => {
             setCashOnHand(Number(value1))
             setChaseAmount(Number(value2))
             setBoAAmount(Number(value3))
+            console.log(value1)
         }catch (e) {
             console.log(e)
         }
@@ -31,7 +32,7 @@ const App : FC = () => {
         getData()
     },[])
 
-    const depositIntoAccount = (bank, amount) => {
+    const depositIntoAccount = (bank:string, amount:number) => {
         if(amount <= cashOnHand){
             if(bank ==="boa"){setBoAValue(boaValue+amount);saveData()}
             if(bank ==="chase"){setChaseValue(chaseValue+amount);saveData()}
