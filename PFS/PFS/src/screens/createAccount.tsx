@@ -16,7 +16,7 @@ const App : FC = () => {
     const [confirmUsername, setConfirmUserName] = useState("")
     const [confirmPassworc, setConfirmPassword] = useState("")
 
-    //FOR LOCAL STORAGE
+    //LOCAL STORAGE/STATE
     //Game Data will be here actually
     const [timeRate,setTimeRate] = useState("24")
     const [wealth, setWealth] = useState("")
