@@ -14,11 +14,30 @@ const App : FC = () => {
     const [boaValue, setBoAValue] = useState(0)
     const [boaAmount,setBoAAmount] = useState(0)
 
+    const getData = async() =>{
+        try{
+            const value1 = await AsyncStorage.getItem('cashOnHand')
+            const value2 = await AsyncStorage.getItem('chaseAccount')
+            const value3 = await AsyncStorage.getItem('boaAccount')
+            setCashOnHand(Number(value1))
+            setChaseAmount(Number(value2))
+            setBoAAmount(Number(value3))
+        }catch (e) {
+            console.log(e)
+        }
+    }
+
+    useEffect(()=>{
+        getData()
+    },[])
+
     const depositIntoAccount = (bank, amount) => {
         if(amount <= cashOnHand){
-            if(bank ==="boa"){setBoAValue(amount);saveData(); setBoAAmount(0)}
-            if(bank ==="chase"){setChaseValue(amount);saveData(); setChaseAmount(0)}
-            setCashOnHand(0)
+            if(bank ==="boa"){setBoAValue(boaValue+amount);saveData()}
+            if(bank ==="chase"){setChaseValue(chaseValue+amount);saveData()}
+            setBoAAmount(0)
+            setChaseAmount(0)
+            setCashOnHand(cashOnHand-boaValue-chaseValue)
         }else{
             alert("The amount you have entered is greater then cash on hand")
             if(bank==="boa"){setBoAAmount(cashOnHand)}
@@ -42,30 +61,13 @@ const App : FC = () => {
 
     const saveData = async() =>{
         try{
-            await AsyncStorage.setItem('cashOnHand', cashOnHand );
-            await AsyncStorage.setItem('chaseAccount', chaseAmount );
-            await AsyncStorage.setItem('boaAccount', boaAmount );
+            await AsyncStorage.setItem('cashOnHand', cashOnHand.toString() );
+            await AsyncStorage.setItem('chaseAccount', chaseAmount.toString() );
+            await AsyncStorage.setItem('boaAccount', boaAmount.toString() );
         }catch (e) {
             alert("Failed")
         }
     }
-
-    const getData = async() =>{
-        try{
-            const value1 = await AsyncStorage.getItem('cashOnHand')
-            const value2 = await AsyncStorage.getItem('chaseAccount')
-            const value3 = await AsyncStorage.getItem('boaAccount')
-            setCashOnHand(value1)
-            setChaseAmount(value2)
-            setBoAAmount(value3)
-        }catch (e) {
-            console.log(e)
-        }
-    }
-
-    useEffect(()=>{
-        getData()
-    },[])
 
     return(
         <><StatusBar hidden />
