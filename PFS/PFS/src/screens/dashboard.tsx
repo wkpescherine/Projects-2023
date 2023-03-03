@@ -1,6 +1,6 @@
 import React , { FC , useEffect, useState} from "react";
 import { View , Text, Button } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useIsFocused , useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
 import { Stocks , Bank , Occupation , CreditCards , DailyTasks } from "./components"
@@ -8,6 +8,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage"
 
 const App : FC = () => {
     const navigation = useNavigation();
+    const isFocused = useIsFocused()
 
     const [name,setName] = useState("")
     const [score,setScore] = useState(0)
@@ -38,10 +39,11 @@ const App : FC = () => {
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
+                {isFocused ? console.log("Render Dash") : console.log("Failed Dash")}
                 <Text style={mainStyle.basicText}>Dashboard</Text>
                 <Text style={mainStyle.basicText}>{name}</Text>
                 <Text style={mainStyle.basicText}> Total Wealth: ${wealth}</Text>
-                <Text style={mainStyle.basicText}> Cash On Hand: ${wealth}</Text>
+                <Text style={mainStyle.basicText}> Cash On Hand: ${cashOnHand}</Text>
                 <View style={mainStyle.spacer} />
                 <CreditCards />
                 <View style={mainStyle.spacer} />

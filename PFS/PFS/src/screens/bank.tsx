@@ -8,10 +8,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const App : FC = () => {
     const navigation = useNavigation();
     
-    const [cashOnHand,setCashOnHand] = useState(0)
-    const [chaseValue, setChaseValue] = useState(0)
+    const [cashOnHand,setCashOnHand] = useState("")
+    const [chaseTotal, setChaseTotal] = useState("0")
     const [chaseAmount,setChaseAmount] = useState(0)
-    const [boaValue, setBoAValue] = useState(0)
+    const [boaTotal, setBoATotal] = useState("0")
     const [boaAmount,setBoAAmount] = useState(0)
 
     const getData = async() =>{
@@ -19,9 +19,9 @@ const App : FC = () => {
             const value1 = await AsyncStorage.getItem('cashOnHand')
             const value2 = await AsyncStorage.getItem('chaseAccount')
             const value3 = await AsyncStorage.getItem('boaAccount')
-            setCashOnHand(Number(value1))
-            setChaseAmount(Number(value2))
-            setBoAAmount(Number(value3))
+            setCashOnHand(value1)
+            setChaseTotal(value2)
+            setBoATotal(value3)
             console.log(value1)
         }catch (e) {
             console.log(e)
@@ -33,36 +33,40 @@ const App : FC = () => {
     },[])
 
     const depositIntoAccount = (bank:string, amount:number) => {
-        if(amount <= cashOnHand){
-            if(bank ==="boa"){setBoAValue(boaValue+amount);saveData()}
-            if(bank ==="chase"){setChaseValue(chaseValue+amount);saveData()}
+        let cash = Number(cashOnHand)
+        if(amount <= cash){
+            if(bank ==="boa"){setBoATotal(boaTotal+amount);saveData()}
+            if(bank ==="chase"){setChaseTotal(chaseTotal+amount);saveData()}
             setBoAAmount(0)
             setChaseAmount(0)
-            setCashOnHand(cashOnHand-boaValue-chaseValue)
+            setCashOnHand((cash-Number(boaAmount)-Number(chaseAmount)).toString())
         }else{
             alert("The amount you have entered is greater then cash on hand")
-            if(bank==="boa"){setBoAAmount(cashOnHand)}
-            if(bank==="chase"){setChaseAmount(cashOnHand)}
-        }
-    }
-
-    const withdrawFromAccount = (bank, amount) =>{
-        if(bank === "boa"){
-            if(boaAmount <= boaValue){
-                setCashOnHand(cashOnHand-boaAmount)
-                setBoAValue(boaValue-boaAmount)
-                setBoAAmount(0)
-            }else{
-                alert("The withdrawl amount is greater then amount in account")
-                setBoAAmount(boaValue)
+            if(bank==="boa"){setBoAAmount(Number(cashOnHand))}
+            if(bank==="chase"){
+                setChaseAmount(cash)
             }
         }
     }
 
+    //const withdrawFromAccount = (bank, amount) =>{
+    //    if(bank === "boa"){
+    //        if(boaAmount <= boaValue){
+    //            setCashOnHand(cashOnHand-boaAmount)
+    //            setBoAValue(boaValue-boaAmount)
+    //            setBoAAmount(0)
+    //        }else{
+    //            alert("The withdrawl amount is greater then amount in account")
+    //            setBoAAmount(boaValue)
+    //        }
+    //    }
+    //}
+
 
     const saveData = async() =>{
+        
         try{
-            await AsyncStorage.setItem('cashOnHand', cashOnHand.toString() );
+            await AsyncStorage.setItem('cashOnHand', cashOnHand );
             await AsyncStorage.setItem('chaseAccount', chaseAmount.toString() );
             await AsyncStorage.setItem('boaAccount', boaAmount.toString() );
         }catch (e) {
@@ -80,7 +84,7 @@ const App : FC = () => {
                     <View>
                         <View style={mainStyle.horizonFlow}>
                             <Text style={mainStyle.basicText}> Chase </Text>
-                            <Text style={mainStyle.basicText}> ${chaseValue}</Text>
+                            <Text style={mainStyle.basicText}> ${chaseTotal}</Text>
                         </View>
                         <View>
                            <TextInput                             
@@ -105,7 +109,7 @@ const App : FC = () => {
                     <View>
                         <View style={mainStyle.horizonFlow}>
                             <Text style={mainStyle.basicText}> Bank of America</Text>
-                            <Text style={mainStyle.basicText}> ${boaValue}</Text>
+                            <Text style={mainStyle.basicText}> ${boaTotal}</Text>
                         </View>
                         <View>
                            <TextInput                             
