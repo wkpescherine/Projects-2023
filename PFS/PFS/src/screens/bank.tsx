@@ -39,7 +39,8 @@ const App : FC = () => {
             if(bank ==="chase"){setChaseTotal(chaseTotal+amount);saveData()}
             setBoAAmount(0)
             setChaseAmount(0)
-            setCashOnHand((cash-Number(boaAmount)-Number(chaseAmount)).toString())
+            let temp = cash-Number(boaAmount)-Number(chaseAmount)
+            setCashOnHand(temp.toString())
         }else{
             alert("The amount you have entered is greater then cash on hand")
             if(bank==="boa"){setBoAAmount(Number(cashOnHand))}
@@ -64,11 +65,10 @@ const App : FC = () => {
 
 
     const saveData = async() =>{
-        
         try{
             await AsyncStorage.setItem('cashOnHand', cashOnHand );
-            await AsyncStorage.setItem('chaseAccount', chaseAmount.toString() );
-            await AsyncStorage.setItem('boaAccount', boaAmount.toString() );
+            await AsyncStorage.setItem('chaseAccount', chaseTotal );
+            await AsyncStorage.setItem('boaAccount', boaTotal );
         }catch (e) {
             alert("Failed")
         }
