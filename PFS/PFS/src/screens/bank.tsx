@@ -14,7 +14,8 @@ const App : FC = () => {
     const [chaseAmount,setChaseAmount] = useState(0)
     const [boaTotal, setBoATotal] = useState("0")
     const [boaAmount,setBoAAmount] = useState(0)
-    const [confirm,setConfirm] = useState("None")
+    const [confirmChase,setConfirmChase] = useState("None")
+    const [confirmBoA, setConfirmBoA] = useState("None")
 
     const getData = async() =>{
         try{
@@ -33,12 +34,20 @@ const App : FC = () => {
         getData()
     },[])
 
+    const setConfirm = () => {
+        setConfirmChase("None")
+        setConfirmBoA("None")
+    }
+
     const depositIntoAccount = (bank:string, amount:number) => {
         var cash = Number(cashOnHand)
         var cashDeposited = Number(amount)
         var tempCash = 0
         var tempDeposit = 0
-        if(bank===""){setConfirm("None")}
+        if(bank === ""){
+            setConfirmChase("None")
+            setConfirmBoA("None")
+        }
         if(amount > cash){
             var cashHand = cash
             alert("The amount you have entered is greater then cash on hand")
@@ -51,7 +60,7 @@ const App : FC = () => {
                 setBoATotal(String(tempDeposit))
                 setCashOnHand(String(tempCash))
                 setBoAAmount(0)
-
+                setConfirmBoA("Confirm")
             }
             if(bank ==="chase"){
                 tempDeposit = Number(chaseTotal) + cashDeposited
@@ -59,24 +68,45 @@ const App : FC = () => {
                 setChaseTotal(String(tempDeposit))
                 setCashOnHand(String(tempCash))
                 setChaseAmount(0)
-                setConfirm("Confirm")
+                setConfirmChase("Confirm")
             }
             saveData()
         }
     }
 
-    //const withdrawFromAccount = (bank, amount) =>{
-    //    if(bank === "boa"){
-    //        if(boaAmount <= boaValue){
-    //            setCashOnHand(cashOnHand-boaAmount)
-    //            setBoAValue(boaValue-boaAmount)
-    //            setBoAAmount(0)
-    //        }else{
-    //            alert("The withdrawl amount is greater then amount in account")
-    //            setBoAAmount(boaValue)
-    //        }
-    //    }
-    //}
+    const withdrawFromAccount = (bank:string, amount:number) =>{
+        var cash = Number(cashOnHand)
+        var withdrawn = Number(amount)
+        var tempCash = 0
+        var tempAccount = 0
+        if(bank === "chase"){
+            if(withdrawn <= Number(chaseTotal) ){
+                tempAccount = Number(chaseTotal) - withdrawn
+                tempCash = cash + withdrawn
+                setCashOnHand(String(tempCash))
+                setChaseTotal(String(tempAccount))
+                setChaseAmount(0)
+                setConfirmChase("Confirm")
+            }else{
+                alert("The withdrawl amount is greater then amount in account")
+                setChaseAmount(0)
+            }
+        }
+        if(bank === "boa"){
+            if(withdrawn <= Number(boaTotal)){
+                tempAccount = Number(boaTotal) - withdrawn
+                tempCash = cash + withdrawn
+                setCashOnHand(String(tempCash))
+                setBoATotal(String(tempAccount))
+                setBoAAmount(0)
+                setConfirmBoA("Confirm")
+            }else{
+                alert("The withdrawl amount is greater then amount in account")
+                setBoAAmount(0)
+            }
+        }
+        saveData()
+    }
 
 
     const saveData = async() =>{
@@ -118,17 +148,17 @@ const App : FC = () => {
                             ></TextInput>
                         </View>
                         <View>
-                            {confirm ==="None" &&
+                            {confirmChase ==="None" &&
                                 <View style={mainStyle.horizonFlow}>
-                                    <Button title="Withdrawal" />
+                                    <Button title="Withdrawal" onPress={() => withdrawFromAccount("chase", chaseAmount)}/>
                                     <View style={{padding:5}}></View>
                                     <Button title="Deposit" onPress={()=>depositIntoAccount ("chase", chaseAmount)}/>
                                 </View>
                             }
-                            {confirm ==="Confirm" &&
+                            {confirmChase ==="Confirm" &&
                                 <View style={mainStyle.horizonFlow}>
                                     <View style={{width: "56%"}}>
-                                        <Button title="confirm" onPress={()=>depositIntoAccount("",0)}/>
+                                        <Button title="confirm" onPress={()=> depositIntoAccount("", 0)}/>
                                     </View>
                                 </View>
                             }
@@ -152,11 +182,20 @@ const App : FC = () => {
                             ></TextInput>
                         </View>
                         <View>
-                            <View style={mainStyle.horizonFlow}>
-                                <Button title="Withdrawal" />
-                                <View style={{padding:5}}></View>
-                                <Button title="Deposit" onPress={()=> depositIntoAccount("boa", boaAmount)}/>
-                            </View>
+                            {confirmBoA ==="None" &&
+                                <View style={mainStyle.horizonFlow}>
+                                    <Button title="Withdrawal" onPress={()=> withdrawFromAccount("boa", boaAmount)}/>
+                                    <View style={{padding:5}}></View>
+                                    <Button title="Deposit" onPress={()=>   depositIntoAccount    ("boa", boaAmount)}/>
+                                </View>
+                            }
+                            {confirmBoA ==="Confirm" &&
+                                <View style={mainStyle.horizonFlow}>
+                                    <View style={{width: "56%"}}>
+                                        <Button title="confirm" onPress={()=>depositIntoAccount("",0)}/>
+                                    </View>
+                                </View>
+                            }
                         </View>
                     </View>
                 </View>
