@@ -39,7 +39,7 @@ const App : FC = () => {
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
-                {isFocused ? console.log("Render Dash") : console.log("Failed Dash")}
+                {isFocused ? console.log("Render Dash") : console.log("Left Dash")}
                 <Text style={mainStyle.basicText}>Dashboard</Text>
                 <Text style={mainStyle.basicText}>{name}</Text>
                 <Text style={mainStyle.basicText}> Total Wealth: ${wealth}</Text>

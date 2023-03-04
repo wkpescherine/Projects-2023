@@ -14,6 +14,7 @@ const App : FC = () => {
     const [chaseAmount,setChaseAmount] = useState(0)
     const [boaTotal, setBoATotal] = useState("0")
     const [boaAmount,setBoAAmount] = useState(0)
+    const [confirm,setConfirm] = useState("None")
 
     const getData = async() =>{
         try{
@@ -37,6 +38,7 @@ const App : FC = () => {
         var cashDeposited = Number(amount)
         var tempCash = 0
         var tempDeposit = 0
+        if(bank===""){setConfirm("None")}
         if(amount > cash){
             var cashHand = cash
             alert("The amount you have entered is greater then cash on hand")
@@ -57,6 +59,7 @@ const App : FC = () => {
                 setChaseTotal(String(tempDeposit))
                 setCashOnHand(String(tempCash))
                 setChaseAmount(0)
+                setConfirm("Confirm")
             }
             saveData()
         }
@@ -81,16 +84,21 @@ const App : FC = () => {
             await AsyncStorage.setItem('cashOnHand', cashOnHand );
             await AsyncStorage.setItem('chaseAccount', chaseTotal );
             await AsyncStorage.setItem('boaAccount', boaTotal );
-            console.log("Saved")
+            console.log("Saved Area")
+            {isFocused ? console.log("Render Save") : console.log("Left Bank")}
         }catch (e) {
             alert("Failed")
         }
     }
 
+    function checkReRender(){
+        console.log("checked")
+    }
+
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
-                {isFocused ? console.log("render") : console.log("Failed")}
+                {isFocused ? checkReRender() : console.log("Left Bank")}
                 <Text style={mainStyle.basicTitle}>Banking</Text>
                 <Text style={mainStyle.basicText}>${cashOnHand}</Text>
                 <View style={mainStyle.horizonFlow}>
@@ -110,11 +118,20 @@ const App : FC = () => {
                             ></TextInput>
                         </View>
                         <View>
-                            <View style={mainStyle.horizonFlow}>
-                                <Button title="Withdrawal" />
-                                <View style={{padding:5}}></View>
-                                <Button title="Deposit" onPress={()=>depositIntoAccount("chase", chaseAmount)}/>
-                            </View>
+                            {confirm ==="None" &&
+                                <View style={mainStyle.horizonFlow}>
+                                    <Button title="Withdrawal" />
+                                    <View style={{padding:5}}></View>
+                                    <Button title="Deposit" onPress={()=>depositIntoAccount ("chase", chaseAmount)}/>
+                                </View>
+                            }
+                            {confirm ==="Confirm" &&
+                                <View style={mainStyle.horizonFlow}>
+                                    <View style={{width: "56%"}}>
+                                        <Button title="confirm" onPress={()=>depositIntoAccount("",0)}/>
+                                    </View>
+                                </View>
+                            }
                         </View>
                     </View>
                 </View>
