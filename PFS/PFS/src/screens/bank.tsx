@@ -1,12 +1,13 @@
 import React , { FC , useEffect , useState} from "react";
 import { View , Text, Button , Image, TextInput} from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useIsFocused , useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const App : FC = () => {
     const navigation = useNavigation();
+    const isFocused = useIsFocused()
     
     const [cashOnHand,setCashOnHand] = useState("")
     const [chaseTotal, setChaseTotal] = useState("0")
@@ -22,7 +23,6 @@ const App : FC = () => {
             setCashOnHand(value1)
             setChaseTotal(value2)
             setBoATotal(value3)
-            console.log(value1)
         }catch (e) {
             console.log(e)
         }
@@ -33,20 +33,32 @@ const App : FC = () => {
     },[])
 
     const depositIntoAccount = (bank:string, amount:number) => {
-        let cash = Number(cashOnHand)
-        if(amount <= cash){
-            if(bank ==="boa"){setBoATotal(boaTotal+amount);saveData()}
-            if(bank ==="chase"){setChaseTotal(chaseTotal+amount);saveData()}
-            setBoAAmount(0)
-            setChaseAmount(0)
-            let temp = cash-Number(boaAmount)-Number(chaseAmount)
-            setCashOnHand(temp.toString())
-        }else{
+        var cash = Number(cashOnHand)
+        var cashDeposited = Number(amount)
+        var tempCash = 0
+        var tempDeposit = 0
+        if(amount > cash){
+            var cashHand = cash
             alert("The amount you have entered is greater then cash on hand")
-            if(bank==="boa"){setBoAAmount(Number(cashOnHand))}
-            if(bank==="chase"){
-                setChaseAmount(cash)
+            if(bank==="boa"){setBoAAmount(cashHand)}
+            if(bank==="chase"){setChaseAmount(cashHand)}
+        }else {
+            if(bank ==="boa"){
+                tempDeposit = Number(boaTotal)+cashDeposited
+                tempCash = cash - amount
+                setBoATotal(String(tempDeposit))
+                setCashOnHand(String(tempCash))
+                setBoAAmount(0)
+
             }
+            if(bank ==="chase"){
+                tempDeposit = Number(chaseTotal) + cashDeposited
+                tempCash = cash - amount
+                setChaseTotal(String(tempDeposit))
+                setCashOnHand(String(tempCash))
+                setChaseAmount(0)
+            }
+            saveData()
         }
     }
 
@@ -69,6 +81,7 @@ const App : FC = () => {
             await AsyncStorage.setItem('cashOnHand', cashOnHand );
             await AsyncStorage.setItem('chaseAccount', chaseTotal );
             await AsyncStorage.setItem('boaAccount', boaTotal );
+            console.log("Saved")
         }catch (e) {
             alert("Failed")
         }
@@ -77,6 +90,7 @@ const App : FC = () => {
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
+                {isFocused ? console.log("render") : console.log("Failed")}
                 <Text style={mainStyle.basicTitle}>Banking</Text>
                 <Text style={mainStyle.basicText}>${cashOnHand}</Text>
                 <View style={mainStyle.horizonFlow}>
