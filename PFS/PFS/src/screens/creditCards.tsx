@@ -9,22 +9,29 @@ import { CCPayments } from "./components";
 const App : FC = () => {
     const navigation = useNavigation();
 
-    const [ficoScore , steFicoScore] = useState("600")
+    const [ficoScore , steFicoScore] = useState(600)
 
     const [visaStatus, setVisaStatus] = useState("Apply")
     const [visaLimit, setVisaLimit] = useState("1000")
     const [visaInterest, setVisaInterest] = useState("19.8")
     const [visaBalance, setVisaBalance] = useState("0")
     const [visaAvailable, setVisaAvailable] = useState("0")
+    const [mastercardStatus, setMastercardStatus] = useState("Apply")
+    const [amexStatus, setAmexStatus] = useState("Apply")
+
+    const upgradeCC = (card:string) =>{
+        if(card === "visa" && ficoScore >= 600){ setVisaStatus("Basic")}
+    }
 
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
                 <Text style={mainStyle.basicTitle}>Credit Cards</Text>
                 <View style={mainStyle.spacer} />
+                {/* This section is for the Visa CC */}
                 {visaStatus === "Apply" &&
                     <View>
-                        <Button title="Basic Visa Apply" />
+                        <Button title="Basic Visa Apply" onPress={() => upgradeCC("visa")}/>
                     </View>
                 }
                 {visaStatus ==="Basic" &&
@@ -42,10 +49,12 @@ const App : FC = () => {
                                 </View>
                             </View>
                         </View>
+                        <Button title="Apply to upgrade to Platnium" />
                     </View>
                 }
                 <CCPayments />
                 <View style={mainStyle.spacer} />
+                {/* This section is for the Mastercard CC */}
                 <View>
                     <Button title="Basic Mastercard Apply" />
                 </View>
@@ -66,6 +75,7 @@ const App : FC = () => {
                 </View>
                 <CCPayments />
                 <View style={mainStyle.spacer} />
+                {/* This section is for the AMEX CC */}
                 <View>
                     <Button title="Basic Amex Apply" />
                 </View>
