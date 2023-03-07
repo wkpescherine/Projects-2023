@@ -52,7 +52,14 @@ const App : FC = () => {
                         <Button title="Apply to upgrade to Platnium" />
                     </View>
                 }
-                <CCPayments />
+                {visaStatus !== "Apply" &&
+                    <CCPayments />
+                }
+                {visaStatus === "Basic" &&
+                    <View>
+                        <Button title="Apply to Upgrade to Platnium"/>
+                    </View>
+                }
                 <View style={mainStyle.spacer} />
                 {/* This section is for the Mastercard CC */}
                 <View>
