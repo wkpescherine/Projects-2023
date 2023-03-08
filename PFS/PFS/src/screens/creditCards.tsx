@@ -1,7 +1,6 @@
 import React , { FC, useState } from "react";
 import { View , Text, Button , Image} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-//import containers from "../Stylesheets/containers"
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
 import { CCPayments } from "./components";
@@ -11,12 +10,19 @@ const App : FC = () => {
 
     const [ficoScore , steFicoScore] = useState(600)
 
+    //VISA DATA
     const [visaStatus, setVisaStatus] = useState("Apply")
     const [visaLimit, setVisaLimit] = useState("1000")
     const [visaInterest, setVisaInterest] = useState("19.8")
     const [visaBalance, setVisaBalance] = useState("0")
     const [visaAvailable, setVisaAvailable] = useState("0")
+    //MASTERCARD DATA
     const [mastercardStatus, setMastercardStatus] = useState("Apply")
+    const [mastercardLimit, setMastercardLimit] = useState("1000")
+    const [mastercardInterest, setMastercardInterest] = useState("19.8")
+    const [mastercardBalance, setMastercardBalance] = useState("0")
+    const [mastercardAvailable, setMastercardAvailable] = useState("0")
+    //AMEX DATA
     const [amexStatus, setAmexStatus] = useState("Apply")
 
     const upgradeCC = (card:string) =>{
@@ -57,30 +63,37 @@ const App : FC = () => {
                 }
                 {visaStatus === "Basic" &&
                     <View>
-                        <Button title="Apply to Upgrade to Platnium"/>
+                        <Button title="Apply to Upgrade to Platnium" onPress={() => upgradeCC("mastercard")}/>
                     </View>
                 }
                 <View style={mainStyle.spacer} />
                 {/* This section is for the Mastercard CC */}
-                <View>
-                    <Button title="Basic Mastercard Apply" />
-                </View>
-                <View style={mainStyle.horizonFlow}>
-                    <Image source={require("../images/mastercardCC.png")} style={{width: 90, height: 60}} />
+                {mastercardStatus === "Apply" &&
                     <View>
-                        <View style={mainStyle.horizonFlow}>
-                            <Text style={mainStyle.basicText}>Limit: ${visaLimit}</Text>
-                            <Text style={mainStyle.basicText}>Interest: {visaInterest}%</Text>
-                        </View>
+                        <Button title="Basic Mastercard Apply" />
+                    </View>
+                }
+                {mastercardStatus ==="Basic" &&
+                    <View style={mainStyle.horizonFlow}>
+                        <Image source={require("../images/mastercardCC.png")} style={{width: 90, height: 60}} />
                         <View>
                             <View style={mainStyle.horizonFlow}>
-                                <Text style={mainStyle.basicText}>Balance: ${visaBalance}</Text>
-                                <Text style={mainStyle.basicText}>Available: S{visaAvailable}%</Text>
+                                <Text style={mainStyle.basicText}>Limit: ${visaLimit}</Text>
+                                <Text style={mainStyle.basicText}>Interest: {visaInterest}%</Text>
+                            </View>
+                            <View>
+                                <View style={mainStyle.horizonFlow}>
+                                    <Text style={mainStyle.basicText}>Balance: ${visaBalance}</Text>
+                                    <Text style={mainStyle.basicText}>Available: S  {visaAvailable}%</Text>
+                                 </View>
                             </View>
                         </View>
                     </View>
-                </View>
-                <CCPayments />
+                }
+                {mastercardStatus === "Basic" &&
+                    <CCPayments />
+                }
+
                 <View style={mainStyle.spacer} />
                 {/* This section is for the AMEX CC */}
                 <View>
