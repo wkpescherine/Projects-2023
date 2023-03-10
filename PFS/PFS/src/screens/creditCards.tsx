@@ -24,9 +24,18 @@ const App : FC = () => {
     const [mastercardAvailable, setMastercardAvailable] = useState("0")
     //AMEX DATA
     const [amexStatus, setAmexStatus] = useState("Apply")
+    const [amexcardLimit, setAmexLimit] = useState("1000")
+    const [amexcardInterest, setAmexInterest] = useState("19.8")
+    const [amexcardBalance, setAmexBalance] = useState("0")
+    const [amexAvailable, setAmexAvailable] = useState("0")
 
     const upgradeCC = (card:string) =>{
         if(card === "visa" && ficoScore >= 600){ setVisaStatus("Basic")}
+        if(card === "visa" && visaStatus=== "Basic" &&ficoScore >= 700){ setVisaStatus("Basic")}
+        if(card === "mastercard" && ficoScore >= 600){ setVisaStatus("Basic")}
+        if(card === "mastercard" && mastercardStatus=== "Basic" &&ficoScore >= 700){ setVisaStatus("Basic")}
+        if(card === "amex" && ficoScore >= 600){ setVisaStatus("Basic")}
+        if(card === "amex" && amexStatus=== "Basic" &&ficoScore >= 700){ setVisaStatus("Basic")}
     }
 
     return(
@@ -63,7 +72,7 @@ const App : FC = () => {
                 }
                 {visaStatus === "Basic" &&
                     <View>
-                        <Button title="Apply to Upgrade to Platnium" onPress={() => upgradeCC("mastercard")}/>
+                        <Button title="Apply to Upgrade to Platnium" onPress={() => upgradeCC("visa")}/>
                     </View>
                 }
                 <View style={mainStyle.spacer} />
@@ -92,6 +101,11 @@ const App : FC = () => {
                 }
                 {mastercardStatus === "Basic" &&
                     <CCPayments />
+                }
+                {mastercardStatus === "Basic" &&
+                    <View>
+                        <Button title="Apply to Upgrade to Platnium" onPress={() => upgradeCC("mastercard")}/>
+                    </View>
                 }
 
                 <View style={mainStyle.spacer} />
