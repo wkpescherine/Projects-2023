@@ -1,9 +1,9 @@
-import Stocks from "./stockMarketWidget";
+import Stocks from "./DashBoardWidgets/stockMarketWidget";
 import Bank from "./DashBoardWidgets/bankWidget"
-import Occupation from "./occupationWidget"
-import CreditCards from "./creditCardWidget"
+import Occupation from "./DashBoardWidgets/occupationWidget"
+import CreditCards from "./DashBoardWidgets/creditCardWidget"
 import States from "./statesWidget"
-import DailyTasks from "./dailyTaskWidget"
+import DailyTasks from "./DashBoardWidgets/dailyTaskWidget"
 import CCPayments from "./CreditCardWidgets/ccPaymentOptions"
 
 export { Stocks , Bank , Occupation , CreditCards , States , DailyTasks , CCPayments};

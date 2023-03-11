@@ -1,7 +1,7 @@
 import React , { FC , useEffect , useState} from "react";
 import { View , Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import mainStyle from "../../stylesheets/mainStyleSheet"
+import mainStyle from "../../../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
