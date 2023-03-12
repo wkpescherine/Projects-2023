@@ -18,14 +18,14 @@ const App : FC = () => {
     const [mastercardAvailable, setMastercardAvailable] = useState("0")
     //AMEX DATA
     const [amexStatus, setAmexStatus] = useState("Apply")
-    const [amexcardLimit, setAmexLimit] = useState("1000")
-    const [amexcardInterest, setAmexInterest] = useState("19.8")
-    const [amexcardBalance, setAmexBalance] = useState("0")
+    const [amexLimit, setAmexLimit] = useState("1000")
+    const [amexInterest, setAmexInterest] = useState("19.8")
+    const [amexBalance, setAmexBalance] = useState("0")
     const [amexAvailable, setAmexAvailable] = useState("0")
 
     const upgradeCC = (card:string) =>{
-        if(card === "visa" && ficoScore >= 600){ setVisaStatus("Basic")}
-        if(card === "visa" && visaStatus=== "Basic" &&ficoScore >= 700){ setVisaStatus("Basic")}
+        //if(card === "visa" && ficoScore >= 600){ setVisaStatus("Basic")}
+        //if(card === "visa" && visaStatus=== "Basic" &&ficoScore >= 700){ setVisaStatus("Basic")}
         if(card === "mastercard" && ficoScore >= 600){ setVisaStatus("Basic")}
         if(card === "mastercard" && mastercardStatus=== "Basic" &&ficoScore >= 700){ setVisaStatus("Basic")}
         if(card === "amex" && ficoScore >= 600){ setVisaStatus("Basic")}
@@ -49,13 +49,13 @@ const App : FC = () => {
                         <Image source={require("../images/mastercardCC.png")} style={{width: 90, height: 60}} />
                         <View>
                             <View style={mainStyle.horizonFlow}>
-                                <Text style={mainStyle.basicText}>Limit: ${visaLimit}</Text>
-                                <Text style={mainStyle.basicText}>Interest: {visaInterest}%</Text>
+                                <Text style={mainStyle.basicText}>Limit: ${mastercardLimit}</Text>
+                                <Text style={mainStyle.basicText}>Interest: {mastercardInterest}%</Text>
                             </View>
                             <View>
                                 <View style={mainStyle.horizonFlow}>
-                                    <Text style={mainStyle.basicText}>Balance: ${visaBalance}</Text>
-                                    <Text style={mainStyle.basicText}>Available: S  {visaAvailable}%</Text>
+                                    <Text style={mainStyle.basicText}>Balance: ${mastercardBalance}</Text>
+                                    <Text style={mainStyle.basicText}>Available: S  {mastercardAvailable}%</Text>
                                  </View>
                             </View>
                         </View>
@@ -79,13 +79,13 @@ const App : FC = () => {
                     <Image source={require("../images/amex.png")} style={{width: 90, height: 60}} />
                     <View>
                         <View style={mainStyle.horizonFlow}>
-                            <Text style={mainStyle.basicText}>Limit: ${visaLimit}</Text>
-                            <Text style={mainStyle.basicText}>Interest: {visaInterest}%</Text>
+                            <Text style={mainStyle.basicText}>Limit: ${amexLimit}</Text>
+                            <Text style={mainStyle.basicText}>Interest: {amexInterest}%</Text>
                         </View>
                         <View>
                             <View style={mainStyle.horizonFlow}>
-                                <Text style={mainStyle.basicText}>Balance: ${visaBalance}</Text>
-                                <Text style={mainStyle.basicText}>Available: S{visaAvailable}%</Text>
+                                <Text style={mainStyle.basicText}>Balance: ${amexBalance}</Text>
+                                <Text style={mainStyle.basicText}>Available: S{amexAvailable}%</Text>
                             </View>
                         </View>
                     </View>

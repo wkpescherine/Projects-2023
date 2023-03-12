@@ -1,8 +1,8 @@
 import React , { FC , useState} from "react";
 import { View , Text, Button , Image } from "react-native";
-import mainStyle from "../../../stylesheets/mainStyleSheet"
+import mainStyle from "../../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
-import { CCPayments } from "..";
+import { CCPayments } from "./";
 
 const App : FC = () => {
     const [ficoScore , steFicoScore] = useState(600)
