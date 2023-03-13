@@ -26,7 +26,7 @@ export default StyleSheet.create({
         margin: 15,
     },
     horizonFlow:{
-        padding: 5,
+        padding: 3,
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",

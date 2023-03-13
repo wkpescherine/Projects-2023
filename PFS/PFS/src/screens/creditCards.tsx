@@ -115,22 +115,32 @@ const App : FC = () => {
                         <Button title="Basic Amex Apply" onPress={() => upgradeCC("amex")}/>
                     </View>
                 }
-                <View style={mainStyle.horizonFlow}>
-                    <Image source={require("../images/amex.png")} style={{width: 90, height: 60}} />
-                    <View>
-                        <View style={mainStyle.horizonFlow}>
-                            <Text style={mainStyle.basicText}>Limit: ${amexLimit}</Text>
-                            <Text style={mainStyle.basicText}>Interest: {amexInterest}%</Text>
-                        </View>
+                {amexStatus === "Basic" &&
+                    <View style={mainStyle.horizonFlow}>
+                        <Image source={require("../images/amex.png")} style={{width: 90, height: 60}} />
                         <View>
                             <View style={mainStyle.horizonFlow}>
-                                <Text style={mainStyle.basicText}>Balance: ${amexBalance}</Text>
-                                <Text style={mainStyle.basicText}>Available: S{amexAvailable}%</Text>
+                                <Text style={mainStyle.basicText}>Limit: ${amexLimit}</Text>
+                                <Text style={mainStyle.basicText}>Interest: {amexInterest}%</Text>
+                            </View>
+                            <View>
+                                <View style={mainStyle.horizonFlow}>
+                                    <Text style={mainStyle.basicText}>Balance: ${amexBalance}</Text>
+                                    <Text style={mainStyle.basicText}>Available: S{amexAvailable}%</Text>
+                             </View>
                             </View>
                         </View>
                     </View>
-                </View>
-                <CCPayments />
+                }
+                {amexStatus !== "Apply" &&
+                    <CCPayments />
+                }
+                {amexStatus === "Basic" &&
+                    <View>
+                        <Button title="Apply to Upgrade to Platnium" onPress={() => upgradeCC("amex")}/>
+                    </View>
+                }
+                
                 <View style={mainStyle.spacer} />
                 <View>
                     <Text style={mainStyle.basicText}>Fico Score: {ficoScore}</Text>
