@@ -129,8 +129,9 @@ const App : FC = () => {
         <><StatusBar hidden />
             <View style={mainStyle.container}>
                 {isFocused ? checkReRender() : console.log("Left Bank")}
-                <Text style={mainStyle.basicTitle}>Banking</Text>
+                <Text style={mainStyle.basicCatTitle}>Banking</Text>
                 <Text style={mainStyle.basicText}>${cashOnHand}</Text>
+                <View style={mainStyle.spacer} />
                 <View style={mainStyle.horizonFlow}>
                     <Image source={require("../images/chasebank.png")} style={{width: 120, height: 120}} />
                     <View>
@@ -165,6 +166,7 @@ const App : FC = () => {
                         </View>
                     </View>
                 </View>
+                <View style={mainStyle.spacer} />
                 <View style={mainStyle.horizonFlow}>
                     <Image source={require("../images/bankofAmerica.png")} style={{width: 120, height: 120}} />
                     <View>
@@ -199,6 +201,7 @@ const App : FC = () => {
                         </View>
                     </View>
                 </View>
+                <View style={mainStyle.spacer} />
                 <Button title="Back to Dashboard" onPress={() => navigation.navigate("dashboard")}/>
             </View>
         </>

@@ -3,7 +3,7 @@ import { View , Text, Button , Image} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
-import { CCPayments, VisaCard} from "./components";
+import { CCPayments } from "./components";
 
 const App : FC = () => {
     const navigation = useNavigation();
@@ -31,17 +31,17 @@ const App : FC = () => {
 
     const upgradeCC = (card:string) =>{
         if(card === "visa" && ficoScore >= 600){ setVisaStatus("Basic")}
-        if(card === "visa" && visaStatus=== "Basic" &&ficoScore >= 700){ setVisaStatus("Basic")}
-        if(card === "mastercard" && ficoScore >= 600){ setVisaStatus("Basic")}
-        if(card === "mastercard" && mastercardStatus=== "Basic" &&ficoScore >= 700){ setVisaStatus("Basic")}
-        if(card === "amex" && ficoScore >= 600){ setVisaStatus("Basic")}
-        if(card === "amex" && amexStatus=== "Basic" &&ficoScore >= 700){ setVisaStatus("Basic")}
+        if(card === "visa" && visaStatus=== "Basic" && ficoScore >= 700){ setVisaStatus("Platinum")}
+        if(card === "mastercard" && ficoScore >= 600){ setMastercardStatus("Basic")}
+        if(card === "mastercard" && mastercardStatus=== "Basic" && ficoScore >= 700){ setMastercardStatus("Platinum")}
+        if(card === "amex" && ficoScore >= 600){ setAmexStatus("Basic")}
+        if(card === "amex" && amexStatus=== "Basic" &&ficoScore >= 700){ setAmexStatus("Platinum")}
     }
 
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
-                <Text style={mainStyle.basicTitle}>Credit Cards</Text>
+                <Text style={mainStyle.basicCatTitle}>Credit Cards</Text>
                 {/*<VisaCard />*/}
                 <View style={mainStyle.spacer} />
                 {/* This section is for the Visa CC */}
@@ -65,7 +65,6 @@ const App : FC = () => {
                                 </View>
                             </View>
                         </View>
-                        <Button title="Apply to upgrade to Platnium" />
                     </View>
                 }
                 {visaStatus !== "Apply" &&
@@ -80,7 +79,7 @@ const App : FC = () => {
                 {/* This section is for the Mastercard CC */}
                 {mastercardStatus === "Apply" &&
                     <View>
-                        <Button title="Basic Mastercard Apply" />
+                        <Button title="Basic Mastercard Apply" onPress={() => upgradeCC("mastercard")}/>
                     </View>
                 }
                 {mastercardStatus ==="Basic" &&
@@ -111,9 +110,11 @@ const App : FC = () => {
 
                 <View style={mainStyle.spacer} />
                 {/* This section is for the AMEX CC */}
-                <View>
-                    <Button title="Basic Amex Apply" />
-                </View>
+                {amexStatus === "Apply" &&
+                    <View>
+                        <Button title="Basic Amex Apply" onPress={() => upgradeCC("amex")}/>
+                    </View>
+                }
                 <View style={mainStyle.horizonFlow}>
                     <Image source={require("../images/amex.png")} style={{width: 90, height: 60}} />
                     <View>
@@ -132,7 +133,7 @@ const App : FC = () => {
                 <CCPayments />
                 <View style={mainStyle.spacer} />
                 <View>
-                    <Text>Fico Score: {ficoScore}</Text>
+                    <Text style={mainStyle.basicText}>Fico Score: {ficoScore}</Text>
                 </View>
                 <View style={mainStyle.spacer} />
                 <Button title="Back to Dashboard" onPress={() => navigation.navigate("dashboard")}/>

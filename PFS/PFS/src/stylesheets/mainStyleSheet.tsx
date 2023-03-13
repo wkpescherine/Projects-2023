@@ -5,6 +5,10 @@ export default StyleSheet.create({
         fontSize: 48,
         color: "#ffffff",//white
     },
+    basicCatTitle:{
+        fontSize: 24,
+        color: "#ffffff",//white
+    },
     basicText:{
         color:"#ffffff",//white
         padding: 5,
