@@ -47,8 +47,25 @@ const App : FC = () => {
     function resetAccount(){
         const saveReset = async() =>{
             try{
-                console.log("Reset")
+                //Account related data
                 await AsyncStorage.setItem('status', "Non-Active" );
+                await AsyncStorage.setItem('username', "");
+                await AsyncStorage.setItem('password', "");
+                await AsyncStorage.setItem('wealth', "" );
+                await AsyncStorage.setItem('timeRate', "" );
+                await AsyncStorage.setItem('employment', "" );
+                await AsyncStorage.setItem('cashOnHand', "" );
+                //Bank saved data
+                await AsyncStorage.setItem('chaseAccount', "0" );
+                await AsyncStorage.setItem('boaAccount', "0" );
+                //Credit card saved data
+                await AsyncStorage.setItem('ficotScore', "600" );
+                await AsyncStorage.setItem('visaStatus', "Apply" );
+                await AsyncStorage.setItem('mastercardStatus', "Apply" );
+                await AsyncStorage.setItem('amexStatus', "Apply" );
+                await AsyncStorage.setItem('visaLimit', "" );
+                await AsyncStorage.setItem('mastercardLimit', "" );
+                await AsyncStorage.setItem('amexLimit', "" );
             }catch (e) {
                 alert("Reset Failed")
             }

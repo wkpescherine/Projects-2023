@@ -1,37 +1,73 @@
-import React , { FC, useState } from "react";
+import React , { FC, useState , useEffect} from "react";
 import { View , Text, Button , Image} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
 import { CCPayments } from "./components";
+import AsyncStorage from "@react-native-async-storage/async-storage"
 
 const App : FC = () => {
     const navigation = useNavigation();
 
-    const [ficoScore , steFicoScore] = useState(600)
+    const [ficoScore , setFicoScore] = useState(0)
 
     //VISA DATA
     const [visaStatus, setVisaStatus] = useState("Apply")
-    const [visaLimit, setVisaLimit] = useState("1000")
-    const [visaInterest, setVisaInterest] = useState("19.8")
+    const [visaLimit, setVisaLimit] = useState("")
+    const [visaInterest, setVisaInterest] = useState("18%")
     const [visaBalance, setVisaBalance] = useState("0")
     const [visaAvailable, setVisaAvailable] = useState("0")
     //MASTERCARD DATA
     const [mastercardStatus, setMastercardStatus] = useState("Apply")
-    const [mastercardLimit, setMastercardLimit] = useState("1000")
-    const [mastercardInterest, setMastercardInterest] = useState("19.8")
+    const [mastercardLimit, setMastercardLimit] = useState("")
+    const [mastercardInterest, setMastercardInterest] = useState("21%")
     const [mastercardBalance, setMastercardBalance] = useState("0")
     const [mastercardAvailable, setMastercardAvailable] = useState("0")
     //AMEX DATA
     const [amexStatus, setAmexStatus] = useState("Apply")
-    const [amexLimit, setAmexLimit] = useState("1000")
-    const [amexInterest, setAmexInterest] = useState("19.8")
+    const [amexLimit, setAmexLimit] = useState("")
+    const [amexInterest, setAmexInterest] = useState("25%")
     const [amexBalance, setAmexBalance] = useState("0")
     const [amexAvailable, setAmexAvailable] = useState("0")
 
+    const checkData = async() =>{
+        try{
+            const value1 = await AsyncStorage.getItem('ficoScore')
+            const value2 = await AsyncStorage.getItem('visaStatus')
+            const value3 = await AsyncStorage.getItem('mastercardStatus')
+            const value4 = await AsyncStorage.getItem('amexStatus')
+            const value5 = await AsyncStorage.getItem('visaLimit')
+            const value6 = await AsyncStorage.getItem('mastercardLimit')
+            const value7 = await AsyncStorage.getItem('amexLimit')
+            if( value1 !== null && value2 !== null && value3 !== null && value4 !== null){
+                setFicoScore(Number(value1));
+                setVisaStatus(value2);
+                setMastercardStatus(value3)
+                setAmexStatus(value4)
+                setVisaLimit(value5);
+                setMastercardLimit(value6)
+                setAmexLimit(value7)
+            }else {
+                alert("Value was null")
+            }
+        }catch (e) {
+            console.log(e)
+        }
+    }
+
+    useEffect(() =>{
+        checkData();
+    },[]);
+
     const upgradeCC = (card:string) =>{
-        if(card === "visa" && ficoScore >= 600){ setVisaStatus("Basic")}
-        if(card === "visa" && visaStatus=== "Basic" && ficoScore >= 700){ setVisaStatus("Platinum")}
+        if(card === "visa" && ficoScore >= 600){
+             setVisaStatus("Basic")
+             setVisaLimit("1000")
+        }
+        if(card === "visa" && visaStatus=== "Basic" && ficoScore >= 700){ 
+            setVisaStatus("Platinum")
+            setVisaLimit("5000")
+        }
         if(card === "mastercard" && ficoScore >= 600){ setMastercardStatus("Basic")}
         if(card === "mastercard" && mastercardStatus=== "Basic" && ficoScore >= 700){ setMastercardStatus("Platinum")}
         if(card === "amex" && ficoScore >= 600){ setAmexStatus("Basic")}

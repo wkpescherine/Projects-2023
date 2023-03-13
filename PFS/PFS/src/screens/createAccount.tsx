@@ -46,6 +46,7 @@ const App : FC = () => {
 
     const saveData = async() =>{
         try{
+            //Dashboard and account related data
             await AsyncStorage.setItem('username', newUserName);
             await AsyncStorage.setItem('password', newPassword);
             await AsyncStorage.setItem('wealth', wealth );
@@ -53,9 +54,17 @@ const App : FC = () => {
             await AsyncStorage.setItem('timeRate', timeRate );
             await AsyncStorage.setItem('employment', employment );
             await AsyncStorage.setItem('cashOnHand', wealth );
-            //await AsyncStorage.setItem('cashOnHand', cashOnHand );
+            //Bank saved data
             await AsyncStorage.setItem('chaseAccount', "0" );
             await AsyncStorage.setItem('boaAccount', "0" );
+            //Credit card saved data
+            await AsyncStorage.setItem('ficotScore', "600" );
+            await AsyncStorage.setItem('visaStatus', "Apply" );
+            await AsyncStorage.setItem('mastercardStatus', "Apply" );
+            await AsyncStorage.setItem('amexStatus', "Apply" );
+            await AsyncStorage.setItem('visaLimit', "" );
+            await AsyncStorage.setItem('mastercardLimit', "" );
+            await AsyncStorage.setItem('amexLimit', "" );            
             navigation.navigate("dashboard")
         }catch (e) {
             alert("Failed")
