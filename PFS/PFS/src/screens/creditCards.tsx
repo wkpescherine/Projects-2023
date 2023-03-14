@@ -68,10 +68,52 @@ const App : FC = () => {
             setVisaStatus("Platinum")
             setVisaLimit("5000")
         }
+        if(card === "visa" && visaStatus=== "Platinum" && ficoScore >= 850){ 
+            setVisaStatus("Black")
+            setVisaLimit("10,000")
+        }
         if(card === "mastercard" && ficoScore >= 600){ setMastercardStatus("Basic")}
         if(card === "mastercard" && mastercardStatus=== "Basic" && ficoScore >= 700){ setMastercardStatus("Platinum")}
         if(card === "amex" && ficoScore >= 600){ setAmexStatus("Basic")}
         if(card === "amex" && amexStatus=== "Basic" &&ficoScore >= 700){ setAmexStatus("Platinum")}
+        else(
+            alert("You attempted to upgrade your "+card+" and did not meet the requirements ")
+        )
+        saveData()
+    }
+
+    const makePayment = ( card:string , payment:string){
+        if(card === "visa"){
+            if(payment ==="min"){
+                console.log("Min payment of visa")
+            }
+            if(payment ==="15"){
+                console.log("15% payment of visa")
+            }
+            if(payment ==="25"){
+                console.log("25% payment of visa")
+            }
+            if(payment ==="50"){
+                console.log("50% payment of visa")
+            }
+            if(payment ==="full"){
+                console.log("Min payment of visa")
+            }
+        }
+    }
+
+    const saveData = async() =>{
+        try{
+            await AsyncStorage.setItem('ficotScore', "600" );
+            await AsyncStorage.setItem('visaStatus', visaStatus );
+            await AsyncStorage.setItem('mastercardStatus', mastercardStatus );
+            await AsyncStorage.setItem('amexStatus', amexStatus );
+            await AsyncStorage.setItem('visaLimit', visaLimit );
+            await AsyncStorage.setItem('mastercardLimit', mastercardLimit );
+            await AsyncStorage.setItem('amexLimit', amexLimit );            
+        }catch (e) {
+            alert("Failed")
+        }
     }
 
     return(
@@ -108,7 +150,12 @@ const App : FC = () => {
                 }
                 {visaStatus === "Basic" &&
                     <View>
-                        <Button title="Apply to Upgrade to Platnium" onPress={() => upgradeCC("visa")}/>
+                        <Button title="Apply to Upgrade to Platinum" onPress={() => upgradeCC("visa")}/>
+                    </View>
+                }
+                {visaStatus === "Platinum" &&
+                    <View>
+                        <Button title="Apply to Upgrade to Black" onPress={() => upgradeCC("visa")}/>
                     </View>
                 }
                 <View style={mainStyle.spacer} />
@@ -173,10 +220,14 @@ const App : FC = () => {
                 }
                 {amexStatus === "Basic" &&
                     <View>
-                        <Button title="Apply to Upgrade to Platnium" onPress={() => upgradeCC("amex")}/>
+                        <Button title="Apply to Upgrade to Platinum" onPress={() => upgradeCC("amex")}/>
                     </View>
                 }
-                
+                {amexStatus === "Platinum" &&
+                    <View>
+                        <Button title="Apply to Upgrade to Black" onPress={() => upgradeCC("amex")}/>
+                    </View>
+                }                
                 <View style={mainStyle.spacer} />
                 <View>
                     <Text style={mainStyle.basicText}>Fico Score: {ficoScore}</Text>
