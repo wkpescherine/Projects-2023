@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
-import './App.css';
-import {Link, useNavigate} from 'react-router-dom'
+import '../App.css';
+import {useNavigate} from 'react-router-dom'
 
 function Main() {
     const[logInUsername,setLogInUsername] = useState ("");
     const[logInPassword,setLogInPassword] = useState ("");
 
-    let logInStatus = "None";
     let navigate = useNavigate();
     
     const handleLogInUsernameChange = (event) => {
@@ -17,13 +16,19 @@ function Main() {
         setLogInPassword(event.target.value)
     }
     
-    function RedirectTo(){
-        navigate('./dashboard')
+    function RedirectTo(page){
+        if(page ==="dash"){
+            console.log(logInUsername)
+            console.log(logInPassword)
+            navigate('./dashboard')
+        }
+        if(page === "create"){
+            navigate('./createaccount')
+        }
     }
 
     return (
         <div>
-            <p>Invest21</p>
             <p>
                 <input type="text" placeholder="Enter username" onChange={handleLogInUsernameChange}></input>
             </p>
@@ -31,7 +36,8 @@ function Main() {
                 <input type="text" placeholder="Enter password" onChange={handleLogInPasswordChange}></input>
             </p>
             <p>
-                <button onClick={RedirectTo}>Login</button> 
+                <button onClick={() => RedirectTo("dash")}>Login</button> 
+                <button onClick={() => RedirectTo("create")}>Create Account</button>
             </p>
         </div>
     );
