@@ -39,6 +39,9 @@ const App : FC = () => {
             const value5 = await AsyncStorage.getItem('visaLimit')
             const value6 = await AsyncStorage.getItem('mastercardLimit')
             const value7 = await AsyncStorage.getItem('amexLimit')
+            const value8 = await AsyncStorage.getItem('viasBalance')
+            const value9 = await AsyncStorage.getItem('mastercardBalance')
+            const value10 = await AsyncStorage.getItem('amexBalance')
             if( value1 !== null && value2 !== null && value3 !== null && value4 !== null){
                 setFicoScore(Number(value1));
                 setVisaStatus(value2);
@@ -47,6 +50,12 @@ const App : FC = () => {
                 setVisaLimit(value5);
                 setMastercardLimit(value6)
                 setAmexLimit(value7)
+                setVisaBalance(value8)
+                setMastercardBalance(value9)
+                setAmexBalance(value10)
+                setVisaAvailable(String(Number(visaLimit)-Number(visaBalance)))
+                setVisaAvailable(String(Number(mastercardLimit)-Number(mastercardBalance)))
+                setAmexAvailable(String(Number(amexLimit)-Number(amexBalance)))
             }else {
                 alert("Value was null")
             }
@@ -63,14 +72,17 @@ const App : FC = () => {
         if(card === "visa" && ficoScore >= 600){
              setVisaStatus("Basic")
              setVisaLimit("1000")
+             setVisaBalance("0")
         }
         if(card === "visa" && visaStatus=== "Basic" && ficoScore >= 700){ 
             setVisaStatus("Platinum")
             setVisaLimit("5000")
+            setMastercardBalance("0")
         }
         if(card === "visa" && visaStatus=== "Platinum" && ficoScore >= 850){ 
             setVisaStatus("Black")
             setVisaLimit("10,000")
+            setAmexBalance("0")
         }
         if(card === "mastercard" && ficoScore >= 600){ setMastercardStatus("Basic")}
         if(card === "mastercard" && mastercardStatus=== "Basic" && ficoScore >= 700){ setMastercardStatus("Platinum")}

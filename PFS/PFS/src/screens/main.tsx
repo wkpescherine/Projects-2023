@@ -64,8 +64,11 @@ const App : FC = () => {
                 await AsyncStorage.setItem('mastercardStatus', "Apply" );
                 await AsyncStorage.setItem('amexStatus', "Apply" );
                 await AsyncStorage.setItem('visaLimit', "" );
+                await AsyncStorage.setItem('visaBalance', "" );
                 await AsyncStorage.setItem('mastercardLimit', "" );
+                await AsyncStorage.setItem('mastercardBalnce', "" );
                 await AsyncStorage.setItem('amexLimit', "" );
+                await AsyncStorage.setItem('amexBalance', "" );
             }catch (e) {
                 alert("Reset Failed")
             }
