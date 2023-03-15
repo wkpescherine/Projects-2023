@@ -54,7 +54,7 @@ const App : FC = () => {
                 setMastercardBalance(value9)
                 setAmexBalance(value10)
                 setVisaAvailable(String(Number(visaLimit)-Number(visaBalance)))
-                setVisaAvailable(String(Number(mastercardLimit)-Number(mastercardBalance)))
+                setMastercardAvailable(String(Number(mastercardLimit)-Number(mastercardBalance)))
                 setAmexAvailable(String(Number(amexLimit)-Number(amexBalance)))
             }else {
                 alert("Value was null")
