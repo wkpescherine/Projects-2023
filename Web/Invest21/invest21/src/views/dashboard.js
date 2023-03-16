@@ -21,14 +21,16 @@ function Dashboard(){
             setSection("profile")
             navigate('/dashboard/profile')
         }
+        if(page === "logout"){
+            navigate('/')
+        }
     }
     return (
         <div>
-            <p>Invest21</p>
-            <p>Dashboard</p>
             <button onClick={() => RedirectTo("home")}>Home</button>
             <button onClick={() => RedirectTo("search")}>Search</button>
             <button onClick={() => RedirectTo("profile")}>Profile</button>
+            <button onClick={() => RedirectTo("logout")}>Logout</button>
             {section ==="home" &&
                 <p>Home Section</p>
             }
