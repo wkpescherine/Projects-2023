@@ -14,9 +14,10 @@ function App() {
             <Route exact path="/" element={ <Main />} />
             <Route exact path="/dashboard" element={ <Dashboard />} />
             <Route exact path="/dashboard/profile" element={ <Dashboard />} />
+            <Route exact path="/dashboard/search" element={ <Dashboard />} />
             <Route exact path="/createaccount" element={ <CreateAccount />}/>
           </Routes>
-        <h5>version 0.1</h5>
+        <h5>version 0.2</h5>
       </div>
     </Router>
   );
