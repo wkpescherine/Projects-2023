@@ -24,6 +24,14 @@
   color: white;
 }
 
+body {
+  background-color: #000;
+}
+
+p , h1 , h5{
+  color: white;
+}
+
 .App-link {
   color: #61dafb;
 }

@@ -17,7 +17,7 @@ function App() {
             <Route exact path="/dashboard/search" element={ <Dashboard />} />
             <Route exact path="/createaccount" element={ <CreateAccount />}/>
           </Routes>
-        <h5>version 0.2</h5>
+        <h5>version 0.3</h5>
       </div>
     </Router>
   );
