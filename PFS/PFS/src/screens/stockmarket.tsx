@@ -12,7 +12,18 @@ const App : FC = () => {
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
-                <Text style={mainStyle.basicText}>Stock Market Section</Text>
+                <Text style={mainStyle.basicCatTitle}>Stock Market Section</Text>
+                <View style={mainStyle.spacer} />
+                <View style={mainStyle.horizonFlow}>
+                    <Text> Apple</Text>
+                    <Text> 34</Text>
+                    <Text> 36</Text>
+                    <Text> Apple</Text>
+                    <Button title="+"/>
+                    <Button title="-"/>
+                </View>
+                <View style={mainStyle.spacer} />
+
                 <Button title="Back to Dashboard" onPress={() => navigation.navigate("dashboard")}/>
             </View>
         </>
