@@ -9,6 +9,8 @@ public class Hotd implements ActionListener{
 
 	String status = "false";
 
+	Integer number = 0;
+
     Hotd(){
 		Active.addActionListener(this);
 		version.setForeground(Color.WHITE);
@@ -29,8 +31,22 @@ public class Hotd implements ActionListener{
 	public void actionPerformed(ActionEvent e){
 		if(status == "false"){
 			status = "true";
+			counter();
 		}else{
 			status = "false";
+		}
+	}
+
+	public void counter(){
+		while(status == "true"){
+			number +=1;
+			System.out.println(number);
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			counter();
 		}
 	}
 }
