@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Hotd implements ActionListener{
-	JLabel version = new JLabel("version 1");
+	JLabel version = new JLabel("version 2");
     JFrame window = new JFrame("HOTD bot");
 	JButton Active = new JButton("Activate/Disable");
 
@@ -31,22 +31,29 @@ public class Hotd implements ActionListener{
 	public void actionPerformed(ActionEvent e){
 		if(status == "false"){
 			status = "true";
-			counter();
+			try {
+				counter();
+			} catch (AWTException e1) {
+				e1.printStackTrace();
+			}
 		}else{
 			status = "false";
 		}
 	}
 
-	public void counter(){
+	public void counter()throws AWTException{
+		Robot r = new Robot();
 		while(status == "true"){
 			number +=1;
+			System.out.println("Before");
+        	r.mouseMove(100, 400);
+			System.out.println("After");
 			System.out.println(number);
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			counter();
 		}
 	}
 }
