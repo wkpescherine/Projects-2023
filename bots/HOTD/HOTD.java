@@ -5,7 +5,8 @@ import javax.swing.*;
 public class Hotd implements ActionListener{
 	JLabel version = new JLabel("version 2");
     JFrame window = new JFrame("HOTD bot");
-	JButton Active = new JButton("Activate/Disable");
+	JButton Active = new JButton("Activate");
+	JButton Disable = new JButton("Disable");
 
 	String status = "false";
 
@@ -14,8 +15,19 @@ public class Hotd implements ActionListener{
     Hotd(){
 		Active.addActionListener(this);
 		version.setForeground(Color.WHITE);
+		Disable.setVisible(false);
+		Disable.addActionListener(
+			new ActionListener(){
+				public void actionPerformed(ActionEvent e){
+                    status = "false";
+					Active.setVisible(true);
+					Disable.setVisible(false);
+				}
+			}
+		);
 
 		window.add(Active);
+		window.add(Disable);
 		window.add(version);
 		window.setLayout(new FlowLayout());
         window.getContentPane().setBackground(Color.BLACK);
@@ -29,15 +41,13 @@ public class Hotd implements ActionListener{
 	}   
 
 	public void actionPerformed(ActionEvent e){
-		if(status == "false"){
-			status = "true";
-			try {
-				counter();
-			} catch (AWTException e1) {
-				e1.printStackTrace();
-			}
-		}else{
-			status = "false";
+		status = "true";
+		Active.setVisible(false);
+		Disable.setVisible(true);
+		try {
+			counter();
+		} catch (AWTException e1) {
+			e1.printStackTrace();
 		}
 	}
 
