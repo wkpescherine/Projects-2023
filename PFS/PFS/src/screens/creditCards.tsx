@@ -94,7 +94,7 @@ const App : FC = () => {
         saveData()
     }
 
-    const makePayment = ( card:string , payment:string){
+    const makePayment = ( card:string , payment:string) =>{
         if(card === "visa"){
             if(payment ==="min"){
                 console.log("Min payment of visa")
