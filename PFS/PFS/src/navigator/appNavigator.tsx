@@ -1,6 +1,6 @@
 import React , { FC } from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Main , Dashboard , StockMarket, BankAcct , Setting , CreditCards , CreateAccount , Occupation , DailyTasks } from "../screens";
+import { Main , Dashboard , StockMarket, BankAcct , Setting , CreditCards , CreateAccount , Occupation , DailyTasks , Profile} from "../screens";
 //import { Settings } from "react-native";
 const { Navigator , Screen } = createStackNavigator();
 
@@ -16,6 +16,7 @@ const appStack : FC = () => {
             <Screen name="create" component={ CreateAccount } options={{headerShown: false}} />
             <Screen name="occupation" component={ Occupation } options={{headerShown: false}} />
             <Screen name="dailytasks" component={ DailyTasks } options={{headerShown: false}} />
+            <Screen name="profile" component={ Profile } options={{headerShown: false}} />
         </Navigator>
     )
 }

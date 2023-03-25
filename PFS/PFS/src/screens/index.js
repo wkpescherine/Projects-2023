@@ -7,5 +7,6 @@ import CreditCards from "./creditCards"
 import CreateAccount from "./createAccount"
 import Occupation from "./occupation"
 import DailyTasks from "./dailyTasks"
+import Profile from "./profile"
 
-export { Main , Dashboard , StockMarket , BankAcct, Setting, CreditCards , CreateAccount , Occupation , DailyTasks };
+export { Main , Dashboard , StockMarket , BankAcct, Setting, CreditCards , CreateAccount , Occupation , DailyTasks , Profile};

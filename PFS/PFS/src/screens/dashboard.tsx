@@ -3,7 +3,7 @@ import { View , Text, Button } from "react-native";
 import { useIsFocused , useNavigation } from "@react-navigation/native";
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
-import { Stocks , Bank , Occupation , CreditCards , DailyTasks } from "./components"
+import { Stocks , Bank , Occupation , CreditCards , DailyTasks, Profile } from "./components"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 
 const App : FC = () => {
@@ -58,6 +58,8 @@ const App : FC = () => {
                 <Stocks />
                 <View style={mainStyle.spacer} />
                 <DailyTasks />
+                <View style={mainStyle.spacer} />
+                <Profile />
                 <View style={mainStyle.spacer} />
                 <Text style={mainStyle.basicText}> {score} </Text>
                 <View style={mainStyle.spacer} />
