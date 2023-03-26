@@ -1,13 +1,23 @@
-import React , { FC } from "react";
+import React , { FC , useState } from "react";
 import { View , Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 //import containers from "../Stylesheets/containers"
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
-import { Stocks } from "./components"
+//import { Stocks } from "./components"
 
 const App : FC = () => {
     const navigation = useNavigation();
+    //const [stockQuantity, setStockQuantity] = useState([0,0,0])
+    const stockQuantity = [0,0,0]
+
+    function buyStock(purchase:string){
+        if(purchase === "Apple"){
+            stockQuantity[0] += 1
+            //setStockQuantity([0], temp)
+            console.log("bought")
+        }
+    }
 
     return(
         <><StatusBar hidden />
@@ -24,28 +34,31 @@ const App : FC = () => {
                     <Text style={mainStyle.basicText}> Open: $34</Text>
                     <Text style={mainStyle.basicText}> Closed: $37</Text>
                     <Text style={mainStyle.basicText}> Chng: +1%</Text>
-                    <Button title="+"/>
-                    <Button title="-"/>
+                    <Button title="BUY" onPress={() => buyStock("Apple")}/>
                 </View>
                 <View style={mainStyle.horizonFlow}>
                     <Text style={mainStyle.basicText}> Google</Text>
                     <Text style={mainStyle.basicText}> Open: $55</Text>
                     <Text style={mainStyle.basicText}> Closed: $62</Text>
                     <Text style={mainStyle.basicText}> Chng: +1.4%</Text>
-                    <Button title="+"/>
-                    <Button title="-"/>
+                    <Button title="BUY"/>
                 </View>
                 <View style={mainStyle.horizonFlow}>
                     <Text style={mainStyle.basicText}> Tesla</Text>
                     <Text style={mainStyle.basicText}> Open: $24</Text>
                     <Text style={mainStyle.basicText}> Closed: $22</Text>
                     <Text style={mainStyle.basicText}> Chng: -1%</Text>
-                    <Button title="+"/>
-                    <Button title="-"/>
+                    <Button title="BUY"/>
                 </View>
                 <View style={mainStyle.spacer} />
                 <Text style={mainStyle.basicText}>Stock Portfolio</Text>
-
+                {stockQuantity[0] >= 1 &&
+                    <View>
+                        <Text>Apple : {stockQuantity[0]}</Text>
+                        <Button title="SELL" />
+                    </View>
+                }
+                <View style={mainStyle.spacer} />
                 <Button title="Back to Dashboard" onPress={() => navigation.navigate("dashboard")}/>
             </View>
         </>
