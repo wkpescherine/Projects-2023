@@ -11,7 +11,7 @@ const App : FC = () => {
         <><StatusBar hidden />
             <View style={mainStyle.horizonFlow}>
                 <Text style={mainStyle.basicText}>Account Profile</Text>
-                <Button title=">" onPress={() => navigation.navigate("dailytasks")}/>
+                <Button title=">" onPress={() => navigation.navigate("profile")}/>
             </View>
         </>
     )

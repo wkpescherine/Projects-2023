@@ -8,7 +8,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 const App : FC = () => {
     const navigation = useNavigation(); 
     const [profileUsername,setProfileUsername] = useState("")
-    const [profileWealth,setProfileWealth] = useState("0")
+    const [profileActualWealth,setProfileActualWealth] = useState("0")
     const [profileBank,setProfileBank] = useState("0")
     const [profileOnHand,setProfileOnHand] = useState("0")
     const [profileDebt,setProfileDebt] = useState("0")
@@ -23,7 +23,7 @@ const App : FC = () => {
             const value5 = await AsyncStorage.getItem('boaAccount')
             var bankTotal = Number(value4) + Number(value5)
             setProfileUsername(value1)
-            setProfileWealth(value2)
+            setProfileActualWealth(value2)
             setProfileOnHand(value3)
             setProfileBank(String(bankTotal))
         }catch (e) {
@@ -44,7 +44,7 @@ const App : FC = () => {
                 <Text style={mainStyle.basicText}>Total Bank Value: {profileBank}</Text>
                 <Text style={mainStyle.basicText}>Total Stocks Value: {profileStock}</Text>
                 <Text style={mainStyle.basicText}>Total Debt: {profileDebt}</Text>
-                <Text style={mainStyle.basicText}>Actual Wealth:{profileWealth}</Text>
+                <Text style={mainStyle.basicText}>Actual Wealth:{profileActualWealth}</Text>
                 <Button title="Back to Dashboard" onPress={() => navigation.navigate("dashboard")}/>
             </View>
         </>
