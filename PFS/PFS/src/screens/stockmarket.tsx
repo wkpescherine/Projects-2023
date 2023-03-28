@@ -7,15 +7,18 @@ import { StatusBar } from "expo-status-bar";
 //import { Stocks } from "./components"
 
 const App : FC = () => {
-    const navigation = useNavigation();
-    //const [stockQuantity, setStockQuantity] = useState([0,0,0])
-    const stockQuantity = [0,0,0]
+    const navigation = useNavigation()
+    const appleStockValues = [0,0,0]
+    const googleStockValues = [0,0,0]
+    const [appleProfileValues, setAppleProfileValues] = useState(appleStockValues)
+    const [googleProfileValues, setGoogleProfileValues] = useState(googleStockValues)
 
     function buyStock(purchase:string){
         if(purchase === "Apple"){
             stockQuantity[0] += 1
             //setStockQuantity([0], temp)
             console.log("bought")
+            console.log(stockQuantity[0])
         }
     }
 
@@ -52,12 +55,17 @@ const App : FC = () => {
                 </View>
                 <View style={mainStyle.spacer} />
                 <Text style={mainStyle.basicText}>Stock Portfolio</Text>
-                {stockQuantity[0] >= 1 &&
-                    <View>
-                        <Text>Apple : {stockQuantity[0]}</Text>
-                        <Button title="SELL" />
+                <Text style={mainStyle.basicText}>{stockQuantity[0]}</Text>
+                <View>
+                    <View style={mainStyle.horizonFlow}>
+                        {teststockQuantity === 0 &&
+                            <View>
+                                <Text style={mainStyle.basicText}>Apple : {stockQuantity[0]}</Text>
+                                <Button title="SELL" />
+                            </View>
+                        }   
                     </View>
-                }
+                </View>
                 <View style={mainStyle.spacer} />
                 <Button title="Back to Dashboard" onPress={() => navigation.navigate("dashboard")}/>
             </View>
