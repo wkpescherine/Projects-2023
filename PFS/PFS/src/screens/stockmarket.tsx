@@ -1,26 +1,34 @@
-import React , { FC , useState } from "react";
+import React , { FC , useState , useEffect} from "react";
 import { View , Text, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-//import containers from "../Stylesheets/containers"
 import mainStyle from "../stylesheets/mainStyleSheet"
 import { StatusBar } from "expo-status-bar";
-//import { Stocks } from "./components"
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const App : FC = () => {
     const navigation = useNavigation()
 
     //Info related to Apple Stock
     const [appleStockQty, setAppleStockQty] = useState(0)
+    const [appleClose, setAppleClose] = useState(37)
     //Info related to Google Stock
     const [googleStockQty, setGoogleStockQty] = useState(0)
+    const [googleClose, setGoogleClose] = useState(45)
     //Info related to Tesla Stock
     const [teslaStockQty, setTeslaStockQty] = useState(0)
+    const [teslaClose, setTeslaClose] = useState(21)
+
+    //Info related to Money 
+    const [chaseCash,setChaseCash] = useState(0)
+    const [boaCash,setBoaCash] = useState(0)
 
     //Info related to the Portfolio Worth
-    const [invest, setInvested] = useState(0)
+    const [invest, setInvest] = useState(0)
     const [worth, setWorth] = useState(0)
 
-    function stockOptions(purchase:string, action:string){
+    function stockOptions(purchase:string, action:string, cash:number){
+        let tempInvest = invest
+        let tempWorth = worth
         if(purchase === "Apple"){
             if(action === "Buy"){
                 let temp = appleStockQty+1
@@ -48,59 +56,84 @@ const App : FC = () => {
                 setTeslaStockQty(temp)
             }
         }
+        if(action === "Buy"){
+            tempInvest += cash
+        } else{
+            tempInvest -= cash
+        }
+        tempWorth = (appleStockQty*appleClose)+(googleStockQty*googleClose)+(teslaStockQty*teslaClose) 
+        setInvest(tempInvest)
+        setWorth(tempWorth)
     }
+
+    const getData = async() =>{
+        try{
+            const value1 = await AsyncStorage.getItem('chaseAccount')
+            const value2 = await AsyncStorage.getItem('boaAccount')
+            setChaseCash(Number(value1))
+            setBoaCash(Number(value2))
+        }catch (e) {
+            console.log(e)
+        }
+    }
+
+    useEffect(()=>{
+        getData()
+    },[])
 
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
                 <Text style={mainStyle.basicCatTitle}>Stock Market Section</Text>
                 <View style={mainStyle.horizonFlow}>
-                    <Text style={mainStyle.basicText}>Chase: $0</Text>
-                    <Text style={mainStyle.basicText}>BoA: $0</Text>
+                    <Text style={mainStyle.basicText}>Chase: ${chaseCash}</Text>
+                    <Text style={mainStyle.basicText}>BoA: ${boaCash}</Text>
                 </View>
                 <View style={mainStyle.spacer} />
                 <View style={mainStyle.horizonFlow}>
                     <Text style={mainStyle.basicText}> Apple</Text>
                     <Text style={mainStyle.basicText}> Open: $34</Text>
-                    <Text style={mainStyle.basicText}> Closed: $37</Text>
+                    <Text style={mainStyle.basicText}> Closed: ${appleClose}</Text>
                     <Text style={mainStyle.basicText}> Chng: +1%</Text>
-                    <Button title="BUY" onPress={() => stockOptions("Apple", "Buy")}/>
+                    <Button title="BUY" onPress={() => stockOptions("Apple", "Buy", appleClose)}/>
                 </View>
                 <View style={mainStyle.horizonFlow}>
                     <Text style={mainStyle.basicText}> Google</Text>
                     <Text style={mainStyle.basicText}> Open: $55</Text>
-                    <Text style={mainStyle.basicText}> Closed: $62</Text>
+                    <Text style={mainStyle.basicText}> Closed: ${googleClose}</Text>
                     <Text style={mainStyle.basicText}> Chng: +1.4%</Text>
-                    <Button title="BUY" onPress={() => stockOptions("Google", "Buy")}/>
+                    <Button title="BUY" onPress={() => stockOptions("Google", "Buy", googleClose)}/>
                 </View>
                 <View style={mainStyle.horizonFlow}>
                     <Text style={mainStyle.basicText}> Tesla</Text>
                     <Text style={mainStyle.basicText}> Open: $24</Text>
-                    <Text style={mainStyle.basicText}> Closed: $22</Text>
+                    <Text style={mainStyle.basicText}> Closed: ${teslaClose}</Text>
                     <Text style={mainStyle.basicText}> Chng: -1%</Text>
-                    <Button title="BUY" onPress={() => stockOptions("Tesla", "Buy")}/>
+                    <Button title="BUY" onPress={() => stockOptions("Tesla", "Buy", teslaClose)}/>
                 </View>
                 <View style={mainStyle.spacer} />
                 <Text style={mainStyle.basicText}>Stock Portfolio</Text>
-                <Text style={mainStyle.basicText}>Invested: $0</Text>
-                <Text style={mainStyle.basicText}>Worth: $0</Text>
+                <View style={mainStyle.horizonFlow}>
+                    <Text style={mainStyle.basicText}>Invested: ${invest}</Text>
+                    <Text style={mainStyle.basicText}>Worth: ${worth}</Text>
+                </View>
                 <View>
                     {appleStockQty !== 0 &&
                         <View style={mainStyle.horizonFlow}>
                             <Text style={mainStyle.basicText}>Apple : {appleStockQty}</Text>
-                            <Button title="SELL" onPress={() => stockOptions("Apple","Sell")}/>
+                            <Button title="SELL" onPress={() => stockOptions("Apple","Sell", appleClose)}/>
                         </View>
                     } 
                     {googleStockQty !== 0 &&
                         <View style={mainStyle.horizonFlow}>
-                            <Text style={mainStyle.basicText}>Tesla : {googleStockQty}</Text>
-                            <Button title="SELL" onPress={() => stockOptions("Google","Sell")}/>
+                            <Text style={mainStyle.basicText}>Google : {googleStockQty}</Text>
+                            <Button title="SELL" onPress={() => stockOptions("Google","Sell", googleClose)}/>
                         </View>
                     } 
                     {teslaStockQty !== 0 &&
                         <View style={mainStyle.horizonFlow}>
                             <Text style={mainStyle.basicText}>Tesla : {teslaStockQty}</Text>
-                            <Button title="SELL" onPress={() => stockOptions("Tesla","Sell")}/>
+                            <Button title="SELL" onPress={() => stockOptions("Tesla","Sell", teslaClose)}/>
                         </View>
                     }   
                 </View>
