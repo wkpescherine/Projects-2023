@@ -10,12 +10,15 @@ const App : FC = () => {
 
     //Info related to Apple Stock
     const [appleStockQty, setAppleStockQty] = useState(0)
+    const [appleOpen, setAppleOpen] = useState(34)
     const [appleClose, setAppleClose] = useState(37)
     //Info related to Google Stock
     const [googleStockQty, setGoogleStockQty] = useState(0)
+    const [googleOpen, setGoogleOpen] = useState(38)
     const [googleClose, setGoogleClose] = useState(45)
     //Info related to Tesla Stock
     const [teslaStockQty, setTeslaStockQty] = useState(0)
+    const [teslaOpen, setTeslaOpen] = useState(22)
     const [teslaClose, setTeslaClose] = useState(21)
 
     //Info related to Money 
@@ -57,8 +60,24 @@ const App : FC = () => {
             }
         }
         if(action === "Buy"){
+            if(chaseCash >= cash){
+                const tempCash = chaseCash-cash
+                setChaseCash(tempCash)
+            }else if(boaCash >= cash){
+                const tempCash = boaCash-cash
+                setChaseCash(tempCash)
+            }else{
+                alert("No money in bank to purchase")
+            }
             tempInvest += cash
         } else{
+            if(chaseCash > boaCash){
+                const tempCash = chaseCash+cash
+                setChaseCash(tempCash)
+            }else{
+                const tempCash = boaCash+cash
+                setBoaCash(tempCash)
+            }
             tempInvest -= cash
         }
         tempWorth = (appleStockQty*appleClose)+(googleStockQty*googleClose)+(teslaStockQty*teslaClose) 
@@ -81,6 +100,10 @@ const App : FC = () => {
         getData()
     },[])
 
+    const saveData = async() => {
+
+    }
+
     return(
         <><StatusBar hidden />
             <View style={mainStyle.container}>
@@ -92,21 +115,21 @@ const App : FC = () => {
                 <View style={mainStyle.spacer} />
                 <View style={mainStyle.horizonFlow}>
                     <Text style={mainStyle.basicText}> Apple</Text>
-                    <Text style={mainStyle.basicText}> Open: $34</Text>
+                    <Text style={mainStyle.basicText}> Open: ${appleOpen}</Text>
                     <Text style={mainStyle.basicText}> Closed: ${appleClose}</Text>
                     <Text style={mainStyle.basicText}> Chng: +1%</Text>
                     <Button title="BUY" onPress={() => stockOptions("Apple", "Buy", appleClose)}/>
                 </View>
                 <View style={mainStyle.horizonFlow}>
                     <Text style={mainStyle.basicText}> Google</Text>
-                    <Text style={mainStyle.basicText}> Open: $55</Text>
+                    <Text style={mainStyle.basicText}> Open: ${googleOpen}</Text>
                     <Text style={mainStyle.basicText}> Closed: ${googleClose}</Text>
                     <Text style={mainStyle.basicText}> Chng: +1.4%</Text>
                     <Button title="BUY" onPress={() => stockOptions("Google", "Buy", googleClose)}/>
                 </View>
                 <View style={mainStyle.horizonFlow}>
                     <Text style={mainStyle.basicText}> Tesla</Text>
-                    <Text style={mainStyle.basicText}> Open: $24</Text>
+                    <Text style={mainStyle.basicText}> Open: ${teslaOpen}</Text>
                     <Text style={mainStyle.basicText}> Closed: ${teslaClose}</Text>
                     <Text style={mainStyle.basicText}> Chng: -1%</Text>
                     <Button title="BUY" onPress={() => stockOptions("Tesla", "Buy", teslaClose)}/>
@@ -138,7 +161,7 @@ const App : FC = () => {
                     }   
                 </View>
                 <View style={mainStyle.spacer} />
-                <Button title="Back to Dashboard" onPress={() => navigation.navigate("dashboard")}/>
+                <Button title="Back to Dashboard" onPress={() => {console.log("test this") ; navigation.navigate("dashboard")}}/>
             </View>
         </>
     )
