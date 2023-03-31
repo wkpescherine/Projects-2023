@@ -112,7 +112,7 @@ const App : FC = () => {
                         <Button title="Create Account" onPress={ () => navigation.navigate("create")}/>
                     </View>
                 }
-                <Text style={mainStyle.basicText}>Version 2.1</Text>
+                <Text style={mainStyle.basicText}>Version 2.2</Text>
             </View>
         </>
     )
