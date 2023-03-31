@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class Hotd implements ActionListener{
+public class Bot implements ActionListener{
 	JLabel version = new JLabel("version 2");
     JFrame window = new JFrame("HOTD bot");
 	JButton Active = new JButton("Activate");
@@ -12,7 +12,7 @@ public class Hotd implements ActionListener{
 
 	Integer number = 0;
 
-    Hotd(){
+    Bot(){
 		Active.addActionListener(this);
 		version.setForeground(Color.WHITE);
 		Disable.setVisible(false);
@@ -37,7 +37,7 @@ public class Hotd implements ActionListener{
 		window.setResizable(false);
     }
     public static void main(String args[]){
-		Hotd bot = new Hotd();
+		Bot bot = new Bot();
 	}   
 
 	public void actionPerformed(ActionEvent e){
