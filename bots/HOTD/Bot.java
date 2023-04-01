@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Bot implements ActionListener{
 	JLabel version = new JLabel("version 2");
-    JFrame window = new JFrame("HOTD bot");
+    JFrame window = new JFrame("Bot");
 	JButton Active = new JButton("Activate");
 	JButton Disable = new JButton("Disable");
 
