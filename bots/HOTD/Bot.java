@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import java.awt.Robot;
+
 
 public class Bot implements ActionListener{
 	JLabel version = new JLabel("version 2");
