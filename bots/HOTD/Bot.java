@@ -54,14 +54,17 @@ public class Bot implements ActionListener{
 	}
 
 	public void counter()throws AWTException{
-		Robot r = new Robot();
 		while(status == "true"){
-			number +=1;
-			System.out.println("Before");
-        	r.mouseMove(100, 400);
-			System.out.println("After");
-			System.out.println(number);
 			try {
+				Robot r = new Robot();
+				int mask = InputEvent.BUTTON1_DOWN_MASK;
+				number +=1;
+				System.out.println("Before");
+				r.mouseMove(10, 40);
+				r.mousePress(mask);
+				r.mousePress(mask);
+				System.out.println("After");
+				System.out.println(number);
 				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();

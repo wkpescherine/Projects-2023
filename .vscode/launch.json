@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Bot",
+            "request": "launch",
+            "mainClass": "Bot",
+            "projectName": "Projects-2023_a7b05a2a"
+        },
+        {
+            "type": "java",
             "name": "Hotd",
             "request": "launch",
             "mainClass": "Hotd",
