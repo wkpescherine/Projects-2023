@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.awt.Robot;
+//import java.awt.Robot;
 
 
 public class Bot implements ActionListener{
@@ -47,7 +47,7 @@ public class Bot implements ActionListener{
 				int mask = InputEvent.BUTTON1_DOWN_MASK;
 				number +=1;
 				System.out.println("Before");
-				r.mouseMove(10, 50);
+				r.mouseMove(10, 400);
 				r.mousePress(mask);
 				r.mousePress(mask);
 				System.out.println("After");
