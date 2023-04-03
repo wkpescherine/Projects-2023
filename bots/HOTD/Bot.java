@@ -7,29 +7,29 @@ import javax.swing.*;
 public class Bot implements ActionListener{
 	JLabel version = new JLabel("version 2");
     JFrame window = new JFrame("Bot");
-	JButton Active = new JButton("Activate");
-	JButton Disable = new JButton("Disable");
+	JButton active = new JButton("Activate");
+	JButton disable = new JButton("Disable");
 
-	static String status = "false";
+	static Boolean status = false;
 
 	static Integer number = 0;
 
     Bot(){
-		Active.addActionListener(this);
+		active.addActionListener(this);
 		version.setForeground(Color.WHITE);
-		Disable.setVisible(false);
-		Disable.addActionListener(
+		disable.setVisible(false);
+		disable.addActionListener(
 			new ActionListener(){
 				public void actionPerformed(ActionEvent e){
-                    status = "false";
-					Active.setVisible(true);
-					Disable.setVisible(false);
+                    status = false;
+					active.setVisible(true);
+					disable.setVisible(false);
 				}
 			}
 		);
 
-		window.add(Active);
-		window.add(Disable);
+		window.add(active);
+		window.add(disable);
 		window.add(version);
 		window.setLayout(new FlowLayout());
         window.getContentPane().setBackground(Color.BLACK);
@@ -38,46 +38,29 @@ public class Bot implements ActionListener{
 		window.setVisible(true);
 		window.setResizable(false);
     }
-    public static void main(String args[]){
+    public static void main(String args[]) throws AWTException{
 		Bot bot = new Bot();
-
-		while(status == "true"){
-			try {
-				Robot r = new Robot();
-				int mask = InputEvent.BUTTON1_DOWN_MASK;
-				number +=1;
-				System.out.println("Before");
-				r.mouseMove(10, 400);
-				r.mousePress(mask);
-				r.mousePress(mask);
-				System.out.println("After");
-				System.out.println(number);
-				//Thread.sleep(5000);
-			} catch (AWTException e) {
-				e.printStackTrace();
-			}
-		}
 	}   
 
 	public void actionPerformed(ActionEvent e){
-		//status = "true";
-		Active.setVisible(false);
-		Disable.setVisible(true);
-		//try {
-		//	counter();
-		//} catch (AWTException e1) {
-		//	e1.printStackTrace();
-		//}
+		status = true;
+		active.setVisible(false);
+		disable.setVisible(true);
+		try {
+			counter();
+		} catch (AWTException e1) {
+			e1.printStackTrace();
+		}
 	}
 
-	public void counter()throws AWTException{
-		while(status == "true"){
+	public static void counter()throws AWTException{
+		while(status == true){
 			try {
 				Robot r = new Robot();
 				int mask = InputEvent.BUTTON1_DOWN_MASK;
 				number +=1;
 				System.out.println("Before");
-				r.mouseMove(10, 50);
+				r.mouseMove(100, 50);
 				r.mousePress(mask);
 				r.mousePress(mask);
 				System.out.println("After");

@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Robo2",
+            "request": "launch",
+            "mainClass": "Robo2",
+            "projectName": "Projects-2023_a7b05a2a"
+        },
+        {
+            "type": "java",
+            "name": "Robo",
+            "request": "launch",
+            "mainClass": "Robo",
+            "projectName": "Projects-2023_a7b05a2a"
+        },
+        {
+            "type": "java",
             "name": "Bot",
             "request": "launch",
             "mainClass": "Bot",
