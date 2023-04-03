@@ -10,9 +10,9 @@ public class Bot implements ActionListener{
 	JButton Active = new JButton("Activate");
 	JButton Disable = new JButton("Disable");
 
-	String status = "false";
+	static String status = "false";
 
-	Integer number = 0;
+	static Integer number = 0;
 
     Bot(){
 		Active.addActionListener(this);
@@ -40,17 +40,34 @@ public class Bot implements ActionListener{
     }
     public static void main(String args[]){
 		Bot bot = new Bot();
+
+		while(status == "true"){
+			try {
+				Robot r = new Robot();
+				int mask = InputEvent.BUTTON1_DOWN_MASK;
+				number +=1;
+				System.out.println("Before");
+				r.mouseMove(10, 50);
+				r.mousePress(mask);
+				r.mousePress(mask);
+				System.out.println("After");
+				System.out.println(number);
+				//Thread.sleep(5000);
+			} catch (AWTException e) {
+				e.printStackTrace();
+			}
+		}
 	}   
 
 	public void actionPerformed(ActionEvent e){
-		status = "true";
+		//status = "true";
 		Active.setVisible(false);
 		Disable.setVisible(true);
-		try {
-			counter();
-		} catch (AWTException e1) {
-			e1.printStackTrace();
-		}
+		//try {
+		//	counter();
+		//} catch (AWTException e1) {
+		//	e1.printStackTrace();
+		//}
 	}
 
 	public void counter()throws AWTException{
@@ -60,7 +77,7 @@ public class Bot implements ActionListener{
 				int mask = InputEvent.BUTTON1_DOWN_MASK;
 				number +=1;
 				System.out.println("Before");
-				r.mouseMove(10, 40);
+				r.mouseMove(10, 50);
 				r.mousePress(mask);
 				r.mousePress(mask);
 				System.out.println("After");
