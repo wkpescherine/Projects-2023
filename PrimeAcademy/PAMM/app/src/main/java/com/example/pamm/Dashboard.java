@@ -7,19 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 
-public class MainActivity extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dashboard);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
     }
 
-    public void clickToStart(View v){
-        Intent intent = new Intent(this, Dashboard.class);
+    public void clickToExit(View v){
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
