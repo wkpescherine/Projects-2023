@@ -18,6 +18,11 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
+    public void clickToChallenge(View v){
+        Intent intent = new Intent(this, Challenge.class);
+        startActivity(intent);
+    }
+
     public void clickToExit(View v){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);

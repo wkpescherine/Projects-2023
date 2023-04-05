@@ -9,11 +9,37 @@
     android:orientation="vertical"
     android:background="#000">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grade: none"
+            android:textColor="#fff"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tier: 0"
+            android:textColor="#fff"/>
+    </LinearLayout>
+
     <Button
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Tier"
+        android:layout_margin="25dp"
+        android:layout_gravity="center_horizontal"
+        android:onClick="clickToChallenge"
+        />
+
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="EXIT"
         android:layout_gravity="center_horizontal"
         android:onClick="clickToExit"
+        />
 
 </LinearLayout>
