@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class Challenge extends AppCompatActivity {
     Data data = new Data();
     String answer = "";
@@ -41,9 +43,28 @@ public class Challenge extends AppCompatActivity {
         TextView dataTier = findViewById(R.id.ctier);
         dataTier.setText("Tier: "+ data.tier);
         dataGrade.setText("Grade: "+ data.grade);
+        gameLogic();
     }
 
-    public void checkSolution(View v){}
+    public void checkSolution(View v){
+        setDataUI();
+    }
+
+    public void gameLogic (){
+        TextView num1 = findViewById(R.id.number1);
+        TextView num2 = findViewById(R.id.number2);
+        TextView sym = findViewById(R.id.symbol);
+        String symbolUsed = "+";
+        Random rnd = new Random(10);
+        Integer rndNum1 = rnd.nextInt();
+        Integer rndNum2 = rnd.nextInt();
+        if (symbolUsed.equals("+")) {
+            solution = rndNum1+rndNum2;
+        }
+        sym.setText(symbolUsed);
+        num1.setText(rndNum1.toString());
+        num2.setText(rndNum2.toString());
+    }
 
     public void backToDashboard(View v){
         Intent intent = new Intent(this, Dashboard.class);
