@@ -10,18 +10,23 @@
     android:background="#000">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_gravity="center_horizontal">
         <TextView
+            android:id="@+id/dgrade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Grade: none"
+            android:text="Grade"
+            android:layout_marginRight="25dp"
             android:textColor="#fff"/>
         <TextView
+            android:id="@+id/dtier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tier: 0"
+            android:text="Tier"
+            android:layout_marginLeft="25dp"
             android:textColor="#fff"/>
     </LinearLayout>
 

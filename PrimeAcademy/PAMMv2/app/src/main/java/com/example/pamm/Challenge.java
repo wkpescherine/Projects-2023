@@ -9,6 +9,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 public class Challenge extends AppCompatActivity {
+    Data data = new Data();
     String answer = "";
     String question = "";
     Integer solution = 0;
@@ -22,6 +23,7 @@ public class Challenge extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+        setDataUI();
     }
 
     public void handleKeypadNum(View v){
@@ -33,6 +35,15 @@ public class Challenge extends AppCompatActivity {
         TextView answerText = findViewById(R.id.answer);
         answerText.setText(answer);
     }
+
+    public void setDataUI(){
+        TextView dataGrade = findViewById(R.id.cgrade);
+        TextView dataTier = findViewById(R.id.ctier);
+        dataTier.setText("Tier: "+ data.tier);
+        dataGrade.setText("Grade: "+ data.grade);
+    }
+
+    public void checkSolution(View v){}
 
     public void backToDashboard(View v){
         Intent intent = new Intent(this, Dashboard.class);
