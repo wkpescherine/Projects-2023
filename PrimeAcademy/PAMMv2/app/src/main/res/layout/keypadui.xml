@@ -74,7 +74,7 @@
                 android:textColor="#fff"
                 android:gravity="center"
                 android:textSize="24dp"
-                android:onClick="handleMathSym"/>
+                android:onClick="handleKeypadNum"/>
             <TextView
                 android:text="7"
                 android:layout_width="60dp"
@@ -82,7 +82,7 @@
                 android:textColor="#fff"
                 android:gravity="center"
                 android:textSize="24dp"
-                android:onClick="handleMathSym"/>
+                android:onClick="handleKeypadNum"/>
             <TextView
                 android:text="8"
                 android:layout_width="60dp"
@@ -90,7 +90,7 @@
                 android:textColor="#fff"
                 android:gravity="center"
                 android:textSize="24dp"
-                android:onClick="handleMathSym"/>
+                android:onClick="handleKeypadNum"/>
             <TextView
                 android:text="9"
                 android:layout_width="60dp"
@@ -98,7 +98,7 @@
                 android:textColor="#fff"
                 android:gravity="center"
                 android:textSize="24dp"
-                android:onClick="handleMathSym"/>
+                android:onClick="handleKeypadNum"/>
             <TextView
                 android:text="0"
                 android:layout_width="60dp"
@@ -106,7 +106,7 @@
                 android:textColor="#fff"
                 android:gravity="center"
                 android:textSize="24dp"
-                android:onClick="handleMathSym"/>
+                android:onClick="handleKeypadNum"/>
             <TextView
                 android:text="DEL"
                 android:layout_width="60dp"
@@ -114,7 +114,7 @@
                 android:textColor="#fff"
                 android:gravity="center"
                 android:textSize="24dp"
-                android:onClick="handleMathSym"/>
+                android:onClick="handleKeypadNum"/>
         </TableRow>
     </TableLayout>
     </LinearLayout>

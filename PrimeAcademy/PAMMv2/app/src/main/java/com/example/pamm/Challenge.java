@@ -31,6 +31,12 @@ public class Challenge extends AppCompatActivity {
     public void handleKeypadNum(View v){
         TextView t = (TextView) v;
         String valueSelect = t.getText().toString();
+        if(valueSelect.equals("DEL")){
+            valueSelect = "";
+            if(answer.length()>=1) {
+                answer = answer.substring(0, answer.length()-1);
+            }
+        }
         answer += valueSelect;
         //data.currentNum += valueSelect;
         //renderSection();
@@ -47,6 +53,7 @@ public class Challenge extends AppCompatActivity {
     }
 
     public void checkSolution(View v){
+        gameLogic();
         setDataUI();
     }
 
@@ -55,9 +62,9 @@ public class Challenge extends AppCompatActivity {
         TextView num2 = findViewById(R.id.number2);
         TextView sym = findViewById(R.id.symbol);
         String symbolUsed = "+";
-        Random rnd = new Random(10);
-        Integer rndNum1 = rnd.nextInt();
-        Integer rndNum2 = rnd.nextInt();
+        Random rnd = new Random();
+        Integer rndNum1 = rnd.nextInt(10)+1;
+        Integer rndNum2 = rnd.nextInt(10)+1;
         if (symbolUsed.equals("+")) {
             solution = rndNum1+rndNum2;
         }
