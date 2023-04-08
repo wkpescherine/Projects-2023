@@ -13,10 +13,10 @@ import java.util.Random;
 public class Challenge extends AppCompatActivity {
     Data data = new Data();
     String answer = "";
-    String question = "";
+    //String question = "";
     Integer solution = 0;
-    Integer answerInt = 0;
-    Double answerDecimal = 0.000;
+    Integer solved = 0;
+    Integer boundValue = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +47,22 @@ public class Challenge extends AppCompatActivity {
     public void setDataUI(){
         TextView dataGrade = findViewById(R.id.cgrade);
         TextView dataTier = findViewById(R.id.ctier);
+        TextView answersSolved = findViewById(R.id.csolve);
+        TextView answerString = findViewById(R.id.answer);
         dataTier.setText("Tier: "+ data.tier);
         dataGrade.setText("Grade: "+ data.grade);
+        answersSolved.setText("Solved: "+ solved);
+        answerString.setText("");
+        answer="";
         gameLogic();
     }
 
     public void checkSolution(View v){
+        if(answer.equals("")){ solved -= 1;}
+        else if(solution == Integer.valueOf(answer)){
+            solved += 1;
+        } else { solved -= 1;}
+        checkTier();
         gameLogic();
         setDataUI();
     }
@@ -63,14 +73,27 @@ public class Challenge extends AppCompatActivity {
         TextView sym = findViewById(R.id.symbol);
         String symbolUsed = "+";
         Random rnd = new Random();
-        Integer rndNum1 = rnd.nextInt(10)+1;
-        Integer rndNum2 = rnd.nextInt(10)+1;
+        Integer rndNum1 = rnd.nextInt(boundValue)+1;
+        Integer rndNum2 = rnd.nextInt(boundValue)+1;
         if (symbolUsed.equals("+")) {
             solution = rndNum1+rndNum2;
         }
         sym.setText(symbolUsed);
         num1.setText(rndNum1.toString());
         num2.setText(rndNum2.toString());
+    }
+
+    public void checkTier(){
+        if(solved == 10){
+            data.tier += 1;
+            solved = 0;
+            boundValue += 5;
+        }
+        if(solved == -1 && data.tier > 1){
+            data.tier -= 1;
+            solved = 0;
+        }
+        data.checkGrade();
     }
 
     public void backToDashboard(View v){
