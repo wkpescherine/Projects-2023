@@ -19,12 +19,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Grade"
+            android:layout_marginRight="25dp"
             android:textColor="#fff"/>
         <TextView
             android:id="@+id/ctier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tier"
+            android:layout_marginRight="25dp"
             android:textColor="#fff"/>
         <TextView
             android:id="@+id/csolve"

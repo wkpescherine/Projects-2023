@@ -2,12 +2,12 @@ package com.example.pamm;
 
 public class Data {
     public static Integer tier = 1;
-    public static String grade = "k";
+    public static String grade = "K";
 
     public void checkGrade(){
-        if(tier >= 10){ grade = "1st";}
-        if(tier >= 20){ grade = "2nd";}
-        if(tier >= 30){ grade = "3rd";}
-        if(tier >= 40){ grade = "4th";}
+        if(tier == 2){ grade = "1st";}
+        if(tier == 3){ grade = "2nd";}
+        if(tier >= 40){ grade = "3rd";}
+        if(tier >= 50){ grade = "4th";}
     }
 }
