@@ -16,7 +16,10 @@ public class Challenge extends AppCompatActivity {
     //String question = "";
     Integer solution = 0;
     Integer solved = 0;
-    Integer boundValue = 10;
+    Integer addSubBoundValue = 5;
+    Integer mulDivBoundValue = 5;
+    Integer symbolBound = 0;
+    String [] symbolArray = {"+","-","*","/"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,12 +74,22 @@ public class Challenge extends AppCompatActivity {
         TextView num1 = findViewById(R.id.number1);
         TextView num2 = findViewById(R.id.number2);
         TextView sym = findViewById(R.id.symbol);
-        String symbolUsed = "+";
+        //String symbolUsed = "+";
+        if(data.tier >= 1){symbolBound = 1;}
+        if(data.tier >= 5){symbolBound = 2;}
+        if(data.tier >= 15){symbolBound = 3;}
+        if(data.tier >= 30){symbolBound = 4;}
         Random rnd = new Random();
-        Integer rndNum1 = rnd.nextInt(boundValue)+1;
-        Integer rndNum2 = rnd.nextInt(boundValue)+1;
+        Integer symbolValue = rnd.nextInt(symbolBound);
+        String symbolUsed = symbolArray[symbolValue];
+        Integer rndNum1 = rnd.nextInt(addSubBoundValue)+1;
+        Integer rndNum2 = rnd.nextInt(addSubBoundValue)+1;
         if (symbolUsed.equals("+")) {
             solution = rndNum1+rndNum2;
+        }else if( symbolUsed.equals("-")){
+            solution = rndNum1 - rndNum2;
+        }else if( symbolUsed.equals("*")){
+            solution = rndNum1 * rndNum2;
         }
         sym.setText(symbolUsed);
         num1.setText(rndNum1.toString());
@@ -87,10 +100,11 @@ public class Challenge extends AppCompatActivity {
         if(solved == 10){
             data.tier += 1;
             solved = 0;
-            boundValue += 5;
+            addSubBoundValue += 5;
         }
         if(solved == -1 && data.tier > 1){
             data.tier -= 1;
+            addSubBoundValue -= 5;
             solved = 0;
         }
         data.checkGrade();

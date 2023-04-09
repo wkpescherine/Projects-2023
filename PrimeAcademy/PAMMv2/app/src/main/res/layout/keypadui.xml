@@ -55,7 +55,7 @@
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
             <TextView
-                android:text="."
+                android:text="-"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:textColor="#fff"
