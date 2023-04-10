@@ -2,6 +2,7 @@ package com.example.pamm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
+    Data mData = new Data();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +24,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void checkPref(){
         String filename = "PAMM";
-        SharedPreferences sharedPreferences = getSharedPreferences(filename,MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences(filename,MODE_PRIVATE);
         if(filename.isEmpty()){
-            sharedPreferences.Editor 
-        }else{
-
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putString("grade", "k");
+            editor.putInt("tier", 1);
+            editor.commit();
         }
     }
 
