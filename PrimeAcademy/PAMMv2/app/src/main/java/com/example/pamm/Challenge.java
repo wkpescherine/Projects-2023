@@ -12,6 +12,8 @@ import java.util.Random;
 
 public class Challenge extends AppCompatActivity {
     Data data = new Data();
+    SolveEquation solve = new SolveEquation();
+
     String answer = "";
     //String question = "";
     Integer solution = 0;
@@ -33,6 +35,8 @@ public class Challenge extends AppCompatActivity {
 
     public void handleKeypadNum(View v){
         TextView t = (TextView) v;
+        TextView clearResponse = findViewById(R.id.cresponse);
+        clearResponse.setText("");
         String valueSelect = t.getText().toString();
         if(valueSelect.equals("DEL")){
             valueSelect = "";
@@ -61,10 +65,18 @@ public class Challenge extends AppCompatActivity {
     }
 
     public void checkSolution(View v){
-        if(answer.equals("")){ solved -= 1;}
+        TextView response = findViewById(R.id.cresponse);
+        if(answer.equals("")){
+            solved -= 1;
+            response.setText("No answer");
+        }
         else if(solution == Integer.valueOf(answer)){
             solved += 1;
-        } else { solved -= 1;}
+            response.setText("Correct");
+        } else {
+            solved -= 1;
+            response.setText("Incorrect");
+        }
         checkTier();
         gameLogic();
         setDataUI();
@@ -84,13 +96,7 @@ public class Challenge extends AppCompatActivity {
         String symbolUsed = symbolArray[symbolValue];
         Integer rndNum1 = rnd.nextInt(addSubBoundValue)+1;
         Integer rndNum2 = rnd.nextInt(addSubBoundValue)+1;
-        if (symbolUsed.equals("+")) {
-            solution = rndNum1+rndNum2;
-        }else if( symbolUsed.equals("-")){
-            solution = rndNum1 - rndNum2;
-        }else if( symbolUsed.equals("*")){
-            solution = rndNum1 * rndNum2;
-        }
+        solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
         sym.setText(symbolUsed);
         num1.setText(rndNum1.toString());
         num2.setText(rndNum2.toString());

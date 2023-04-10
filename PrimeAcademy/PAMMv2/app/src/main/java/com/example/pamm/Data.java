@@ -1,8 +1,8 @@
 package com.example.pamm;
 
 public class Data {
-    public static Integer tier = 1;
-    public static String grade = "K";
+    public static Integer tier = 0;
+    public static String grade = "None";
 
     public void checkGrade(){
         if(tier == 1){ grade = "K";}
