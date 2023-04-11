@@ -17,6 +17,7 @@ public class Challenge extends AppCompatActivity {
     String answer = "";
     //String question = "";
     Integer solution = 0;
+    double solution2 = 0.0;
     Integer solved = 0;
     Integer addSubBoundValue = 5;
     Integer mulDivBoundValue = 5;
@@ -96,7 +97,11 @@ public class Challenge extends AppCompatActivity {
         String symbolUsed = symbolArray[symbolValue];
         Integer rndNum1 = rnd.nextInt(addSubBoundValue)+1;
         Integer rndNum2 = rnd.nextInt(addSubBoundValue)+1;
-        solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
+        if(symbolUsed.equals("/")){
+            solution2 = solve.basicDivide(rndNum1, rndNum2);
+        }else{
+            solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
+        }
         sym.setText(symbolUsed);
         num1.setText(rndNum1.toString());
         num2.setText(rndNum2.toString());
