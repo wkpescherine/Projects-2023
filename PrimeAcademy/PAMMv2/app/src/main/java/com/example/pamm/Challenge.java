@@ -3,6 +3,7 @@ package com.example.pamm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -15,10 +16,7 @@ public class Challenge extends AppCompatActivity {
     SolveEquation solve = new SolveEquation();
 
     String answer = "";
-    //String question = "";
-    Integer solution = 0;
-    double solution2 = 0.0;
-    Integer solved = 0;
+    double solution = 0;
     Integer addSubBoundValue = 5;
     Integer mulDivBoundValue = 5;
     Integer symbolBound = 0;
@@ -57,9 +55,10 @@ public class Challenge extends AppCompatActivity {
         TextView dataTier = findViewById(R.id.ctier);
         TextView answersSolved = findViewById(R.id.csolve);
         TextView answerString = findViewById(R.id.answer);
+        data.checkNextTier();
         dataTier.setText("Tier: "+ data.tier);
         dataGrade.setText("Grade: "+ data.grade);
-        answersSolved.setText("Solved: "+ solved);
+        answersSolved.setText("Solved: "+ data.solvedAnswers + " of "+ data.nextTier);
         answerString.setText("");
         answer="";
         gameLogic();
@@ -68,14 +67,14 @@ public class Challenge extends AppCompatActivity {
     public void checkSolution(View v){
         TextView response = findViewById(R.id.cresponse);
         if(answer.equals("")){
-            solved -= 1;
+            data.solvedAnswers -= 1;
             response.setText("No answer");
         }
-        else if(solution == Integer.valueOf(answer)){
-            solved += 1;
+        else if(solution == Double.valueOf(answer)){
+            data.solvedAnswers += 1;
             response.setText("Correct");
         } else {
-            solved -= 1;
+            data.solvedAnswers -= 1;
             response.setText("Incorrect");
         }
         checkTier();
@@ -87,7 +86,6 @@ public class Challenge extends AppCompatActivity {
         TextView num1 = findViewById(R.id.number1);
         TextView num2 = findViewById(R.id.number2);
         TextView sym = findViewById(R.id.symbol);
-        //String symbolUsed = "+";
         if(data.tier >= 1){symbolBound = 1;}
         if(data.tier >= 5){symbolBound = 2;}
         if(data.tier >= 15){symbolBound = 3;}
@@ -97,28 +95,34 @@ public class Challenge extends AppCompatActivity {
         String symbolUsed = symbolArray[symbolValue];
         Integer rndNum1 = rnd.nextInt(addSubBoundValue)+1;
         Integer rndNum2 = rnd.nextInt(addSubBoundValue)+1;
-        if(symbolUsed.equals("/")){
-            solution2 = solve.basicDivide(rndNum1, rndNum2);
-        }else{
-            solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
-        }
+        solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
         sym.setText(symbolUsed);
         num1.setText(rndNum1.toString());
         num2.setText(rndNum2.toString());
     }
 
     public void checkTier(){
-        if(solved == 10){
+        if(data.solvedAnswers == 10){
             data.tier += 1;
-            solved = 0;
+            data.solvedAnswers = 0;
             addSubBoundValue += 5;
         }
-        if(solved == -1 && data.tier > 1){
+        if(data.solvedAnswers == -1 && data.tier > 1){
             data.tier -= 1;
             addSubBoundValue -= 5;
-            solved = 0;
+            data.solvedAnswers = 0;
         }
         data.checkGrade();
+        saveData();
+    }
+
+    public void saveData(){
+        String filename = "PAMM";
+        SharedPreferences sp = getSharedPreferences(filename,MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("grade", data.grade);
+        editor.putInt("tier", data.tier);
+        editor.commit();
     }
 
     public void backToDashboard(View v){
