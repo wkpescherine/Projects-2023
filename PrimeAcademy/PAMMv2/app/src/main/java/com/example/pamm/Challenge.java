@@ -17,7 +17,7 @@ public class Challenge extends AppCompatActivity {
 
     String answer = "";
     double solution = 0;
-    Integer addSubBoundValue = 5;
+    //Integer addSubBoundValue = 5;
     Integer mulDivBoundValue = 5;
     Integer symbolBound = 0;
     String [] symbolArray = {"+","-","*","/"};
@@ -91,8 +91,11 @@ public class Challenge extends AppCompatActivity {
         Random rnd = new Random();
         Integer symbolValue = rnd.nextInt(symbolBound);
         String symbolUsed = symbolArray[symbolValue];
-        Integer rndNum1 = rnd.nextInt(addSubBoundValue)+1;
-        Integer rndNum2 = rnd.nextInt(addSubBoundValue)+1;
+        int boundValue = 0;
+        if(symbolValue == 0){ boundValue = data.addBoundValue;}
+        if(symbolValue == 1){ boundValue = data.subBoundValue;}
+        Integer rndNum1 = rnd.nextInt(boundValue)+1;
+        Integer rndNum2 = rnd.nextInt(boundValue)+1;
         solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
         sym.setText(symbolUsed);
         num1.setText(rndNum1.toString());
@@ -103,11 +106,9 @@ public class Challenge extends AppCompatActivity {
         if(data.solvedAnswers == data.nextTier){
             data.tier += 1;
             data.solvedAnswers = 0;
-            addSubBoundValue += 5;
         }
         if(data.solvedAnswers == -1 && data.tier > 1){
             data.tier -= 1;
-            addSubBoundValue -= 5;
             data.solvedAnswers = 0;
         }
         data.checkGrade();

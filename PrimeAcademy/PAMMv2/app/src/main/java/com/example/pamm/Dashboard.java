@@ -32,9 +32,16 @@ public class Dashboard extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void clickToProfile(View v){
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+    }
+
     public void setDashDataUI(){
+        TextView dashDataUsername = findViewById(R.id.username);
         TextView dashDataGrade = findViewById(R.id.dgrade);
         TextView dashDataTier = findViewById(R.id.dtier);
+        dashDataUsername.setText(data.username);
         dashDataTier.setText("Tier: "+ data.tier);
         dashDataGrade.setText("Grade: "+ data.grade);
     }

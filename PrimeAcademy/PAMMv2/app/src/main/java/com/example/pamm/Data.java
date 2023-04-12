@@ -4,6 +4,7 @@ import android.content.SharedPreferences;
 
 public class Data {
     //Player Data
+    public static String username = "Guest";
     public static Integer tier = 0;
     public static String grade = "None";
 
@@ -30,6 +31,6 @@ public class Data {
         if(tier == 2){ nextTier = 7; addBoundValue = 7;}
         if(tier == 3){ nextTier = 10; addBoundValue = 10;}
         if(tier == 4){ nextTier = 15; addBoundValue =20;}
-        if(tier == 4){ nextTier = 15; addBoundValue =20; subBoundValue = 5;}
+        if(tier == 5){ nextTier = 20; addBoundValue =20; subBoundValue = 5;}
     }
 }

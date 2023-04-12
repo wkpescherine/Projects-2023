@@ -9,6 +9,16 @@
     android:orientation="vertical"
     android:background="#000">
 
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_gravity="center_horizontal"
+        android:textSize="32dp"
+        android:textColor="#fff"
+        android:onClick="clickToProfile"/>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,13 +41,43 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Next Tier"
-        android:layout_margin="25dp"
+        android:text="Start Grade Challenge"
+        android:layout_margin="5dp"
         android:layout_gravity="center_horizontal"
         android:onClick="clickToChallenge"
         />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="20 Questions Challenge"
+        android:layout_margin="5dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Timed Challenge"
+        android:layout_margin="5dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#fff"
+            android:text="Profile"
+            android:textAlignment="center"
+            android:paddingTop="20dp"
+            />
+    </LinearLayout>
 
     <Button
         android:layout_width="match_parent"
