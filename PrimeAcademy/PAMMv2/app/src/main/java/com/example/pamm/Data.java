@@ -26,9 +26,10 @@ public class Data {
     }
 
     public void checkNextTier(){
-        if(tier == 1){ nextTier = 5;}
-        if(tier == 2){ nextTier = 7;}
-        if(tier == 3){ nextTier = 10;}
-        if(tier == 4){ nextTier = 15;}
+        if(tier == 1){ nextTier = 5; addBoundValue = 5;}
+        if(tier == 2){ nextTier = 7; addBoundValue = 7;}
+        if(tier == 3){ nextTier = 10; addBoundValue = 10;}
+        if(tier == 4){ nextTier = 15; addBoundValue =20;}
+        if(tier == 4){ nextTier = 15; addBoundValue =20; subBoundValue = 5;}
     }
 }

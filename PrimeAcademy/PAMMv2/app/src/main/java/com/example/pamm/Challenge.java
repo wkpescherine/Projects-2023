@@ -44,8 +44,6 @@ public class Challenge extends AppCompatActivity {
             }
         }
         answer += valueSelect;
-        //data.currentNum += valueSelect;
-        //renderSection();
         TextView answerText = findViewById(R.id.answer);
         answerText.setText(answer);
     }
@@ -102,7 +100,7 @@ public class Challenge extends AppCompatActivity {
     }
 
     public void checkTier(){
-        if(data.solvedAnswers == 10){
+        if(data.solvedAnswers == data.nextTier){
             data.tier += 1;
             data.solvedAnswers = 0;
             addSubBoundValue += 5;
