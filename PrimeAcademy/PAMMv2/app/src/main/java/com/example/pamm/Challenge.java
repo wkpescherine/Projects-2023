@@ -18,8 +18,8 @@ public class Challenge extends AppCompatActivity {
     String answer = "";
     double solution = 0;
     //Integer addSubBoundValue = 5;
-    Integer mulDivBoundValue = 5;
-    Integer symbolBound = 0;
+    //Integer mulDivBoundValue = 5;
+    //Integer symbolBound = 0;
     String [] symbolArray = {"+","-","*","/"};
 
     @Override
@@ -84,12 +84,10 @@ public class Challenge extends AppCompatActivity {
         TextView num1 = findViewById(R.id.number1);
         TextView num2 = findViewById(R.id.number2);
         TextView sym = findViewById(R.id.symbol);
-        if(data.tier >= 1){symbolBound = 1;}
-        if(data.tier >= 5){symbolBound = 2;}
-        if(data.tier >= 15){symbolBound = 3;}
-        if(data.tier >= 30){symbolBound = 4;}
+        //if(data.tier >= 15){symbolBound = 3;}
+        //if(data.tier >= 30){symbolBound = 4;}
         Random rnd = new Random();
-        Integer symbolValue = rnd.nextInt(symbolBound);
+        Integer symbolValue = rnd.nextInt(data.symbolBound);
         String symbolUsed = symbolArray[symbolValue];
         int boundValue = 0;
         if(symbolValue == 0){ boundValue = data.addBoundValue;}

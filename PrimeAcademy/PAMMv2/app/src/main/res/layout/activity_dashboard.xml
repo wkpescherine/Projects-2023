@@ -55,6 +55,7 @@
         android:text="20 Questions Challenge"
         android:layout_margin="5dp"
         android:layout_gravity="center_horizontal"
+        android:onClick="clickTo20Questions"
         />
 
     <Button

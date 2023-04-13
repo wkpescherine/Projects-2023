@@ -37,6 +37,12 @@ public class Dashboard extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void clickTo20Questions(View v){
+        data.tier = 500;
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
+    }
+
     public void setDashDataUI(){
         TextView dashDataUsername = findViewById(R.id.username);
         TextView dashDataGrade = findViewById(R.id.dgrade);

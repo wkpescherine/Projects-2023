@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = sp.edit();
             editor.putString("grade", "k");
             editor.putInt("tier", 1);
+            editor.putInt("totalSolved", 0);
+            editor.putInt("totalAsked", 0);
             editor.commit();
         }
     }
