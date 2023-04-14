@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
-    Data mData = new Data();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Dashboard extends AppCompatActivity {
@@ -28,6 +29,10 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void clickToChallenge(View v){
+        LinearLayout standard = findViewById(R.id.standardHeader);
+        LinearLayout q20 = findViewById(R.id.q20Header);
+        standard.setVisibility(View.VISIBLE);
+        q20.setVisibility(View.GONE);
         Intent intent = new Intent(this, Challenge.class);
         startActivity(intent);
     }
@@ -38,7 +43,11 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void clickTo20Questions(View v){
-        data.tier = 500;
+        LinearLayout standard = findViewById(R.id.standardHeader);
+        LinearLayout q20 = findViewById(R.id.q20Header);
+        standard.setVisibility(View.GONE);
+        q20.setVisibility(View.VISIBLE);
+        data.specialTier = 500;
         Intent intent = new Intent(this, Profile.class);
         startActivity(intent);
     }

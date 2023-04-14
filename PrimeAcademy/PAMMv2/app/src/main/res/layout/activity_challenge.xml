@@ -12,6 +12,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/standardHeader"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal">
         <TextView
@@ -35,6 +36,36 @@
             android:text="Solved"
             android:textColor="#fff"/>
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/q20Header"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/q20Questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 of 20"
+            android:layout_marginRight="25dp"
+            android:textColor="#fff"/>
+        <TextView
+            android:id="@+id/q20Questions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correct: 0"
+            android:layout_marginRight="25dp"
+            android:textColor="#fff"/>
+        <TextView
+            android:id="@+id/q20Points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Points: 0"
+            android:textColor="#fff"/>
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="wrap_content"
