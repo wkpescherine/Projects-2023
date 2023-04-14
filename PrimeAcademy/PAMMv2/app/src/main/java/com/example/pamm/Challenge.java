@@ -87,7 +87,7 @@ public class Challenge extends AppCompatActivity {
         TextView num2 = findViewById(R.id.number2);
         TextView sym = findViewById(R.id.symbol);
         Random rnd = new Random();
-        Integer symbolValue = rnd.nextInt(4);
+        Integer symbolValue = rnd.nextInt(data.symbolBound);
         String symbolUsed = symbolArray[symbolValue];
         int boundValue = 0;
         if(symbolValue == 0){ boundValue = data.addBoundValue;}
