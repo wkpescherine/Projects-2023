@@ -59,10 +59,12 @@ public class Challenge extends AppCompatActivity {
         answersSolved.setText("Solved: "+ data.solvedAnswers + " of "+ data.nextTier);
         answerString.setText("");
         answer="";
-        gameLogic();
+        if(data.specialTier == 0){ standardGameLogic();}
+        if(data.specialTier == 500){ q20GameLogic();}
     }
 
     public void checkSolution(View v){
+        data.totalAsked += 1;
         TextView response = findViewById(R.id.cresponse);
         if(answer.equals("")){
             data.solvedAnswers -= 1;
@@ -71,21 +73,37 @@ public class Challenge extends AppCompatActivity {
         else if(solution == Double.valueOf(answer)){
             data.solvedAnswers += 1;
             response.setText("Correct");
+            data.totalCorrect += 1;
         } else {
             data.solvedAnswers -= 1;
             response.setText("Incorrect");
         }
         checkTier();
-        gameLogic();
         setDataUI();
     }
 
-    public void gameLogic (){
+    public void standardGameLogic (){
         TextView num1 = findViewById(R.id.number1);
         TextView num2 = findViewById(R.id.number2);
         TextView sym = findViewById(R.id.symbol);
-        //if(data.tier >= 15){symbolBound = 3;}
-        //if(data.tier >= 30){symbolBound = 4;}
+        Random rnd = new Random();
+        Integer symbolValue = rnd.nextInt(4);
+        String symbolUsed = symbolArray[symbolValue];
+        int boundValue = 0;
+        if(symbolValue == 0){ boundValue = data.addBoundValue;}
+        if(symbolValue == 1){ boundValue = data.subBoundValue;}
+        Integer rndNum1 = rnd.nextInt(boundValue)+1;
+        Integer rndNum2 = rnd.nextInt(boundValue)+1;
+        solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
+        sym.setText(symbolUsed);
+        num1.setText(rndNum1.toString());
+        num2.setText(rndNum2.toString());
+    }
+
+    public void q20GameLogic (){
+        TextView num1 = findViewById(R.id.number1);
+        TextView num2 = findViewById(R.id.number2);
+        TextView sym = findViewById(R.id.symbol);
         Random rnd = new Random();
         Integer symbolValue = rnd.nextInt(data.symbolBound);
         String symbolUsed = symbolArray[symbolValue];
@@ -119,6 +137,8 @@ public class Challenge extends AppCompatActivity {
         SharedPreferences.Editor editor = sp.edit();
         editor.putString("grade", data.grade);
         editor.putInt("tier", data.tier);
+        editor.putInt("totalSolved", data.totalCorrect);
+        editor.putInt("totalAsked", data.totalAsked);
         editor.commit();
     }
 

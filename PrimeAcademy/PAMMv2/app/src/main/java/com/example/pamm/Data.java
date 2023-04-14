@@ -8,7 +8,7 @@ public class Data {
     public static Integer tier = 0;
     public static String grade = "None";
     public static int totalCorrect = 0;
-    public static int TotalAsked = 0;
+    public static int totalAsked = 0;
     public static int specialTier = 0;
     public static int q20Asked = 0;
     public static int q20Solved = 0;
@@ -34,6 +34,7 @@ public class Data {
     }
 
     public void checkNextTier(){
+        //Kindergarten Tier
         if(tier == 1){ nextTier = 5; addBoundValue = 5; symbolBound = 1;}
         if(tier == 2){ nextTier = 7; addBoundValue = 7;}
         if(tier == 3){ nextTier = 10; addBoundValue = 10;}
@@ -44,6 +45,28 @@ public class Data {
         if(tier == 8){ nextTier = 20; subBoundValue = 15;}
         if(tier == 9){ nextTier = 20; addBoundValue = 20;}
         if(tier == 10){ nextTier = 20; subBoundValue = 20;}
+        //1st Grade Tier
+        if(tier == 11){ nextTier = 5; addBoundValue = 10; symbolBound = 1;}
+        if(tier == 12){ nextTier = 7; addBoundValue = 15;}
+        if(tier == 13){ nextTier = 10; addBoundValue = 20;}
+        if(tier == 14){ nextTier = 12; subBoundValue = 10; symbolBound = 2;}
+        if(tier == 15){ nextTier = 15; subBoundValue = 15;}
+        if(tier == 16){ nextTier = 17; subBoundValue = 20;}
+        if(tier == 17){ nextTier = 20; addBoundValue = 25; subBoundValue = 25;}
+        if(tier == 18){ nextTier = 22; addBoundValue = 30; subBoundValue = 30;}
+        if(tier == 19){ nextTier = 25; addBoundValue = 35; subBoundValue = 35;}
+        if(tier == 20){ nextTier = 25; addBoundValue = 40; subBoundValue = 40;}
+        //2nd Grade Tier
+        if(tier == 21){ nextTier = 5; addBoundValue = 10; subBoundValue = 10; symbolBound = 2;}
+        if(tier == 22){ nextTier = 7; addBoundValue = 20; subBoundValue = 20; }
+        if(tier == 23){ nextTier = 10; addBoundValue = 30; subBoundValue = 30; }
+        if(tier == 24){ nextTier = 12; addBoundValue = 40; subBoundValue = 40; }
+        if(tier == 25){ nextTier = 15; addBoundValue = 50; subBoundValue = 50; }
+        if(tier == 26){ nextTier = 17; addBoundValue = 60; subBoundValue = 60; }
+        if(tier == 27){ nextTier = 20; addBoundValue = 70; subBoundValue = 70; }
+        if(tier == 28){ nextTier = 22; addBoundValue = 80; subBoundValue = 80; }
+        if(tier == 29){ nextTier = 25; addBoundValue = 90; subBoundValue = 90; }
+        if(tier == 30){ nextTier = 25; addBoundValue = 100; subBoundValue = 100; }
         if(specialTier == 500){
             addBoundValue = 1000;
             subBoundValue = 1000;
