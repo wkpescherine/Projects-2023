@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="#000">
+    android:background="@drawable/chalkboard">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="PRIME"
-        android:textColor="#fff"
+        android:textColor="#ffa500"
         android:textSize="80dp"
         android:layout_marginTop="200dp"
         android:textAlignment="center"
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ACADEMY"
-        android:textColor="#fff"
+        android:textColor="#ffa500"
         android:textSize="50dp"
         android:textAlignment="center"
         android:gravity="center_horizontal" />
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Math Masters"
-        android:textColor="#fff"
+        android:textColor="#ffa500"
         android:textSize="20dp"
         android:textAlignment="center"
         android:gravity="center_horizontal" />
@@ -45,8 +45,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="version 0.6"
-        android:textColor="#fff"
+        android:text="version 0.7"
+        android:textColor="#ffa500"
         android:textSize="16dp"
         android:layout_marginTop="60dp"
         android:textAlignment="center"

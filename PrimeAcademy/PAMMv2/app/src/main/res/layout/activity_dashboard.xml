@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Dashboard"
     android:orientation="vertical"
-    android:background="#000">
+    android:background="@drawable/chalkboard">
 
     <TextView
         android:id="@+id/username"
@@ -16,7 +16,7 @@
         android:text=""
         android:layout_gravity="center_horizontal"
         android:textSize="32dp"
-        android:textColor="#fff"
+        android:textColor="#ffa500"
         android:onClick="clickToProfile"/>
 
     <LinearLayout
@@ -30,14 +30,14 @@
             android:layout_height="wrap_content"
             android:text="Grade"
             android:layout_marginRight="25dp"
-            android:textColor="#fff"/>
+            android:textColor="#ffa500"/>
         <TextView
             android:id="@+id/dtier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tier"
             android:layout_marginLeft="25dp"
-            android:textColor="#fff"/>
+            android:textColor="#ffa500"/>
     </LinearLayout>
 
     <Button
