@@ -60,7 +60,7 @@ public class Challenge extends AppCompatActivity {
         answerString.setText("");
         answer="";
         if(data.specialTier == 0){ standardGameLogic();}
-        if(data.specialTier == 500){ q20GameLogic();}
+        //if(data.specialTier == 500){ q20GameLogic();}
     }
 
     public void checkSolution(View v){
@@ -69,8 +69,7 @@ public class Challenge extends AppCompatActivity {
         if(answer.equals("")){
             data.solvedAnswers -= 1;
             response.setText("No answer");
-        }
-        else if(solution == Double.valueOf(answer)){
+        } else if(solution == Double.valueOf(answer)){
             data.solvedAnswers += 1;
             response.setText("Correct");
             data.totalCorrect += 1;
