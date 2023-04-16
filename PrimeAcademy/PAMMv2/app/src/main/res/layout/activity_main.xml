@@ -12,16 +12,18 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/gloria_hallelujah"
+        android:gravity="center_horizontal"
         android:text="PRIME"
-        android:textColor="#ffa500"
-        android:textSize="80dp"
-        android:layout_marginTop="200dp"
         android:textAlignment="center"
-        android:gravity="center_horizontal" />
+        android:textColor="#ffa500"
+        android:textSize="80dp" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ACADEMY"
+        android:fontFamily="@font/gloria_hallelujah"
         android:textColor="#ffa500"
         android:textSize="50dp"
         android:textAlignment="center"
@@ -30,6 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Math Masters"
+        android:fontFamily="@font/gloria_hallelujah"
         android:textColor="#ffa500"
         android:textSize="20dp"
         android:textAlignment="center"
