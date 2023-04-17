@@ -43,6 +43,9 @@
         android:layout_height="wrap_content"
         android:onClick="clickToStart"
         android:layout_gravity="center"
+        android:backgroundTint="#ffa500"
+        android:fontFamily="@font/gloria_hallelujah"
+        android:textColor="#555"
         android:text="Start" />
 
     <Button
@@ -50,14 +53,18 @@
         android:layout_height="wrap_content"
         android:onClick="resetData"
         android:layout_gravity="center"
+        android:backgroundTint="#ffa500"
+        android:textColor="#555"
+        android:fontFamily="@font/gloria_hallelujah"
         android:text="Reset" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="version 0.7.6"
+        android:text="version 0.9.3"
         android:textColor="#ffa500"
         android:textSize="16dp"
+        android:fontFamily="@font/gloria_hallelujah"
         android:layout_marginTop="60dp"
         android:textAlignment="center"
         android:gravity="center_horizontal"

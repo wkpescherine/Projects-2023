@@ -18,7 +18,8 @@
                 android:text="1"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
@@ -26,7 +27,8 @@
                 android:text="2"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
@@ -34,7 +36,8 @@
                 android:text="3"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
@@ -42,7 +45,8 @@
                 android:text="4"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
@@ -50,7 +54,8 @@
                 android:text="5"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
@@ -58,7 +63,8 @@
                 android:text="-"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
@@ -71,7 +77,8 @@
                 android:text="6"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
@@ -79,7 +86,8 @@
                 android:text="7"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
@@ -87,7 +95,8 @@
                 android:text="8"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
@@ -95,7 +104,8 @@
                 android:text="9"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
@@ -103,7 +113,8 @@
                 android:text="0"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>
@@ -111,7 +122,8 @@
                 android:text="DEL"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:textColor="#fff"
+                android:fontFamily="@font/gloria_hallelujah"
+                android:textColor="#ffa500"
                 android:gravity="center"
                 android:textSize="24dp"
                 android:onClick="handleKeypadNum"/>

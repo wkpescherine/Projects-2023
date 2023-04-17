@@ -20,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Grade"
+            android:fontFamily="@font/gloria_hallelujah"
             android:layout_marginRight="25dp"
             android:textColor="#ffa500"/>
         <TextView
@@ -27,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tier"
+            android:fontFamily="@font/gloria_hallelujah"
             android:layout_marginRight="25dp"
             android:textColor="#ffa500"/>
         <TextView
@@ -34,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Solved"
+            android:fontFamily="@font/gloria_hallelujah"
             android:textColor="#ffa500"/>
     </LinearLayout>
 
@@ -49,6 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0 of 20"
+            android:fontFamily="@font/gloria_hallelujah"
             android:layout_marginRight="25dp"
             android:textColor="#ffa500"/>
         <TextView
@@ -56,6 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Correct: 0"
+            android:fontFamily="@font/gloria_hallelujah"
             android:layout_marginRight="25dp"
             android:textColor="#ffa500"/>
         <TextView
@@ -63,6 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Points: 0"
+            android:fontFamily="@font/gloria_hallelujah"
             android:textColor="#ffa500"/>
     </LinearLayout>
 
@@ -78,6 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
+            android:fontFamily="@font/gloria_hallelujah"
             android:textColor="#ffa500"
             android:textSize="64dp" />
         <TextView
@@ -85,6 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
+            android:fontFamily="@font/gloria_hallelujah"
             android:textColor="#ffa500"
             android:textSize="64dp" />
         <TextView
@@ -92,6 +100,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text=""
+            android:fontFamily="@font/gloria_hallelujah"
             android:textColor="#ffa500"
             android:textSize="64dp" />
     </LinearLayout>
@@ -101,6 +110,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
+        android:fontFamily="@font/gloria_hallelujah"
         android:textColor="#ffa500"
         android:textSize="64dp"
         android:layout_gravity="center_horizontal"
@@ -112,6 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
+        android:fontFamily="@font/gloria_hallelujah"
         android:layout_gravity="center_horizontal"
         android:textColor="#ffa500"/>
 
@@ -119,6 +130,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Check Solution"
+        android:fontFamily="@font/gloria_hallelujah"
+        android:backgroundTint="#ffa500"
         android:onClick="checkSolution"/>
 
     <include layout="@layout/keypadui"/>
@@ -128,6 +141,8 @@
         android:layout_height="wrap_content"
         android:onClick="backToDashboard"
         android:layout_gravity="center"
-        android:text="Back to Dashboard" />
+        android:text="Back to Dashboard"
+        android:fontFamily="@font/gloria_hallelujah"
+        android:backgroundTint="#ffa500"/>
 
 </LinearLayout>
