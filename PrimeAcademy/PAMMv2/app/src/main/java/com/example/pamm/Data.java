@@ -40,13 +40,13 @@ public class Data {
         if(tier == 1){ challengeValues = new int[]{1, 5, 5, 0, 0, 0};}
         if(tier == 2){ challengeValues = new int[]{1, 7, 7, 0, 0, 0};}
         if(tier == 3){ challengeValues = new int[]{1, 10, 10, 0, 0, 0};}
-        if(tier == 4){ nextTier = 12; addBoundValue = 15;}
-        if(tier == 5){ nextTier = 15; subBoundValue = 5; symbolBound = 2;}
-        if(tier == 6){ nextTier = 17; subBoundValue = 7; }
-        if(tier == 7){ nextTier = 20; subBoundValue = 10;}
-        if(tier == 8){ nextTier = 20; subBoundValue = 15;}
-        if(tier == 9){ nextTier = 20; addBoundValue = 20;}
-        if(tier == 10){ nextTier = 20; subBoundValue = 20;}
+        if(tier == 4){ challengeValues = new int[]{1, 15, 15, 0, 0, 0};}
+        if(tier == 5){ challengeValues = new int[]{2, 15, 15, 5, 0, 0};}
+        if(tier == 6){ challengeValues = new int[]{2, 17, 15, 7, 0, 0};}
+        if(tier == 7){ challengeValues = new int[]{2, 20, 15, 10, 0, 0};}
+        if(tier == 8){ challengeValues = new int[]{2, 20, 15, 15, 0, 0};}
+        if(tier == 9){ challengeValues = new int[]{2, 20, 20, 15, 0, 0};}
+        if(tier == 10){ challengeValues = new int[]{2, 20, 20, 20, 0, 0};}
         //1st Grade Tier
         if(tier == 11){ nextTier = 5; addBoundValue = 10; symbolBound = 1;}
         if(tier == 12){ nextTier = 7; addBoundValue = 15;}

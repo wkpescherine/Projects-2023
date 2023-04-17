@@ -17,9 +17,7 @@
         android:fontFamily="@font/gloria_hallelujah"
         android:layout_gravity="center_horizontal"
         android:textSize="32dp"
-        android:textColor="#ffa500"
-        android:onClick="clickToProfile"/>
-
+        android:textColor="#ffa500"/>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
