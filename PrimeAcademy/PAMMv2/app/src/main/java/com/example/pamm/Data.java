@@ -15,6 +15,7 @@ public class Data {
     public static int q20Points = 0;
 
     //Challenge Data
+    public static int [] challengeValues = {0,0,0,0,0,0};
     public static int symbolBound = 0;
     public static int nextTier = 0;
     public static int solvedAnswers = 0;
@@ -34,10 +35,11 @@ public class Data {
     }
 
     public void checkNextTier(){
+        //challengeValues [symbolBound,nextTier,addBoundValue, subBoundValue]
         //Kindergarten Tier
-        if(tier == 1){ nextTier = 5; addBoundValue = 5; symbolBound = 1;}
-        if(tier == 2){ nextTier = 7; addBoundValue = 7;}
-        if(tier == 3){ nextTier = 10; addBoundValue = 10;}
+        if(tier == 1){ challengeValues = new int[]{1, 5, 5, 0, 0, 0};}
+        if(tier == 2){ challengeValues = new int[]{1, 7, 7, 0, 0, 0};}
+        if(tier == 3){ challengeValues = new int[]{1, 10, 10, 0, 0, 0};}
         if(tier == 4){ nextTier = 12; addBoundValue = 15;}
         if(tier == 5){ nextTier = 15; subBoundValue = 5; symbolBound = 2;}
         if(tier == 6){ nextTier = 17; subBoundValue = 7; }
@@ -74,5 +76,10 @@ public class Data {
             divBoundValue=100;
             symbolBound=4;
         }
+        //challengeValues [symbolBound,nextTier,addBoundValue, subBoundValue]
+        symbolBound = challengeValues[0];
+        nextTier = challengeValues[1];
+        addBoundValue = challengeValues[2];
+        subBoundValue = challengeValues[3];
     }
 }
