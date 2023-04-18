@@ -51,12 +51,21 @@ public class Challenge extends AppCompatActivity {
         TextView dataGrade = findViewById(R.id.cgrade);
         TextView dataTier = findViewById(R.id.ctier);
         TextView answersSolved = findViewById(R.id.csolve);
+        TextView dataQ20Asked = findViewById(R.id.q20Questions);
+        TextView dataq20Correct = findViewById(R.id.q20QuestionsCorrect);
         TextView answerString = findViewById(R.id.answer);
         data.checkNextTier();
-        dataTier.setText("Tier: "+ data.tier);
-        dataGrade.setText("Grade: "+ data.grade);
-        answersSolved.setText("Solved: "+ data.solvedAnswers + " of "+ data.nextTier);
-        answerString.setText("");
+        if(data.challengeTier == 1){
+            dataTier.setText("Tier: "+ data.tier);
+            dataGrade.setText("Grade: "+ data.grade);
+            answersSolved.setText("Solved: "+ data.solvedAnswers + " of "+ data.nextTier);
+            answerString.setText("");
+        }
+        if(data.challengeTier == 2){
+            dataQ20Asked.setText(data.q20Asked+" of 20");
+            dataq20Correct.setText("Correct :"+ data.q20Solved);
+            answerString.setText("");
+        }
         answer="";
         if(data.challengeTier == 1){
             standardHead.setVisibility(View.VISIBLE);
@@ -74,15 +83,19 @@ public class Challenge extends AppCompatActivity {
         data.totalAsked += 1;
         TextView response = findViewById(R.id.cresponse);
         if(answer.equals("")){
-            data.solvedAnswers -= 1;
             response.setText("No answer");
+            if(data.challengeTier == 1){data.solvedAnswers -= 1;}
+            if(data.challengeTier == 2){data.q20Solved +=1;}
         } else if(solution == Double.valueOf(answer)){
-            data.solvedAnswers += 1;
             response.setText("Correct");
             data.totalCorrect += 1;
+            if(data.challengeTier == 1){ data.solvedAnswers += 1;}
+            if(data.challengeTier == 2){ data.q20Asked += 1; data.q20Solved +=1;}
         } else {
-            data.solvedAnswers -= 1;
             response.setText("Incorrect");
+            if(data.challengeTier == 1){data.solvedAnswers -= 1;}
+            if(data.challengeTier == 2){data.q20Asked +=1;}
+
         }
         checkTier();
         setDataUI();

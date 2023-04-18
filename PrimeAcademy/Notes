@@ -1,10 +1,14 @@
 TODO
 ---------
-1) Need to fix the Profile UI as this is still a mess
-2) Need to fix that the profile button is not working - DONE
-3) Need to fix that the username goes to the profile = DONE
-4) Need to get the logic for handling challenge changes to UI
-5) Need to work on 20q logic
-6) Need to build out Profile UI
-7) Need to add a font for all text, and change font color to ffa500. 
-8) Start to add the various data points into the profile section
+1.0) Need to fix the Profile UI as this is still a mess
+5.0) Need to work on 20q logic
+5.1) Work on how to calculate the points
+6.0) Need to build out Profile UI
+7.0) Need to add a font for all text, and change font color to ffa500. 
+8.0) Start to add the various data points into the profile section
+---------
+DONE
+---------
+2.0) Need to fix that the profile button is not working - DONE
+3.0) Need to fix that the username goes to the profile = DONE
+4.0) Need to get the logic for handling challenge changes to UI - DONE
