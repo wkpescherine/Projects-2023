@@ -61,7 +61,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="version 0.12.0"
+        android:text="version 0.12.2"
         android:textColor="#ffa500"
         android:textSize="16dp"
         android:fontFamily="@font/gloria_hallelujah"

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Dashboard extends AppCompatActivity {
     Data data = new Data();
@@ -41,6 +42,10 @@ public class Dashboard extends AppCompatActivity {
         data.challengeTier = 2;
         Intent intent = new Intent(this, Challenge.class);
         startActivity(intent);
+    }
+
+    public void clickToTimed(View v){
+        Toast.makeText(getApplicationContext(),"Currently unavailble", Toast.LENGTH_SHORT).show();
     }
 
     public void setDashDataUI(){

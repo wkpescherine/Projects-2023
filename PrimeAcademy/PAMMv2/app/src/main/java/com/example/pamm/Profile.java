@@ -24,7 +24,11 @@ public class Profile extends AppCompatActivity {
 
     public void setProfileUI(){
         TextView proDataUsername = findViewById(R.id.pusername);
+        TextView proDataSolved = findViewById(R.id.pSolved);
+        TextView proDataAsked = findViewById(R.id.pAsked);
         proDataUsername.setText(pdata.username);
+        proDataSolved.setText("Total Correct Answers: "+ pdata.totalCorrect);
+        proDataAsked.setText("Total Questions Asked: "+ pdata.totalAsked);
     }
 
     public void backToDashboard(View v){

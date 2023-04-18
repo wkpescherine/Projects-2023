@@ -1,14 +1,18 @@
-TODO
+TO DO LIST
 ---------
-1.0) Need to fix the Profile UI as this is still a mess
-5.0) Need to work on 20q logic
-5.1) Work on how to calculate the points
-6.0) Need to build out Profile UI
-7.0) Need to add a font for all text, and change font color to ffa500. 
-8.0) Start to add the various data points into the profile section
+5.0)  Need to work on 20q logic
+5.1)  Work on how to calculate the points
+6.0)  Need to build out Profile UI
+7.0)  Need to add a font for all text, and change font color to ffa500. 
+8.0)  Start to add the various data points into the profile section
+9.0)  Start building out the Timed Question logic
+9.1)  Mostlike need to have a new thread for timer  on timed Questions
+10.0) Need to review the solutions file for ahndling the decimal points
+10.1) Need to have the decimal point go out only to the 3rd value
 ---------
 DONE
 ---------
-2.0) Need to fix that the profile button is not working - DONE
-3.0) Need to fix that the username goes to the profile = DONE
-4.0) Need to get the logic for handling challenge changes to UI - DONE
+1.0)  Need to fix the Profile UI as this is still a mess - DONE
+2.0)  Need to fix that the profile button is not working - DONE
+3.0)  Need to fix that the username goes to the profile = DONE
+4.0)  Need to get the logic for handling challenge changes to UI - DONE

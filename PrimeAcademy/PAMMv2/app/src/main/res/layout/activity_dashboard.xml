@@ -74,6 +74,7 @@
         android:backgroundTint="#ffa500"
         android:textColor="#555"
         android:fontFamily="@font/gloria_hallelujah"
+        android:onClick="clickToTimed"
         />
 
     <LinearLayout
