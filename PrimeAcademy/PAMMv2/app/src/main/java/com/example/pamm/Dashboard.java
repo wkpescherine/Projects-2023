@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Dashboard extends AppCompatActivity {
@@ -47,7 +46,7 @@ public class Dashboard extends AppCompatActivity {
         //LinearLayout q20 = findViewById(R.id.q20Header);
         //standard.setVisibility(View.GONE);
         //q20.setVisibility(View.VISIBLE);
-        data.specialTier = 500;
+        data.specialTier = "Q20";
         Intent intent = new Intent(this, Challenge.class);
         startActivity(intent);
     }

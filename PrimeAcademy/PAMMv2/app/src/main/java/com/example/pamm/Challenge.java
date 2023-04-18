@@ -1,12 +1,12 @@
 package com.example.pamm;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -17,10 +17,10 @@ public class Challenge extends AppCompatActivity {
 
     String answer = "";
     double solution = 0;
-    //Integer addSubBoundValue = 5;
-    //Integer mulDivBoundValue = 5;
-    //Integer symbolBound = 0;
     String [] symbolArray = {"+","-","*","/"};
+
+    LinearLayout q20Head = findViewById(R.id.q20Header);
+    LinearLayout standardHead = findViewById(R.id.q20Header);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,8 +59,14 @@ public class Challenge extends AppCompatActivity {
         answersSolved.setText("Solved: "+ data.solvedAnswers + " of "+ data.nextTier);
         answerString.setText("");
         answer="";
-        if(data.specialTier == 0){ standardGameLogic();}
-        //if(data.specialTier == 500){ q20GameLogic();}
+        if(data.specialTier.equals("Standard")){
+            standardHead.setVisibility(View.VISIBLE);
+            standardGameLogic();
+        }
+        if(data.specialTier.equals("Q20")){
+            q20Head.setVisibility(View.VISIBLE);
+            q20GameLogic();
+        }
     }
 
     public void checkSolution(View v){
@@ -91,6 +97,8 @@ public class Challenge extends AppCompatActivity {
         int boundValue = 0;
         if(symbolValue == 0){ boundValue = data.addBoundValue;}
         if(symbolValue == 1){ boundValue = data.subBoundValue;}
+        if(symbolValue == 2){ boundValue = data.multiBoundValue;}
+        if(symbolValue == 3){ boundValue = data.divBoundValue;}
         Integer rndNum1 = rnd.nextInt(boundValue)+1;
         Integer rndNum2 = rnd.nextInt(boundValue)+1;
         solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
@@ -109,6 +117,8 @@ public class Challenge extends AppCompatActivity {
         int boundValue = 0;
         if(symbolValue == 0){ boundValue = data.addBoundValue;}
         if(symbolValue == 1){ boundValue = data.subBoundValue;}
+        if(symbolValue == 2){ boundValue = data.multiBoundValue;}
+        if(symbolValue == 3){ boundValue = data.divBoundValue;}
         Integer rndNum1 = rnd.nextInt(boundValue)+1;
         Integer rndNum2 = rnd.nextInt(boundValue)+1;
         solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
@@ -142,7 +152,9 @@ public class Challenge extends AppCompatActivity {
     }
 
     public void backToDashboard(View v){
-        data.specialTier = 0;
+        data.specialTier = "None";
+        q20Head.setVisibility(View.GONE);
+        standardHead.setVisibility(View.GONE);
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }

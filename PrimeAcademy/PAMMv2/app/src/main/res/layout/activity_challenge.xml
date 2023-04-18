@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/standardHeader"
         android:orientation="horizontal"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone">
         <TextView
             android:id="@+id/cgrade"
             android:layout_width="wrap_content"
@@ -56,7 +57,7 @@
             android:layout_marginRight="25dp"
             android:textColor="#ffa500"/>
         <TextView
-            android:id="@+id/q20Questions"
+            android:id="@+id/q20QuestionsCorrect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Correct: 0"
@@ -132,7 +133,8 @@
         android:text="Check Solution"
         android:fontFamily="@font/gloria_hallelujah"
         android:backgroundTint="#ffa500"
-        android:onClick="checkSolution"/>
+        android:onClick="checkSolution"
+        android:textColor="#555"/>
 
     <include layout="@layout/keypadui"/>
 
@@ -143,6 +145,7 @@
         android:layout_gravity="center"
         android:text="Back to Dashboard"
         android:fontFamily="@font/gloria_hallelujah"
-        android:backgroundTint="#ffa500"/>
+        android:backgroundTint="#ffa500"
+        android:textColor="#555"/>
 
 </LinearLayout>
