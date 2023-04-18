@@ -9,7 +9,7 @@ public class Data {
     public static String grade = "None";
     public static int totalCorrect = 0;
     public static int totalAsked = 0;
-    public static String specialTier = "None";
+    public static int challengeTier = 1;
     public static int q20Asked = 0;
     public static int q20Solved = 0;
     public static int q20Points = 0;
@@ -69,17 +69,13 @@ public class Data {
         if(tier == 28){ nextTier = 22; addBoundValue = 80; subBoundValue = 80; }
         if(tier == 29){ nextTier = 25; addBoundValue = 90; subBoundValue = 90; }
         if(tier == 30){ nextTier = 25; addBoundValue = 100; subBoundValue = 100; }
-        if(specialTier.equals("Q20")){
-            addBoundValue = 1000;
-            subBoundValue = 1000;
-            multiBoundValue = 100;
-            divBoundValue=100;
-            symbolBound=4;
-        }
+        if(challengeTier == 2){ challengeValues = new int[]{4,20,1000,1000,100,100};}
         //challengeValues [symbolBound,nextTier,addBoundValue, subBoundValue]
         symbolBound = challengeValues[0];
         nextTier = challengeValues[1];
         addBoundValue = challengeValues[2];
         subBoundValue = challengeValues[3];
+        multiBoundValue = challengeValues[4];
+        divBoundValue = challengeValues[5];
     }
 }

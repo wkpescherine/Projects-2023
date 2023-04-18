@@ -28,10 +28,6 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void clickToChallenge(View v){
-        //LinearLayout standard = findViewById(R.id.standardHeader);
-        //LinearLayout q20 = findViewById(R.id.q20Header);
-        //standard.setVisibility(View.VISIBLE);
-        //q20.setVisibility(View.GONE);
         Intent intent = new Intent(this, Challenge.class);
         startActivity(intent);
     }
@@ -42,11 +38,7 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void clickTo20Questions(View v){
-        //LinearLayout standard = findViewById(R.id.standardHeader);
-        //LinearLayout q20 = findViewById(R.id.q20Header);
-        //standard.setVisibility(View.GONE);
-        //q20.setVisibility(View.VISIBLE);
-        data.specialTier = "Q20";
+        data.challengeTier = 2;
         Intent intent = new Intent(this, Challenge.class);
         startActivity(intent);
     }

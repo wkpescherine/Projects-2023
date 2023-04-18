@@ -19,9 +19,6 @@ public class Challenge extends AppCompatActivity {
     double solution = 0;
     String [] symbolArray = {"+","-","*","/"};
 
-    LinearLayout q20Head = findViewById(R.id.q20Header);
-    LinearLayout standardHead = findViewById(R.id.q20Header);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +46,8 @@ public class Challenge extends AppCompatActivity {
     }
 
     public void setDataUI(){
+        LinearLayout q20Head = findViewById(R.id.q20Header);
+        LinearLayout standardHead = findViewById(R.id.standardHeader);
         TextView dataGrade = findViewById(R.id.cgrade);
         TextView dataTier = findViewById(R.id.ctier);
         TextView answersSolved = findViewById(R.id.csolve);
@@ -59,11 +58,13 @@ public class Challenge extends AppCompatActivity {
         answersSolved.setText("Solved: "+ data.solvedAnswers + " of "+ data.nextTier);
         answerString.setText("");
         answer="";
-        if(data.specialTier.equals("Standard")){
+        if(data.challengeTier == 1){
             standardHead.setVisibility(View.VISIBLE);
+            q20Head.setVisibility(View.GONE);
             standardGameLogic();
         }
-        if(data.specialTier.equals("Q20")){
+        if(data.challengeTier == 2){
+            standardHead.setVisibility(View.GONE);
             q20Head.setVisibility(View.VISIBLE);
             q20GameLogic();
         }
@@ -97,8 +98,6 @@ public class Challenge extends AppCompatActivity {
         int boundValue = 0;
         if(symbolValue == 0){ boundValue = data.addBoundValue;}
         if(symbolValue == 1){ boundValue = data.subBoundValue;}
-        if(symbolValue == 2){ boundValue = data.multiBoundValue;}
-        if(symbolValue == 3){ boundValue = data.divBoundValue;}
         Integer rndNum1 = rnd.nextInt(boundValue)+1;
         Integer rndNum2 = rnd.nextInt(boundValue)+1;
         solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
@@ -152,9 +151,7 @@ public class Challenge extends AppCompatActivity {
     }
 
     public void backToDashboard(View v){
-        data.specialTier = "None";
-        q20Head.setVisibility(View.GONE);
-        standardHead.setVisibility(View.GONE);
+        data.challengeTier = 1 ;
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }
