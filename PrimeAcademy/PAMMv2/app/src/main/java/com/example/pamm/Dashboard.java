@@ -33,19 +33,19 @@ public class Dashboard extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void clickToProfile(View v){
-        Intent intent = new Intent(this, Profile.class);
-        startActivity(intent);
-    }
-
     public void clickTo20Questions(View v){
-        data.challengeTier = 2;
-        Intent intent = new Intent(this, Challenge.class);
+        data.challengeTier = "Q20";
+        Intent intent = new Intent(this, ChallengeQ20.class);
         startActivity(intent);
     }
 
     public void clickToTimed(View v){
         Toast.makeText(getApplicationContext(),"Currently unavailble", Toast.LENGTH_SHORT).show();
+    }
+
+    public void clickToProfile(View v){
+        Intent intent = new Intent(this, Profile.class);
+        startActivity(intent);
     }
 
     public void setDashDataUI(){
