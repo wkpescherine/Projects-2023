@@ -33,7 +33,7 @@ public class ChallengeQ20 extends AppCompatActivity {
         TextView clearResponse = findViewById(R.id.cresponse);
         clearResponse.setText("");
         String valueSelect = t.getText().toString();
-        if(valueSelect.equals("DEL")){
+        if(valueSelect.equals("DELETE")){
             valueSelect = "";
             if(answer.length()>=1) {
                 answer = answer.substring(0, answer.length()-1);

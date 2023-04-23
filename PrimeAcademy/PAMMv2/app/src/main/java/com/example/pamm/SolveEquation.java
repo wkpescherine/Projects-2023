@@ -6,7 +6,10 @@ public class SolveEquation {
         if(s.equals("+")){ value = n1+n2; }
         if(s.equals("-")){ value = n1-n2; }
         if(s.equals("*")){ value = n1*n2; }
-        if(s.equals("*")){ value = (double)n1 / (double)n2; }
+        if(s.equals("/")){
+            String tempValue = ""+ String.format("%.3f",(double)n1 / (double)n2);
+            value = Double.valueOf(tempValue);
+        }
         return value;
     }
 

@@ -30,47 +30,73 @@ public class Data {
         else if(tier >= 21){ grade = "2nd";}
         else if(tier >= 31){ grade = "3rd";}
         else if(tier >= 41){ grade = "4th";}
+        else if(tier >= 51){ grade = "5th";}
+        else if(tier >= 61){ grade = "6th";}
         else{ grade = "";}
         checkNextTier();
     }
 
     public void checkNextTier(){
-        //challengeValues [symbolBound,nextTier,addBoundValue, subBoundValue]
+        //challengeValues [symbolBound,operationsBound,nextTier,addBoundValue, subBoundValue]
         //Kindergarten Tier
-        if(tier == 1){ challengeValues = new int[]{1, 5, 5, 0, 0, 0};}
-        if(tier == 2){ challengeValues = new int[]{1, 7, 7, 0, 0, 0};}
-        if(tier == 3){ challengeValues = new int[]{1, 10, 10, 0, 0, 0};}
-        if(tier == 4){ challengeValues = new int[]{1, 15, 15, 0, 0, 0};}
-        if(tier == 5){ challengeValues = new int[]{2, 15, 15, 5, 0, 0};}
-        if(tier == 6){ challengeValues = new int[]{2, 17, 15, 7, 0, 0};}
-        if(tier == 7){ challengeValues = new int[]{2, 20, 15, 10, 0, 0};}
-        if(tier == 8){ challengeValues = new int[]{2, 20, 15, 15, 0, 0};}
-        if(tier == 9){ challengeValues = new int[]{2, 20, 20, 15, 0, 0};}
-        if(tier == 10){ challengeValues = new int[]{2, 20, 20, 20, 0, 0};}
+        if(tier == 1){ challengeValues = new int[]{1, 1, 5, 5, 0, 0, 0};}
+        if(tier == 2){ challengeValues = new int[]{1, 1, 7, 5, 0, 0, 0};}
+        if(tier == 3){ challengeValues = new int[]{1, 1, 10, 5, 0, 0, 0};}
+        if(tier == 4){ challengeValues = new int[]{1, 1, 10, 7, 0, 0, 0};}
+        if(tier == 5){ challengeValues = new int[]{2, 1, 12, 7, 0, 0, 0};}
+        if(tier == 6){ challengeValues = new int[]{2, 1, 12, 7, 5, 0, 0};}
+        if(tier == 7){ challengeValues = new int[]{2, 1, 15, 7, 5, 0, 0};}
+        if(tier == 8){ challengeValues = new int[]{2, 1, 15, 7, 7, 0, 0};}
+        if(tier == 9){ challengeValues = new int[]{2, 1, 15, 10, 7, 0, 0};}
+        if(tier == 10){ challengeValues = new int[]{2, 1,15, 10, 10, 0, 0};}
         //1st Grade Tier
-        if(tier == 11){ nextTier = 5; addBoundValue = 10; symbolBound = 1;}
-        if(tier == 12){ nextTier = 7; addBoundValue = 15;}
-        if(tier == 13){ nextTier = 10; addBoundValue = 20;}
-        if(tier == 14){ nextTier = 12; subBoundValue = 10; symbolBound = 2;}
-        if(tier == 15){ nextTier = 15; subBoundValue = 15;}
-        if(tier == 16){ nextTier = 17; subBoundValue = 20;}
-        if(tier == 17){ nextTier = 20; addBoundValue = 25; subBoundValue = 25;}
-        if(tier == 18){ nextTier = 22; addBoundValue = 30; subBoundValue = 30;}
-        if(tier == 19){ nextTier = 25; addBoundValue = 35; subBoundValue = 35;}
-        if(tier == 20){ nextTier = 25; addBoundValue = 40; subBoundValue = 40;}
+        if(tier == 11){ challengeValues = new int[]{1, 1, 5, 7, 0, 0, 0};}
+        if(tier == 12){ challengeValues = new int[]{1, 1, 7, 7, 0, 0, 0};}
+        if(tier == 13){ challengeValues = new int[]{1, 1, 10, 7, 0, 0, 0};}
+        if(tier == 14){ challengeValues = new int[]{1, 1, 10, 10, 0, 0, 0};}
+        if(tier == 15){ challengeValues = new int[]{2, 1, 12, 10, 0, 0, 0};}
+        if(tier == 16){ challengeValues = new int[]{2, 1, 12, 10, 7, 0, 0};}
+        if(tier == 17){ challengeValues = new int[]{2, 1, 15, 10, 7, 0, 0};}
+        if(tier == 18){ challengeValues = new int[]{2, 1, 15, 10, 10, 0, 0};}
+        if(tier == 19){ challengeValues = new int[]{2, 1, 15, 15, 10, 0, 0};}
+        if(tier == 20){ challengeValues = new int[]{2, 1, 15, 15, 15, 0, 0};}
         //2nd Grade Tier
-        if(tier == 21){ nextTier = 5; addBoundValue = 10; subBoundValue = 10; symbolBound = 2;}
-        if(tier == 22){ nextTier = 7; addBoundValue = 20; subBoundValue = 20; }
-        if(tier == 23){ nextTier = 10; addBoundValue = 30; subBoundValue = 30; }
-        if(tier == 24){ nextTier = 12; addBoundValue = 40; subBoundValue = 40; }
-        if(tier == 25){ nextTier = 15; addBoundValue = 50; subBoundValue = 50; }
-        if(tier == 26){ nextTier = 17; addBoundValue = 60; subBoundValue = 60; }
-        if(tier == 27){ nextTier = 20; addBoundValue = 70; subBoundValue = 70; }
-        if(tier == 28){ nextTier = 22; addBoundValue = 80; subBoundValue = 80; }
-        if(tier == 29){ nextTier = 25; addBoundValue = 90; subBoundValue = 90; }
-        if(tier == 30){ nextTier = 25; addBoundValue = 100; subBoundValue = 100; }
-        if(challengeTier.equals("Q20")){ challengeValues = new int[]{4,20,1000,1000,100,100};}
+        if(tier == 21){ challengeValues = new int[]{2, 1, 5, 15, 10, 0, 0};}
+        if(tier == 22){ challengeValues = new int[]{2, 1, 7, 15, 10, 0, 0};}
+        if(tier == 23){ challengeValues = new int[]{2, 1, 10, 15, 10, 0, 0};}
+        if(tier == 24){ challengeValues = new int[]{2, 1, 10, 20, 10, 0, 0};}
+        if(tier == 25){ challengeValues = new int[]{2, 1, 12, 20, 10, 0, 0};}
+        if(tier == 26){ challengeValues = new int[]{2, 1, 12, 20, 15, 0, 0};}
+        if(tier == 27){ challengeValues = new int[]{2, 1, 15, 20, 15, 0, 0};}
+        if(tier == 28){ challengeValues = new int[]{2, 1, 15, 20, 20, 0, 0};}
+        if(tier == 29){ challengeValues = new int[]{2, 1, 15, 25, 20, 0, 0};}
+        if(tier == 30){ challengeValues = new int[]{2, 1, 15, 25, 25, 0, 0};}
+        //3nd Grade Tier
+        if(tier == 31){ challengeValues = new int[]{2, 1, 5, 25, 20, 0, 0};}
+        if(tier == 32){ challengeValues = new int[]{2, 1, 7, 25, 20, 0, 0};}
+        if(tier == 33){ challengeValues = new int[]{2, 1, 10, 25, 10, 0, 0};}
+        if(tier == 34){ challengeValues = new int[]{2, 1, 10, 30, 10, 0, 0};}
+        if(tier == 35){ challengeValues = new int[]{2, 1, 12, 30, 10, 0, 0};}
+        if(tier == 36){ challengeValues = new int[]{2, 1, 12, 30, 25, 0, 0};}
+        if(tier == 37){ challengeValues = new int[]{2, 1, 15, 30, 25, 0, 0};}
+        if(tier == 38){ challengeValues = new int[]{3, 1, 15, 30, 30, 5, 0};}
+        if(tier == 39){ challengeValues = new int[]{3, 1, 15, 40, 30, 5, 0};}
+        if(tier == 40){ challengeValues = new int[]{3, 1, 15, 40, 40, 10, 0};}
+        //4th Grade Tier
+        if(tier == 31){ challengeValues = new int[]{2, 1, 5, 25, 25, 0, 0};}
+        if(tier == 32){ challengeValues = new int[]{2, 1, 7, 30, 25, 0, 0};}
+        if(tier == 33){ challengeValues = new int[]{2, 1, 10, 30, 30, 0, 0};}
+        if(tier == 34){ challengeValues = new int[]{3, 1, 10, 35, 30, 3, 0};}
+        if(tier == 35){ challengeValues = new int[]{3, 1, 12, 35, 35, 5, 0};}
+        if(tier == 36){ challengeValues = new int[]{3, 1, 12, 40, 35, 5, 0};}
+        if(tier == 37){ challengeValues = new int[]{3, 1, 15, 40, 40, 7, 0};}
+        if(tier == 38){ challengeValues = new int[]{3, 1, 15, 45, 40, 7, 0};}
+        if(tier == 39){ challengeValues = new int[]{4, 1, 15, 45, 45, 7, 3};}
+        if(tier == 40){ challengeValues = new int[]{4, 1, 15, 50, 50, 10, 5};}
+        //All The challenge tiers will be in this area
         //challengeValues [symbolBound,nextTier,addBoundValue, subBoundValue]
+        if(challengeTier.equals("Q20")){ challengeValues = new int[]{4,20,1000,1000,100,100};}
+        //Setting the game stats/data to allow the game logic to build and solve formulas
         symbolBound = challengeValues[0];
         nextTier = challengeValues[1];
         addBoundValue = challengeValues[2];

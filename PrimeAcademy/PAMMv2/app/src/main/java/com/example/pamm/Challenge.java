@@ -34,7 +34,7 @@ public class Challenge extends AppCompatActivity {
         TextView clearResponse = findViewById(R.id.cresponse);
         clearResponse.setText("");
         String valueSelect = t.getText().toString();
-        if(valueSelect.equals("DEL")){
+        if(valueSelect.equals("DELETE")){
             valueSelect = "";
             if(answer.length()>=1) {
                 answer = answer.substring(0, answer.length()-1);
@@ -46,8 +46,6 @@ public class Challenge extends AppCompatActivity {
     }
 
     public void setDataUI(){
-        LinearLayout q20Head = findViewById(R.id.q20Header);
-        LinearLayout standardHead = findViewById(R.id.standardHeader);
         TextView dataGrade = findViewById(R.id.cgrade);
         TextView dataTier = findViewById(R.id.ctier);
         TextView answersSolved = findViewById(R.id.csolve);
@@ -90,6 +88,8 @@ public class Challenge extends AppCompatActivity {
         int boundValue = 0;
         if(symbolValue == 0){ boundValue = data.addBoundValue;}
         if(symbolValue == 1){ boundValue = data.subBoundValue;}
+        if(symbolValue == 2){ boundValue = data.multiBoundValue;}
+        if(symbolValue == 3){ boundValue = data.divBoundValue;}
         Integer rndNum1 = rnd.nextInt(boundValue)+1;
         Integer rndNum2 = rnd.nextInt(boundValue)+1;
         solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
