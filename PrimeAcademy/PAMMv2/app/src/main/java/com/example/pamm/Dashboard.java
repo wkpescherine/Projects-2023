@@ -24,6 +24,8 @@ public class Dashboard extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences("PAMM", MODE_PRIVATE);
         data.grade = sp.getString("grade", null);
         data.tier = sp.getInt("tier", 0);
+        data.totalCorrect = sp.getInt("totalSolved", 0);
+        data.totalAsked = sp.getInt("totalAsked", 0);
         setDashDataUI();
 
     }

@@ -24,6 +24,7 @@ public class ChallengeQ20 extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+        data.checkNextTier();
         setDataUI();
     }
 
@@ -83,12 +84,11 @@ public class ChallengeQ20 extends AppCompatActivity {
 
     public void setDataUI(){
         TextView dataQ20Asked = findViewById(R.id.q20Questions);
-        TextView dataq20Correct = findViewById(R.id.q20QuestionsCorrect);
-        TextView answerString = findViewById(R.id.answer);
+        TextView dataQ20Correct = findViewById(R.id.q20QuestionsCorrect);
+        TextView answerQ20String = findViewById(R.id.answer);
         dataQ20Asked.setText(data.q20Asked+" of 20");
-        dataq20Correct.setText("Correct :"+ data.q20Solved);
-        answerString.setText("");
-        answerString.setText("");
+        dataQ20Correct.setText("Correct :"+ data.q20Solved);
+        answerQ20String.setText("");
         answer="";
         q20GameLogic();
 
