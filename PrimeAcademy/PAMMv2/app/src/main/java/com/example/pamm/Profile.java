@@ -26,9 +26,12 @@ public class Profile extends AppCompatActivity {
         TextView proDataUsername = findViewById(R.id.pusername);
         TextView proDataSolved = findViewById(R.id.pSolved);
         TextView proDataAsked = findViewById(R.id.pAsked);
+        TextView proDataPercent = findViewById(R.id.pPercent);
         proDataUsername.setText(pdata.username);
+        int solvedPercent = pdata.totalCorrect/pdata.totalAsked;
         proDataSolved.setText("Total Correct Answers: "+ pdata.totalCorrect);
         proDataAsked.setText("Total Questions Asked: "+ pdata.totalAsked);
+        proDataPercent.setText("Percent Correct Answers : "+ solvedPercent + "%");
     }
 
     public void backToDashboard(View v){

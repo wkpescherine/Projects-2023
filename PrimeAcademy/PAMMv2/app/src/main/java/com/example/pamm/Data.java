@@ -96,7 +96,7 @@ public class Data {
         if(tier == 40){ challengeValues = new int[]{4, 1, 15, 50, 50, 10, 5};}
         //All The challenge tiers will be in this area
         //challengeValues [symbolBound,nextTier,addBoundValue, subBoundValue]
-        if(challengeTier.equals("Q20")){ challengeValues = new int[]{4,20,1000,1000,100,100};}
+        if(challengeTier.equals("Q20")){ challengeValues = new int[]{4,1,20,1000,1000,100,100};}
         //Setting the game stats/data to allow the game logic to build and solve formulas
         symbolBound = challengeValues[0];
         operationsBound = challengeValues[1];

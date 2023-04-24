@@ -123,6 +123,7 @@ public class Challenge extends AppCompatActivity {
     }
 
     public void backToDashboard(View v){
+        data.solvedAnswers = 0;
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }

@@ -2,6 +2,7 @@ package com.example.pamm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -91,6 +92,13 @@ public class ChallengeQ20 extends AppCompatActivity {
         answerQ20String.setText("");
         answer="";
         q20GameLogic();
+    }
 
+    public void backToDashboard(View v){
+        data.q20Asked = 0;
+        data.q20Solved = 0;
+        data.challengeTier = "";
+        Intent intent = new Intent(this, Dashboard.class);
+        startActivity(intent);
     }
 }
