@@ -12,5 +12,4 @@ public class SolveEquation {
         }
         return value;
     }
-
 }

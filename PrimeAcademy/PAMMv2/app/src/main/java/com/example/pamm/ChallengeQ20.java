@@ -33,7 +33,7 @@ public class ChallengeQ20 extends AppCompatActivity {
         TextView clearResponse = findViewById(R.id.cresponse);
         clearResponse.setText("");
         String valueSelect = t.getText().toString();
-        if(valueSelect.equals("DELETE")){
+        if(valueSelect.equals("DEL")){
             valueSelect = "";
             if(answer.length()>=1) {
                 answer = answer.substring(0, answer.length()-1);
@@ -68,7 +68,7 @@ public class ChallengeQ20 extends AppCompatActivity {
         data.totalAsked += 1;
         TextView response = findViewById(R.id.cresponse);
         if(answer.equals("")){
-            response.setText("No answer");
+            response.setText("No answer, the answer is "+solution);
             data.q20Asked +=1;
         } else if(solution == Double.valueOf(answer)){
             response.setText("Correct");
@@ -76,7 +76,7 @@ public class ChallengeQ20 extends AppCompatActivity {
             data.q20Asked += 1;
             data.q20Solved +=1;
         } else {
-            response.setText("Incorrect");
+            response.setText("Incorrect! The answer is " + solution);
             data.q20Asked +=1;
         }
         setDataUI();

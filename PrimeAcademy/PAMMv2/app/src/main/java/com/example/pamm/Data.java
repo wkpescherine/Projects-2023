@@ -17,6 +17,7 @@ public class Data {
     //Challenge Data
     public static int [] challengeValues = {0,0,0,0,0,0};
     public static int symbolBound = 0;
+    public static int operationsBound = 0;
     public static int nextTier = 0;
     public static int solvedAnswers = 0;
     public static int addBoundValue = 0;
@@ -98,10 +99,11 @@ public class Data {
         if(challengeTier.equals("Q20")){ challengeValues = new int[]{4,20,1000,1000,100,100};}
         //Setting the game stats/data to allow the game logic to build and solve formulas
         symbolBound = challengeValues[0];
-        nextTier = challengeValues[1];
-        addBoundValue = challengeValues[2];
-        subBoundValue = challengeValues[3];
-        multiBoundValue = challengeValues[4];
-        divBoundValue = challengeValues[5];
+        operationsBound = challengeValues[1];
+        nextTier = challengeValues[2];
+        addBoundValue = challengeValues[3];
+        subBoundValue = challengeValues[4];
+        multiBoundValue = challengeValues[5];
+        divBoundValue = challengeValues[6];
     }
 }

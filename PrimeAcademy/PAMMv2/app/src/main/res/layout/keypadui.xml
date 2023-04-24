@@ -115,6 +115,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
+                    android:text=""
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:fontFamily="@font/gloria_hallelujah"
+                    android:textColor="#ffa500"
+                    android:gravity="center"
+                    android:textSize="24dp" />
+                <TextView
                     android:text="-"
                     android:layout_width="72dp"
                     android:layout_height="72dp"
@@ -124,8 +132,8 @@
                     android:textSize="24dp"
                     android:onClick="handleKeypadNum"/>
                 <TextView
-                    android:text="DELETE"
-                    android:layout_width="216dp"
+                    android:text="DEL"
+                    android:layout_width="72dp"
                     android:layout_height="72dp"
                     android:fontFamily="@font/gloria_hallelujah"
                     android:textColor="#ffa500"
@@ -141,6 +149,14 @@
                     android:gravity="center"
                     android:textSize="24dp"
                     android:onClick="handleKeypadNum"/>
+                <TextView
+                    android:text=""
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:fontFamily="@font/gloria_hallelujah"
+                    android:textColor="#ffa500"
+                    android:gravity="center"
+                    android:textSize="24dp" />
             </TableRow>
     </TableLayout>
     </LinearLayout>
