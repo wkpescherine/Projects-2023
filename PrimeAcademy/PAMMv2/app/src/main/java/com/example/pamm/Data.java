@@ -44,7 +44,7 @@ public class Data {
         if(tier == 2){ challengeValues = new int[]{1, 1, 7, 5, 0, 0, 0};}
         if(tier == 3){ challengeValues = new int[]{1, 1, 10, 5, 0, 0, 0};}
         if(tier == 4){ challengeValues = new int[]{1, 1, 10, 7, 0, 0, 0};}
-        if(tier == 5){ challengeValues = new int[]{2, 1, 12, 7, 0, 0, 0};}
+        if(tier == 5){ challengeValues = new int[]{2, 1, 12, 7, 3, 0, 0};}
         if(tier == 6){ challengeValues = new int[]{2, 1, 12, 7, 5, 0, 0};}
         if(tier == 7){ challengeValues = new int[]{2, 1, 15, 7, 5, 0, 0};}
         if(tier == 8){ challengeValues = new int[]{2, 1, 15, 7, 7, 0, 0};}
@@ -55,7 +55,7 @@ public class Data {
         if(tier == 12){ challengeValues = new int[]{1, 1, 7, 7, 0, 0, 0};}
         if(tier == 13){ challengeValues = new int[]{1, 1, 10, 7, 0, 0, 0};}
         if(tier == 14){ challengeValues = new int[]{1, 1, 10, 10, 0, 0, 0};}
-        if(tier == 15){ challengeValues = new int[]{2, 1, 12, 10, 0, 0, 0};}
+        if(tier == 15){ challengeValues = new int[]{2, 1, 12, 10, 5, 0, 0};}
         if(tier == 16){ challengeValues = new int[]{2, 1, 12, 10, 7, 0, 0};}
         if(tier == 17){ challengeValues = new int[]{2, 1, 15, 10, 7, 0, 0};}
         if(tier == 18){ challengeValues = new int[]{2, 1, 15, 10, 10, 0, 0};}
@@ -75,9 +75,9 @@ public class Data {
         //3nd Grade Tier
         if(tier == 31){ challengeValues = new int[]{2, 1, 5, 25, 20, 0, 0};}
         if(tier == 32){ challengeValues = new int[]{2, 1, 7, 25, 20, 0, 0};}
-        if(tier == 33){ challengeValues = new int[]{2, 1, 10, 25, 10, 0, 0};}
-        if(tier == 34){ challengeValues = new int[]{2, 1, 10, 30, 10, 0, 0};}
-        if(tier == 35){ challengeValues = new int[]{2, 1, 12, 30, 10, 0, 0};}
+        if(tier == 33){ challengeValues = new int[]{2, 1, 10, 25, 20, 0, 0};}
+        if(tier == 34){ challengeValues = new int[]{2, 1, 10, 30, 20, 0, 0};}
+        if(tier == 35){ challengeValues = new int[]{2, 1, 12, 30, 20, 0, 0};}
         if(tier == 36){ challengeValues = new int[]{2, 1, 12, 30, 25, 0, 0};}
         if(tier == 37){ challengeValues = new int[]{2, 1, 15, 30, 25, 0, 0};}
         if(tier == 38){ challengeValues = new int[]{3, 1, 15, 30, 30, 5, 0};}

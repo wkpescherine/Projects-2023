@@ -9,10 +9,12 @@ TO DO LIST
 8.2)  Add a Data point for timed chhallenge, fastest
 8.3)  Add a data point for highest tier
 8.4)  Add a data point for highest score
+8.5)  Need to fix the calcultation to be only to the 2nd decimal
 9.0)  Start building out the Timed Question logic
 9.1)  Mostlike need to have a new thread for timer  on timed Questions
 11.0) Data needs to be saved for the questions after every question
-12.0) Need to review the chekc Tier handling function
+12.0) Need to review the check Tier handling function
+13.0) Move the Reset button from the Main Activity to the Profile Activity
 ---------
 DONE
 ---------

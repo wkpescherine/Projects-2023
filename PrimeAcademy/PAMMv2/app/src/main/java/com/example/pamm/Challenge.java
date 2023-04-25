@@ -83,19 +83,19 @@ public class Challenge extends AppCompatActivity {
         TextView num2 = findViewById(R.id.number2);
         TextView sym = findViewById(R.id.symbol);
         Random rnd = new Random();
-        Integer symbolValue = rnd.nextInt(data.symbolBound);
+        int symbolValue = rnd.nextInt(data.symbolBound);
         String symbolUsed = symbolArray[symbolValue];
         int boundValue = 0;
         if(symbolValue == 0){ boundValue = data.addBoundValue;}
         if(symbolValue == 1){ boundValue = data.subBoundValue;}
         if(symbolValue == 2){ boundValue = data.multiBoundValue;}
         if(symbolValue == 3){ boundValue = data.divBoundValue;}
-        Integer rndNum1 = rnd.nextInt(boundValue)+1;
-        Integer rndNum2 = rnd.nextInt(boundValue)+1;
+        int rndNum1 = rnd.nextInt(boundValue)+1;
+        int rndNum2 = rnd.nextInt(boundValue)+1;
         solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
         sym.setText(symbolUsed);
-        num1.setText(rndNum1.toString());
-        num2.setText(rndNum2.toString());
+        num1.setText(String.valueOf(rndNum1));
+        num2.setText(String.valueOf(rndNum2));
     }
 
     public void checkTier(){
