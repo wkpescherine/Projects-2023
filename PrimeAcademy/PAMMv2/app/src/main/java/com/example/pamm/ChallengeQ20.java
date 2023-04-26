@@ -3,6 +3,7 @@ package com.example.pamm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -66,7 +67,7 @@ public class ChallengeQ20 extends AppCompatActivity {
     }
 
     public void checkSolution(View v){
-        data.totalAsked += 1;
+        Data.totalAsked += 1;
         TextView response = findViewById(R.id.cresponse);
         if(answer.equals("")){
             response.setText("No answer, the answer is "+solution);
@@ -80,6 +81,7 @@ public class ChallengeQ20 extends AppCompatActivity {
             response.setText("Incorrect! The answer is " + solution);
             data.q20Asked +=1;
         }
+        saveData();
         setDataUI();
     }
 
@@ -92,6 +94,15 @@ public class ChallengeQ20 extends AppCompatActivity {
         answerQ20String.setText("");
         answer="";
         q20GameLogic();
+    }
+
+    public void saveData(){
+        String filename = "PAMM";
+        SharedPreferences sp = getSharedPreferences(filename,MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putInt("totalSolved", data.totalCorrect);
+        editor.putInt("totalAsked", data.totalAsked);
+        editor.commit();
     }
 
     public void backToDashboard(View v){

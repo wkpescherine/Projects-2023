@@ -32,8 +32,8 @@ public class Profile extends AppCompatActivity {
         if( Data.totalAsked != 0) {
             solvedPercent = ((double)Data.totalCorrect / (double)Data.totalAsked)*100;
         }
-        proDataSolved.setText("Total Correct Answers: "+ pdata.totalCorrect);
-        proDataAsked.setText("Total Questions Asked: "+ pdata.totalAsked);
+        proDataSolved.setText("Total Correct Answers: "+ Data.totalCorrect);
+        proDataAsked.setText("Total Questions Asked: "+ Data.totalAsked);
         proDataPercent.setText("Percent Correct Answers : "+ solvedPercent + "%");
     }
 
