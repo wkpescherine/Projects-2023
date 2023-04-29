@@ -25,6 +25,9 @@ public class Data {
     public static int multiBoundValue = 0;
     public static int divBoundValue = 0;
 
+    //Formula Data
+    public static String symbolUsed = "";
+
     public void checkGrade(){
         if(tier >= 1){ grade = "K";}
         if(tier >= 11){ grade = "1st";}

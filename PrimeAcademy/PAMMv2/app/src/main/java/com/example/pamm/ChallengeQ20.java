@@ -52,7 +52,7 @@ public class ChallengeQ20 extends AppCompatActivity {
         TextView sym = findViewById(R.id.symbol);
         Random rnd = new Random();
         Integer symbolValue = rnd.nextInt(data.symbolBound);
-        String symbolUsed = symbolArray[symbolValue];
+        Data.symbolUsed = symbolArray[symbolValue];
         int boundValue = 0;
         if(symbolValue == 0){ boundValue = data.addBoundValue;}
         if(symbolValue == 1){ boundValue = data.subBoundValue;}
@@ -60,10 +60,17 @@ public class ChallengeQ20 extends AppCompatActivity {
         if(symbolValue == 3){ boundValue = data.divBoundValue;}
         Integer rndNum1 = rnd.nextInt(boundValue)+1;
         Integer rndNum2 = rnd.nextInt(boundValue)+1;
-        solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
-        sym.setText(symbolUsed);
+        solution = solve.basicFormulas(Data.symbolUsed, rndNum1, rndNum2);
+        sym.setText(Data.symbolUsed);
         num1.setText(rndNum1.toString());
         num2.setText(rndNum2.toString());
+    }
+
+    public void setPoints(){
+        if(Data.symbolUsed.equals("+")){}
+        if(Data.symbolUsed.equals("-")){}
+        if(Data.symbolUsed.equals("*")){}
+        if(Data.symbolUsed.equals("/")){}
     }
 
     public void checkSolution(View v){
@@ -81,6 +88,7 @@ public class ChallengeQ20 extends AppCompatActivity {
             response.setText("Incorrect! The answer is " + solution);
             data.q20Asked +=1;
         }
+        setPoints();
         saveData();
         setDataUI();
     }
