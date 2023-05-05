@@ -7,6 +7,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -15,9 +17,14 @@ public class ChallengeQ20 extends AppCompatActivity {
     Data data = new Data();
     SolveEquation solve = new SolveEquation();
 
+    int points = 0;
     String answer = "";
     double solution = 0;
     String [] symbolArray = {"+","-","*","/"};
+
+    TextView num1 = findViewById(R.id.number1);
+    TextView num2 = findViewById(R.id.number2);
+    TextView sym = findViewById(R.id.symbol);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,9 +54,6 @@ public class ChallengeQ20 extends AppCompatActivity {
     }
 
     public void q20GameLogic (){
-        TextView num1 = findViewById(R.id.number1);
-        TextView num2 = findViewById(R.id.number2);
-        TextView sym = findViewById(R.id.symbol);
         Random rnd = new Random();
         Integer symbolValue = rnd.nextInt(data.symbolBound);
         Data.symbolUsed = symbolArray[symbolValue];
@@ -61,34 +65,35 @@ public class ChallengeQ20 extends AppCompatActivity {
         Integer rndNum1 = rnd.nextInt(boundValue)+1;
         Integer rndNum2 = rnd.nextInt(boundValue)+1;
         solution = solve.basicFormulas(Data.symbolUsed, rndNum1, rndNum2);
+        setPoints(rndNum1, rndNum2);
         sym.setText(Data.symbolUsed);
         num1.setText(rndNum1.toString());
         num2.setText(rndNum2.toString());
     }
 
-    public void setPoints(){
-        if(Data.symbolUsed.equals("+")){}
-        if(Data.symbolUsed.equals("-")){}
-        if(Data.symbolUsed.equals("*")){}
-        if(Data.symbolUsed.equals("/")){}
+    public void setPoints(int number1 , int number2){
+        if(Data.symbolUsed.equals("+")){points = (int) ((number1+number2)*.2);}
+        if(Data.symbolUsed.equals("-")){points = (int) ((number1+number2)*.6);}
+        if(Data.symbolUsed.equals("*")){points = (number1+number2)*2;}
+        if(Data.symbolUsed.equals("/")){points = (number1+number2)*5;}
     }
 
     public void checkSolution(View v){
-        Data.totalAsked += 1;
+        if(Data.totalAsked < 20){ Data.totalAsked += 1; }
         TextView response = findViewById(R.id.cresponse);
         if(answer.equals("")){
             response.setText("No answer, the answer is "+solution);
-            data.q20Asked +=1;
+            Data.q20Asked +=1;
         } else if(solution == Double.valueOf(answer)){
             response.setText("Correct");
-            data.totalCorrect += 1;
-            data.q20Asked += 1;
-            data.q20Solved +=1;
+            Data.q20Points += points;
+            Data.totalCorrect += 1;
+            Data.q20Asked += 1;
+            Data.q20Solved +=1;
         } else {
             response.setText("Incorrect! The answer is " + solution);
-            data.q20Asked +=1;
+            Data.q20Asked +=1;
         }
-        setPoints();
         saveData();
         setDataUI();
     }
@@ -96,12 +101,23 @@ public class ChallengeQ20 extends AppCompatActivity {
     public void setDataUI(){
         TextView dataQ20Asked = findViewById(R.id.q20Questions);
         TextView dataQ20Correct = findViewById(R.id.q20QuestionsCorrect);
+        TextView dataQ20Points = findViewById(R.id.q20Points);
         TextView answerQ20String = findViewById(R.id.answer);
-        dataQ20Asked.setText(data.q20Asked+" of 20");
+        dataQ20Asked.setText(Data.q20Asked+" of 20");
         dataQ20Correct.setText("Correct :"+ data.q20Solved);
+        dataQ20Points.setText("Points=: " + Data.q20Points);
         answerQ20String.setText("");
         answer="";
-        q20GameLogic();
+        if( Data.totalAsked < 20){q20GameLogic();}
+        else {
+            Button solveButton = findViewById(R.id.solveButton)
+            LinearLayout layoutQ20Header = findViewById(R.id.q20Header);
+            layoutQ20Header.setVisibility(View.INVISIBLE);
+            num1.setVisibility(View.INVISIBLE);
+            num2.setVisibility(View.INVISIBLE);
+            solveButton.setVisibility(View.INVISIBLE);
+            sym.setText("Finak Score : " + Data.q20Points);
+        }
     }
 
     public void saveData(){

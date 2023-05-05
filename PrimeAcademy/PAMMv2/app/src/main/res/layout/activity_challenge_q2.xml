@@ -96,6 +96,7 @@
         android:textColor="#ffa500"/>
 
     <Button
+        android:id="@+id/solveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Check Solution"

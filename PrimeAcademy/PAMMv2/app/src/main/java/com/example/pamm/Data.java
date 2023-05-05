@@ -29,13 +29,13 @@ public class Data {
     public static String symbolUsed = "";
 
     public void checkGrade(){
-        if(tier >= 1){ grade = "K";}
-        if(tier >= 11){ grade = "1st";}
-        if(tier >= 21){ grade = "2nd";}
-        if(tier >= 31){ grade = "3rd";}
-        if(tier >= 41){ grade = "4th";}
-        if(tier >= 51){ grade = "5th";}
-        if(tier >= 61){ grade = "6th";}
+        if(tier <= 10){ grade = "K";}
+        else if(tier <= 20){ grade = "1st";}
+        else if(tier <= 30){ grade = "2nd";}
+        else if(tier <= 40){ grade = "3rd";}
+        else if(tier <= 50){ grade = "4th";}
+        else if(tier <= 60){ grade = "5th";}
+        else if(tier <= 70){ grade = "6th";}
         checkNextTier();
     }
 
