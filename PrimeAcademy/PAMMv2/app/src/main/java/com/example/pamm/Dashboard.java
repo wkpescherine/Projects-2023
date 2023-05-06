@@ -22,10 +22,10 @@ public class Dashboard extends AppCompatActivity {
         getSupportActionBar().hide();
 
         SharedPreferences sp = getSharedPreferences("PAMM", MODE_PRIVATE);
-        data.grade = sp.getString("grade", null);
-        data.tier = sp.getInt("tier", 0);
-        data.totalCorrect = sp.getInt("totalSolved", 0);
-        data.totalAsked = sp.getInt("totalAsked", 0);
+        Data.grade = sp.getString("grade", null);
+        Data.tier = sp.getInt("tier", 0);
+        Data.totalCorrect = sp.getInt("totalSolved", 0);
+        Data.totalAsked = sp.getInt("totalAsked", 0);
         setDashDataUI();
 
     }
@@ -36,13 +36,18 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void clickTo20Questions(View v){
-        data.challengeTier = "Q20";
+        Data.challengeTier = "Q20";
         Intent intent = new Intent(this, ChallengeQ20.class);
         startActivity(intent);
     }
 
     public void clickToTimed(View v){
         Toast.makeText(getApplicationContext(),"Currently unavailble", Toast.LENGTH_SHORT).show();
+    }
+
+    public void clickPracticeQuestions(View v){
+        Intent intent = new Intent(this, Practice.class);
+        startActivity(intent);
     }
 
     public void clickToProfile(View v){

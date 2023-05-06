@@ -68,6 +68,18 @@
     <Button
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:text="Practice Questions"
+        android:layout_margin="5dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#ffa500"
+        android:fontFamily="@font/gloria_hallelujah"
+        android:textColor="#555"
+        android:onClick="clickPracticeQuestions"
+        />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
         android:text="Timed Challenge"
         android:layout_margin="5dp"
         android:layout_gravity="center_horizontal"
