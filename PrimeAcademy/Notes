@@ -1,4 +1,4 @@
-TO DO LIST
+TO DO LIST for v1
 ---------
 5.0)  Need to work on 20q logic
 5.1)  Work on how to calculate the points
@@ -6,7 +6,7 @@ TO DO LIST
 6.1)  Start to work on the text handling for the username
 8.0)  Start to add the various data points into the profile section
 8.1)  Issue with the calculation for % correct
-8.2)  Add a Data point for timed chhallenge, fastest
+8.2)  Add a Data point for timed challenge, fastest
 8.3)  Add a data point for highest tier
 8.4)  Add a data point for highest score
 8.5)  Need to fix the calcultation to be only to the 2nd decimal
@@ -15,6 +15,10 @@ TO DO LIST
 11.0) Data needs to be saved for the questions after every question
 12.0) Need to review the check Tier handling function
 13.0) Move the Reset button from the Main Activity to the Profile Activity
+14.0) Work on the Practice Question Screen
+14.1) Need to add game logic
+14.2) Need to better handle changing Tiers
+
 ---------
 DONE
 ---------
