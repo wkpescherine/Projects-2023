@@ -9,6 +9,7 @@ public class Data {
     public static String grade = "None";
     public static int totalCorrect = 0;
     public static int totalAsked = 0;
+    public static int q20HighestScore = 0;
     public static String challengeTier = "";
     public static int q20Asked = 0;
     public static int q20Solved = 0;

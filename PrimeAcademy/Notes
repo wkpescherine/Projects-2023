@@ -1,23 +1,15 @@
 TO DO LIST for v1
 ---------
-5.0)  Need to work on 20q logic
-5.1)  Work on how to calculate the points
-6.0)  Need to build out Profile UI
-6.1)  Start to work on the text handling for the username
-8.0)  Start to add the various data points into the profile section
-8.1)  Issue with the calculation for % correct
+6.1)  Profile:Start to work on the text handling for the username
 8.2)  Add a Data point for timed challenge, fastest
 8.3)  Add a data point for highest tier
-8.4)  Add a data point for highest score
-8.5)  Need to fix the calcultation to be only to the 2nd decimal
 9.0)  Start building out the Timed Question logic
 9.1)  Mostlike need to have a new thread for timer  on timed Questions
-11.0) Data needs to be saved for the questions after every question
 12.0) Need to review the check Tier handling function
 13.0) Move the Reset button from the Main Activity to the Profile Activity
-14.0) Work on the Practice Question Screen
-14.1) Need to add game logic
-14.2) Need to better handle changing Tiers
+14.0) Practice: Work on the Practice Question Screen
+14.1) Practice: Need to add game logic
+14.2) Practice: Need to better handle changing Tiers
 
 ---------
 DONE
@@ -26,6 +18,14 @@ DONE
 2.0)  Need to fix that the profile button is not working - DONE
 3.0)  Need to fix that the username goes to the profile = DONE
 4.0)  Need to get the logic for handling challenge changes to UI - DONE
+5.0)  Need to work on 20q logic - DONE
+5.1)  Work on how to calculate the points - DONE
+6.0)  Need to build out Profile UI - DONE
 7.0)  Need to add a font for all text, and change font color to ffa500. - DONE
+8.0)  Profile: Start to add the various data points into the profile section - DONE
+8.1)  Issue with the calculation for % correct - DONE
+8.4)  Add a data point for highest score - DONE
+8.5)  Need to fix the calcultation to be only to the 2nd decimal - DONE
 10.0) Need to review the solutions file for ahndling the decimal points - DONE
 10.1) Need to have the decimal point go out only to the 3rd value - DONE
+11.0) Data needs to be saved for the questions after every question - DONE

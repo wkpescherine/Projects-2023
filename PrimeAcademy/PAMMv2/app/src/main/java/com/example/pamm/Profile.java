@@ -27,6 +27,7 @@ public class Profile extends AppCompatActivity {
         TextView proDataSolved = findViewById(R.id.pSolved);
         TextView proDataAsked = findViewById(R.id.pAsked);
         TextView proDataPercent = findViewById(R.id.pPercent);
+        TextView proDataQ20HS = findViewById(R.id.q20High);
         proDataUsername.setText(pdata.username);
         double solvedPercent = 0;
         if( Data.totalAsked != 0) {
@@ -34,7 +35,8 @@ public class Profile extends AppCompatActivity {
         }
         proDataSolved.setText("Total Correct Answers: "+ Data.totalCorrect);
         proDataAsked.setText("Total Questions Asked: "+ Data.totalAsked);
-        proDataPercent.setText("Percent Correct Answers : "+ solvedPercent + "%");
+        proDataPercent.setText("Percent Correct Answers : "+ String.format("%2.f",solvedPercent) + "%");
+        proDataQ20HS.setText("20 Questions High Score: " + Data.q20HighestScore);;
     }
 
     public void backToDashboard(View v){

@@ -62,6 +62,13 @@
             android:text="Percent Correct Answers: 0"
             android:fontFamily="@font/gloria_hallelujah"
             android:textColor="#ffa500"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/q20High"
+            android:text="20 Question High Score: 0"
+            android:fontFamily="@font/gloria_hallelujah"
+            android:textColor="#ffa500"/>
 
     </LinearLayout>
 

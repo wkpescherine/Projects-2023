@@ -110,13 +110,13 @@ public class ChallengeQ20 extends AppCompatActivity {
         answer="";
         if( Data.totalAsked < 20){q20GameLogic();}
         else {
-            Button solveButton = findViewById(R.id.solveButton)
+            Button solveButton = findViewById(R.id.solveButton);
             LinearLayout layoutQ20Header = findViewById(R.id.q20Header);
             layoutQ20Header.setVisibility(View.INVISIBLE);
             num1.setVisibility(View.INVISIBLE);
             num2.setVisibility(View.INVISIBLE);
             solveButton.setVisibility(View.INVISIBLE);
-            sym.setText("Finak Score : " + Data.q20Points);
+            sym.setText("Final Score : " + Data.q20Points);
         }
     }
 
@@ -126,6 +126,9 @@ public class ChallengeQ20 extends AppCompatActivity {
         SharedPreferences.Editor editor = sp.edit();
         editor.putInt("totalSolved", data.totalCorrect);
         editor.putInt("totalAsked", data.totalAsked);
+        if(Data.q20Points > Data.q20HighestScore ){
+            editor.putInt("Q20HighScore",  Data.q20Points);
+        }
         editor.commit();
     }
 
