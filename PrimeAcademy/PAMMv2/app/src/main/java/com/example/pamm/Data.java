@@ -27,7 +27,10 @@ public class Data {
     public static int divBoundValue = 0;
 
     //Formula Data
-    public static String symbolUsed = "";
+    //public static String [] symbolArray = {"+","-","*","/"};
+    //public static String symbolUsed = "";
+    public static String formulaString = "";
+    public static int solution = 0;
 
     public void checkGrade(){
         if(tier <= 10){ grade = "K";}
