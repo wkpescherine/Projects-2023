@@ -35,7 +35,8 @@ public class Profile extends AppCompatActivity {
         }
         proDataSolved.setText("Total Correct Answers: "+ Data.totalCorrect);
         proDataAsked.setText("Total Questions Asked: "+ Data.totalAsked);
-        proDataPercent.setText("Percent Correct Answers : "+ String.format("%2.f",solvedPercent) + "%");
+        //proDataPercent.setText("Percent Correct Answers : "+ String.format("%2.f",solvedPercent) + "%");
+        proDataPercent.setText("Percent Correct Answers : "+ solvedPercent + "%");
         proDataQ20HS.setText("20 Questions High Score: " + Data.q20HighestScore);;
     }
 

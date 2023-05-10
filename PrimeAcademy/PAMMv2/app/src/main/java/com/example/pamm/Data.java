@@ -28,7 +28,7 @@ public class Data {
 
     //Formula Data
     //public static String [] symbolArray = {"+","-","*","/"};
-    //public static String symbolUsed = "";
+    public static String symbolUsed = "";
     public static String formulaString = "";
     public static int solution = 0;
 

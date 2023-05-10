@@ -22,10 +22,6 @@ public class ChallengeQ20 extends AppCompatActivity {
     double solution = 0;
     String [] symbolArray = {"+","-","*","/"};
 
-    TextView num1 = findViewById(R.id.number1);
-    TextView num2 = findViewById(R.id.number2);
-    TextView sym = findViewById(R.id.symbol);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +50,9 @@ public class ChallengeQ20 extends AppCompatActivity {
     }
 
     public void q20GameLogic (){
+        TextView num1 = findViewById(R.id.number1);
+        TextView num2 = findViewById(R.id.number2);
+        TextView sym = findViewById(R.id.symbol);
         Random rnd = new Random();
         Integer symbolValue = rnd.nextInt(data.symbolBound);
         Data.symbolUsed = symbolArray[symbolValue];
@@ -79,7 +78,7 @@ public class ChallengeQ20 extends AppCompatActivity {
     }
 
     public void checkSolution(View v){
-        if(Data.totalAsked < 20){ Data.totalAsked += 1; }
+        Data.totalAsked += 1;
         TextView response = findViewById(R.id.cresponse);
         if(answer.equals("")){
             response.setText("No answer, the answer is "+solution);
@@ -99,16 +98,19 @@ public class ChallengeQ20 extends AppCompatActivity {
     }
 
     public void setDataUI(){
+        TextView num1 = findViewById(R.id.number1);
+        TextView num2 = findViewById(R.id.number2);
+        TextView sym = findViewById(R.id.symbol);
         TextView dataQ20Asked = findViewById(R.id.q20Questions);
         TextView dataQ20Correct = findViewById(R.id.q20QuestionsCorrect);
         TextView dataQ20Points = findViewById(R.id.q20Points);
         TextView answerQ20String = findViewById(R.id.answer);
         dataQ20Asked.setText(Data.q20Asked+" of 20");
         dataQ20Correct.setText("Correct :"+ data.q20Solved);
-        dataQ20Points.setText("Points=: " + Data.q20Points);
+        dataQ20Points.setText("Points: " + Data.q20Points);
         answerQ20String.setText("");
         answer="";
-        if( Data.totalAsked < 20){q20GameLogic();}
+        if( Data.q20Asked < 20){q20GameLogic();}
         else {
             Button solveButton = findViewById(R.id.solveButton);
             LinearLayout layoutQ20Header = findViewById(R.id.q20Header);
@@ -133,9 +135,10 @@ public class ChallengeQ20 extends AppCompatActivity {
     }
 
     public void backToDashboard(View v){
-        data.q20Asked = 0;
-        data.q20Solved = 0;
-        data.challengeTier = "";
+        Data.q20Asked = 0;
+        Data.q20Solved = 0;
+        Data.challengeTier = "";
+        Data.q20Points = 0;
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }
