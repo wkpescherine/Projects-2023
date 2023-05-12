@@ -3,7 +3,7 @@ package com.example.pamm;
 import java.util.Random;
 
 public class FormulaBuilder {
-    Data data = new Data();
+    //Data data = new Data();
     public int builder(){
         Random rnd = new Random();
         int symbolValue = rnd.nextInt(Data.symbolBound);

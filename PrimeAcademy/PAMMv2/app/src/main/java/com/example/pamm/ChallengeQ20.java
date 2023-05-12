@@ -114,11 +114,11 @@ public class ChallengeQ20 extends AppCompatActivity {
         else {
             Button solveButton = findViewById(R.id.solveButton);
             LinearLayout layoutQ20Header = findViewById(R.id.q20Header);
-            layoutQ20Header.setVisibility(View.INVISIBLE);
-            num1.setVisibility(View.INVISIBLE);
-            num2.setVisibility(View.INVISIBLE);
-            solveButton.setVisibility(View.INVISIBLE);
-            sym.setText("Final Score : " + Data.q20Points);
+            layoutQ20Header.setVisibility(View.GONE);
+            num1.setVisibility(View.GONE);
+            num2.setVisibility(View.GONE);
+            solveButton.setVisibility(View.GONE);
+            sym.setText("Score: " + Data.q20Points);
         }
     }
 
@@ -139,6 +139,16 @@ public class ChallengeQ20 extends AppCompatActivity {
         Data.q20Solved = 0;
         Data.challengeTier = "";
         Data.q20Points = 0;
+        if( Data.q20Asked == 20){
+            TextView num1 = findViewById(R.id.number1);
+            TextView num2 = findViewById(R.id.number2);
+            Button solveButton = findViewById(R.id.solveButton);
+            LinearLayout layoutQ20Header = findViewById(R.id.q20Header);
+            layoutQ20Header.setVisibility(View.VISIBLE);
+            num1.setVisibility(View.VISIBLE);
+            num2.setVisibility(View.VISIBLE);
+            solveButton.setVisibility(View.VISIBLE);
+        }
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }

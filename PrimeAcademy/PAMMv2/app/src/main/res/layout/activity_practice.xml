@@ -101,7 +101,7 @@
         android:text="Check Solution"
         android:fontFamily="@font/gloria_hallelujah"
         android:backgroundTint="#ffa500"
-        android:onClick="checkSolution"
+        android:onClick="checkPracSolution"
         android:textColor="#555"/>
 
     <include layout="@layout/keypadui"/>

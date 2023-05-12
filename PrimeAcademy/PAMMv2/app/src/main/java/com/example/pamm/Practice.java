@@ -10,6 +10,9 @@ import android.widget.TextView;
 public class Practice extends AppCompatActivity {
     String answer = "";
 
+    Data pracData = new Data();
+    FormulaBuilder pracFormulaBuilder = new FormulaBuilder();
+
     int practiceTier = 1;
 
     @Override
@@ -19,6 +22,7 @@ public class Practice extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
+        practiceGameLogic();
     }
 
     public void handleKeypadNum(View v){
@@ -37,11 +41,22 @@ public class Practice extends AppCompatActivity {
         answerText.setText(answer);
     }
 
-    public void decreaseTier(){
-        if(practiceTier >1){ practiceTier -= 1;}
+    public void practiceGameLogic(){
+        pracData.checkNextTier();
+        pracFormulaBuilder.builder();
+    }
+    public void checkPracSolution(){
+        TextView response = findViewById(R.id.cresponse);
+        if(answer.equals(Data.solution)){
+            response.setText("Correct");
+        } else {
+            response.setText("Incorrect! The answer is " + Data.solution);
+        }
     }
 
-    public void increaseTier(){
-        if(practiceTier < 70){ practiceTier +=1;}
+    public void decreaseTier(){
+        if(practiceTier >= 2){ practiceTier -= 1;}
     }
+
+    public void increaseTier(){ if(practiceTier <= 69){ practiceTier +=1;} }
 }

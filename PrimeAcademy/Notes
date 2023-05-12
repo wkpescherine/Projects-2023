@@ -3,6 +3,7 @@ TO DO LIST for v1
 6.1)  Profile:Start to work on the text handling for the username
 8.2)  Add a Data point for timed challenge, fastest
 8.3)  Add a data point for highest tier
+8.5)  Need to fix the calcultation to be only to the 2nd decimal - DONE
 9.0)  Start building out the Timed Question logic
 9.1)  Mostlike need to have a new thread for timer  on timed Questions
 12.0) Need to review the check Tier handling function
@@ -10,6 +11,7 @@ TO DO LIST for v1
 14.0) Practice: Work on the Practice Question Screen
 14.1) Practice: Need to add game logic
 14.2) Practice: Need to better handle changing Tiers
+14.3) Practice: Needs much more work lots of crashing
 
 ---------
 DONE
@@ -25,7 +27,6 @@ DONE
 8.0)  Profile: Start to add the various data points into the profile section - DONE
 8.1)  Issue with the calculation for % correct - DONE
 8.4)  Add a data point for highest score - DONE
-8.5)  Need to fix the calcultation to be only to the 2nd decimal - DONE
 10.0) Need to review the solutions file for ahndling the decimal points - DONE
 10.1) Need to have the decimal point go out only to the 3rd value - DONE
 11.0) Data needs to be saved for the questions after every question - DONE
