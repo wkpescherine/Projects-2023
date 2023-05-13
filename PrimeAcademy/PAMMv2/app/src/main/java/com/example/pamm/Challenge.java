@@ -75,6 +75,7 @@ public class Challenge extends AppCompatActivity {
             data.solvedAnswers -= 1;
         }
         checkTier();
+        if(Data.tier > Data.highestTier){ Data.highestTier = Data.tier;}
         setDataUI();
     }
 
@@ -119,6 +120,7 @@ public class Challenge extends AppCompatActivity {
         editor.putInt("tier", data.tier);
         editor.putInt("totalSolved", data.totalCorrect);
         editor.putInt("totalAsked", data.totalAsked);
+        editor.putInt("HighestTier", Data.highestTier);
         editor.commit();
     }
 

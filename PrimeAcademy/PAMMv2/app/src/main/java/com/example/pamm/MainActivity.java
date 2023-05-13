@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putInt("totalSolved", 0);
             editor.putInt("totalAsked", 0);
             editor.putInt("Q20HighScore", 0);
+            editor.putInt("HighestTier", 0);
             editor.commit();
         }
     }
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         editor.putInt("totalSolved", 0);
         editor.putInt("totalAsked", 0);
         editor.putInt("Q20HighScore", 0);
+        editor.putInt("HighestTier", 0);
         editor.commit();
     }
 

@@ -54,9 +54,11 @@ public class Practice extends AppCompatActivity {
         }
     }
 
-    public void decreaseTier(){
-        if(practiceTier >= 2){ practiceTier -= 1;}
+    public void decreaseTier(View v){
+        if(practiceTier > 1){practiceTier -= 1;}
     }
 
-    public void increaseTier(){ if(practiceTier <= 69){ practiceTier +=1;} }
+    public void increaseTier(View v){
+        if(practiceTier <= Data.highestTier){ practiceTier +=1;}
+    }
 }

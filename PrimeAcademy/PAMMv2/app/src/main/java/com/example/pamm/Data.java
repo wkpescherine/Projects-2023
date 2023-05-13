@@ -7,6 +7,7 @@ public class Data {
     public static String username = "Guest";
     public static Integer tier = 0;
     public static String grade = "None";
+    public static int highestTier = 0;
     public static int totalCorrect = 0;
     public static int totalAsked = 0;
     public static int q20HighestScore = 0;

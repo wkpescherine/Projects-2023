@@ -27,6 +27,7 @@ public class Dashboard extends AppCompatActivity {
         Data.totalCorrect = sp.getInt("totalSolved", 0);
         Data.totalAsked = sp.getInt("totalAsked", 0);
         Data.q20HighestScore = sp.getInt("Q20HighScore", 0);
+        Data.highestTier = sp.getInt("HighestTier", 0);
         setDashDataUI();
 
     }
