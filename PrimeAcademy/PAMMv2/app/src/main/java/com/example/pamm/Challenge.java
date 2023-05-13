@@ -75,7 +75,6 @@ public class Challenge extends AppCompatActivity {
             data.solvedAnswers -= 1;
         }
         checkTier();
-        if(Data.tier > Data.highestTier){ Data.highestTier = Data.tier;}
         setDataUI();
     }
 
@@ -100,15 +99,18 @@ public class Challenge extends AppCompatActivity {
     }
 
     public void checkTier(){
-        if(data.solvedAnswers == data.nextTier){
-            data.tier += 1;
-            data.solvedAnswers = 0;
+        if(Data.solvedAnswers == Data.nextTier){
+            if(Data.tier < 70){
+                Data.tier += 1;
+                Data.solvedAnswers = 0;
+            }
         }
-        if(data.solvedAnswers == -1 && data.tier > 1){
-            data.tier -= 1;
-            data.solvedAnswers = 0;
+        if(Data.solvedAnswers == -1 && Data.tier > 1){
+            Data.tier -= 1;
+            Data.solvedAnswers = 0;
         }
         data.checkGrade();
+        if(Data.tier > Data.highestTier){ Data.highestTier = Data.tier;}
         saveData();
     }
 
