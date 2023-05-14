@@ -52,8 +52,14 @@ public class Profile extends AppCompatActivity {
         editor.putInt("totalSolved", 0);
         editor.putInt("totalAsked", 0);
         editor.putInt("Q20HighScore", 0);
-        editor.putInt("HighestTier", 0);
+        editor.putInt("HighestTier", 1);
         editor.commit();
+        Data.grade = sp.getString("grade", null);
+        Data.tier = sp.getInt("tier", 0);
+        Data.totalCorrect = sp.getInt("totalSolved", 0);
+        Data.totalAsked = sp.getInt("totalAsked", 0);
+        Data.q20HighestScore = sp.getInt("Q20HighScore", 0);
+        Data.highestTier = sp.getInt("HighestTier", 0);
         setProfileUI();
     }
 

@@ -2,6 +2,7 @@ package com.example.pamm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -47,7 +48,7 @@ public class Practice extends AppCompatActivity {
         pracData.checkNextTier();
         pracFormulaBuilder.builder();
     }
-    public void checkPracSolution(){
+    public void checkPracSolution(View v){
         TextView response = findViewById(R.id.cresponse);
         if(answer.equals(Data.solution)){
             response.setText("Correct");
@@ -68,5 +69,11 @@ public class Practice extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(),"Your Practice Tier is at the highest possible", Toast.LENGTH_SHORT).show();
         }
+        TextView 
+    }
+
+    public void backToDashboard(View v){
+        Intent intent = new Intent(this, Dashboard.class);
+        startActivity(intent);
     }
 }
