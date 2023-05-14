@@ -80,6 +80,16 @@
     </LinearLayout>
 
     <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="resetData"
+        android:layout_gravity="center"
+        android:backgroundTint="#ffa500"
+        android:textColor="#555"
+        android:fontFamily="@font/gloria_hallelujah"
+        android:text="Reset" />
+
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="backToDashboard"

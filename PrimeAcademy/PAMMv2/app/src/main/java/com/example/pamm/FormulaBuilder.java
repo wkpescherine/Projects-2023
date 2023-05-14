@@ -19,6 +19,18 @@ public class FormulaBuilder {
             Data.formulaString = rndNum1+"+"+rndNum2;
             Data.solution = rndNum1+rndNum2;
         }
+        if(symbolValue == 1){
+            Data.formulaString = rndNum1+"-"+rndNum2;
+            Data.solution = rndNum1-rndNum2;
+        }
+        if(symbolValue == 2){
+            Data.formulaString = rndNum1+"x"+rndNum2;
+            Data.solution = rndNum1*rndNum2;
+        }
+        if(symbolValue == 3){
+            Data.formulaString = rndNum1+"/"+rndNum2;
+            Data.solution = rndNum1/rndNum2;
+        }
         return 0;
     }
 }

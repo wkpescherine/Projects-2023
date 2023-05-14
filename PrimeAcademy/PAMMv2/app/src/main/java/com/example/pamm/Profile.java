@@ -3,6 +3,7 @@ package com.example.pamm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -40,6 +41,20 @@ public class Profile extends AppCompatActivity {
         proDataPercent.setText("Percent Correct Answers : "+ solvedPercent + "%");
         proDataQ20HS.setText("20 Questions High Score: " + Data.q20HighestScore);
         proDataHighestTier.setText("Highest Tier: " + Data.highestTier);
+    }
+
+    public void resetData(View v){
+        String filename = "PAMM";
+        SharedPreferences sp = getSharedPreferences(filename,MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("grade", "k");
+        editor.putInt("tier", 1);
+        editor.putInt("totalSolved", 0);
+        editor.putInt("totalAsked", 0);
+        editor.putInt("Q20HighScore", 0);
+        editor.putInt("HighestTier", 0);
+        editor.commit();
+        setProfileUI();
     }
 
     public void backToDashboard(View v){

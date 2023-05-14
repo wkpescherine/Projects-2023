@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Practice extends AppCompatActivity {
     String answer = "";
@@ -42,6 +43,7 @@ public class Practice extends AppCompatActivity {
     }
 
     public void practiceGameLogic(){
+        Data.tier = practiceTier;
         pracData.checkNextTier();
         pracFormulaBuilder.builder();
     }
@@ -59,6 +61,12 @@ public class Practice extends AppCompatActivity {
     }
 
     public void increaseTier(View v){
-        if(practiceTier <= Data.highestTier){ practiceTier +=1;}
+        if(Data.highestTier == 0){
+            Toast.makeText(getApplicationContext(),"Current Tier is 0 unable to raise it", Toast.LENGTH_SHORT).show();
+        } else if(practiceTier < Data.highestTier){
+            practiceTier +=1;
+        } else {
+            Toast.makeText(getApplicationContext(),"Your Practice Tier is at the highest possible", Toast.LENGTH_SHORT).show();
+        }
     }
 }

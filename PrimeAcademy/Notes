@@ -2,14 +2,15 @@ TO DO LIST for v1
 ---------
 6.1)  Profile: Start to work on the text handling for the username
 8.2)  Profile: Add a Data point for timed challenge, fastest
-8.5)  Profile: Need to fix the calcultation to be only to the 2nd decimal - DONE
+8.5)  Profile: Need to fix the calculation to be only to the 2nd decimal - DONE
 9.0)  Timed: Start building out the Timed Question logic
 9.1)  Timed: Mostlike need to have a new thread for timer  on timed Questions
 13.0) Profile: Move the Reset button from the Main Activity to the Profile Activity
+13.1) Profile: Reset does clear, but does not update the UI
 14.0) Practice: Work on the Practice Question Screen
 14.1) Practice: Need to add game logic
 14.2) Practice: Need to better handle changing Tiers
-14.3) Practice: Needs much more work lots of crashing
+14.3) Practice: Issueswihthe chnaging tierespecially on the plus side
 
 ---------
 DONE
