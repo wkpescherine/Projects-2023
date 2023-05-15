@@ -44,7 +44,9 @@ public class Practice extends AppCompatActivity {
     }
 
     public void practiceGameLogic(){
-        Data.tier = practiceTier;
+        TextView pracTierValue = findViewById(R.id.practiceTier);
+        pracTierValue.setText("Tier: " +practiceTier)
+        //Data.tier = practiceTier;
         pracData.checkNextTier();
         pracFormulaBuilder.builder();
     }
@@ -69,7 +71,7 @@ public class Practice extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(),"Your Practice Tier is at the highest possible", Toast.LENGTH_SHORT).show();
         }
-        TextView 
+        TextView
     }
 
     public void backToDashboard(View v){
