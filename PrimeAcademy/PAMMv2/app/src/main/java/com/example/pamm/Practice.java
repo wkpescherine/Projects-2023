@@ -15,7 +15,7 @@ public class Practice extends AppCompatActivity {
     Data pracData = new Data();
     FormulaBuilder pracFormulaBuilder = new FormulaBuilder();
 
-    int practiceTier = 1;
+    //int practiceTier = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +45,7 @@ public class Practice extends AppCompatActivity {
 
     public void practiceGameLogic(){
         TextView pracTierValue = findViewById(R.id.practiceTier);
-        pracTierValue.setText("Tier: " +practiceTier)
-        //Data.tier = practiceTier;
+        pracTierValue.setText("Tier: " +Data.practiceTier);
         pracData.checkNextTier();
         pracFormulaBuilder.builder();
     }
@@ -60,21 +59,21 @@ public class Practice extends AppCompatActivity {
     }
 
     public void decreaseTier(View v){
-        if(practiceTier > 1){practiceTier -= 1;}
+        if(Data.practiceTier > 1){Data.practiceTier -= 1;}
     }
 
     public void increaseTier(View v){
         if(Data.highestTier == 0){
             Toast.makeText(getApplicationContext(),"Current Tier is 0 unable to raise it", Toast.LENGTH_SHORT).show();
-        } else if(practiceTier < Data.highestTier){
-            practiceTier +=1;
+        } else if(Data.practiceTier < Data.highestTier){
+            Data.practiceTier +=1;
         } else {
             Toast.makeText(getApplicationContext(),"Your Practice Tier is at the highest possible", Toast.LENGTH_SHORT).show();
         }
-        TextView
     }
 
     public void backToDashboard(View v){
+        Data.challengeTier = "";
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }
