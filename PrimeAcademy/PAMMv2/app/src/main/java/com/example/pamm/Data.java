@@ -48,7 +48,8 @@ public class Data {
 
     public void checkNextTier(){
         //challengeValues [symbolBound,operationsBound,nextTier,addBoundValue, subBoundValue]
-        if(challengeTier.equals("Practice")){checkTier = practiceTier}
+        if(challengeTier.equals("Practice")){checkTier = practiceTier;}
+        else{ checkTier = tier;}
         //Kindergarten Tier
         if(checkTier == 1){ challengeValues = new int[]{1, 1, 5, 5, 0, 0, 0};}
         if(checkTier == 2){ challengeValues = new int[]{1, 1, 7, 5, 0, 0, 0};}
