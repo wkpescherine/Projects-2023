@@ -60,6 +60,7 @@ public class Practice extends AppCompatActivity {
 
     public void decreaseTier(View v){
         if(Data.practiceTier > 1){Data.practiceTier -= 1;}
+        practiceGameLogic();
     }
 
     public void increaseTier(View v){
@@ -70,6 +71,7 @@ public class Practice extends AppCompatActivity {
         } else {
             Toast.makeText(getApplicationContext(),"Your Practice Tier is at the highest possible", Toast.LENGTH_SHORT).show();
         }
+        practiceGameLogic();
     }
 
     public void backToDashboard(View v){
