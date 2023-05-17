@@ -36,19 +36,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void resetData(View v){
-        String filename = "PAMM";
-        SharedPreferences sp = getSharedPreferences(filename,MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        editor.putString("grade", "k");
-        editor.putInt("tier", 1);
-        editor.putInt("totalSolved", 0);
-        editor.putInt("totalAsked", 0);
-        editor.putInt("Q20HighScore", 0);
-        editor.putInt("HighestTier", 1);
-        editor.commit();
-    }
-
     public void clickToStart(View v){
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);

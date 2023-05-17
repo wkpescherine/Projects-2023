@@ -48,20 +48,10 @@
         android:textColor="#555"
         android:text="Start" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="resetData"
-        android:layout_gravity="center"
-        android:backgroundTint="#ffa500"
-        android:textColor="#555"
-        android:fontFamily="@font/gloria_hallelujah"
-        android:text="Reset" />
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="version 0.30.1"
+        android:text="version 0.31.0"
         android:textColor="#ffa500"
         android:textSize="16dp"
         android:fontFamily="@font/gloria_hallelujah"
