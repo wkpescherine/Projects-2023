@@ -1,20 +1,25 @@
 TO DO LIST for v2
 ---------
 1.0)  Profile: Start to work on the text handling for the username
+1.1)  Profile: Add a Data point for timed challenge, fastest
+1.2)  Profile: Need to fix the calculation to be only to the 2nd decimal
 2.0)  Timed: Start building out the Timed Question logic
 2.1)  Timed: Mostlike need to have a new thread for timer  on timed Questions
+3.0)  General: Expand tiers to include 8th and 9th grade, adds 20 tiers
+3.1)  General; Start to expand the complexity of the math
+4.0)  Builder: Start to build out the formula builder
+
+DONE
+---------
 ______________________________________________________________________________________
 
 TO DO LIST for v1
 ---------
-8.2)  Profile: Add a Data point for timed challenge, fastest
-8.5)  Profile: Need to fix the calculation to be only to the 2nd decimal
 14.0) Practice: Work on the Practice Question Screen
 14.1) Practice: Need to add game logic
 15.0) General: Add in Section for ads to be placed on dashboard
 15.1) General: Add in Section for ads to be placed on challenge screen
 15.2) General: Add in Section for ads to be placed on Q20 screen
-16.0) Main: Delete the reset button from main screen as well as code
 
 DONE
 ---------
@@ -38,3 +43,4 @@ DONE
 13.1) Profile: Reset does clear, but does not update the UI - DONE
 14.2) Practice: Need to better handle changing Tiers - DONE
 14.3) Practice: Issues with the chnaging tier especially on the plus side - DONE
+16.0) Main: Delete the reset button from main screen as well as code - DONE
