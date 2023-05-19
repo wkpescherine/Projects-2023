@@ -2,13 +2,16 @@ package com.example.pfs_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,15 +27,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkPref(){
-        String filename = "PAMM";
+        String filename = "PFS";
         SharedPreferences sp = getSharedPreferences(filename,MODE_PRIVATE);
         if(filename.isEmpty()){
             SharedPreferences.Editor editor = sp.edit();
             editor.putString("status", "inactive");
-            editor.putString("Username", "");
+            editor.putString("username", "");
             editor.putString("password", "");
-            editor.putString("Education", "");
-            editor.putInt("Age", 0);
+            editor.putString("education", "");
+            editor.putString("state", "");
+            editor.putInt("age", 0);
             editor.putInt("cashOnHand", 0);
             editor.putInt("timeSpeed", 24);
             editor.commit();
@@ -40,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkStatus(){
-        SharedPreferences sp = getSharedPreferences("PAMM", MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("PFS", MODE_PRIVATE);
         String currentStatus = sp.getString("status", null);
         LinearLayout login = findViewById(R.id.loginInfo);
         Button create = findViewById(R.id.create);
@@ -56,7 +60,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void createAccount(View v){}
+    public void createAccount(View v){
+        Intent intent = new Intent(this, CreateAccount.class);
+        startActivity(intent);
+    }
 
-    public void login(View v){}
+    public void login(View v){
+        SharedPreferences sp = getSharedPreferences("PFS",MODE_PRIVATE);
+        String userName = sp.getString("username", null);
+        String userPass = sp.getString("password", null);
+        EditText user = findViewById(R.id.username);
+        EditText pass = findViewById(R.id.password);
+        String enteredUsername = user.getText().toString();
+        String enteredPassword = pass.getText().toString();
+        if(userName.equals(enteredUsername) && userPass.equals(enteredPassword)){
+            Intent intent = new Intent(this, dashboard.class);
+            startActivity(intent);
+        }else{
+            Toast.makeText(getApplicationContext(),"Incorrect username or password", Toast.LENGTH_SHORT).show();
+        }
+
+    }
 }
