@@ -17,6 +17,7 @@ import com.google.android.gms.ads.AdView;
 
 public class Dashboard extends AppCompatActivity {
     Data data = new Data();
+    //private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +35,6 @@ public class Dashboard extends AppCompatActivity {
         Data.q20HighestScore = sp.getInt("Q20HighScore", 0);
         Data.highestTier = sp.getInt("HighestTier", 0);
         setDashDataUI();
-
-        //MobileAds.initialize(this, new OnInitializationCompleteListener() {
-        //    @Override
-        //    public void onInitializationComplete(InitializationStatus initializationStatus) {
-        //    }
-        //});
-
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
     }
 
