@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.6.2": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.6.2": []
+  },
+  "packageFolders": {
+    "/Users/wkpescherine/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/wkpescherine/Desktop/Projects-2023/Ascension/Ascensionv1/Test.csproj",
+      "projectName": "Test",
+      "projectPath": "/Users/wkpescherine/Desktop/Projects-2023/Ascension/Ascensionv1/Test.csproj",
+      "packagesPath": "/Users/wkpescherine/.nuget/packages/",
+      "outputPath": "/Users/wkpescherine/Desktop/Projects-2023/Ascension/Ascensionv1/obj/",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "/Users/wkpescherine/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net462"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net462": {
+          "projectReferences": {}
+        }
+      }
+    },
+    "frameworks": {
+      "net462": {}
+    }
+  }
+}
