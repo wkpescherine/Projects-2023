@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PAMM</string>
+    <string name="About_Section1">\t\t Welcome to Prime Academy Math Master. Where we offer you a chance to practice your math skills along various educational levels. \n \t\t And as well as test your math skills</string>
+    <string name="Notes_Section1">Version 1.0.0 - June 7th 2023</string>
+    <string name="Notes_Section2">\u25cf Current Tier Cap is 70</string>
+    <string name="Notes_Section3">\u25cf Current Grade Cap is 6th</string>
 </resources>

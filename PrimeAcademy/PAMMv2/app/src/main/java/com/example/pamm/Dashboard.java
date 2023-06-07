@@ -59,12 +59,12 @@ public class Dashboard extends AppCompatActivity {
         startActivity(intent);
     }
     public void clickToNotes(View v){
-        //Intent intent = new Intent(this, Notes.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, Notes.class);
+        startActivity(intent);
     }
     public void clickToAbout(View v){
-        //Intent intent = new Intent(this, About.class);
-        //startActivity(intent);
+        Intent intent = new Intent(this, About.class);
+        startActivity(intent);
     }
 
     public void setDashDataUI(){

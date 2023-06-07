@@ -8,6 +8,27 @@
     android:orientation="vertical"
     android:background="@drawable/chalkboard">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:fontFamily="@font/gloria_hallelujah"
+        android:layout_gravity="center_horizontal"
+        android:textSize="48dp"
+        android:textColor="#ffa500"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ffa500"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/About_Section1"
+        android:textColor="#ffa500"
+        />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
