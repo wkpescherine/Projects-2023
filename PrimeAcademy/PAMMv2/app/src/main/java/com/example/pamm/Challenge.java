@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -139,5 +140,26 @@ public class Challenge extends AppCompatActivity {
         data.solvedAnswers = 0;
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
+    }
+
+    protected void onStop(){
+        super.onStop();
+        Toast.makeText(getApplicationContext(),"onStop", Toast.LENGTH_SHORT).show();
+    }
+
+    protected void onPause(){
+        super.onPause();
+        data.totalAsked += 1;
+        TextView response = findViewById(R.id.cresponse);
+        response.setText("No answer due to leaving app");
+        data.solvedAnswers -= 1;
+        checkTier();
+        setDataUI();
+        Toast.makeText(getApplicationContext(),"Leaving the app will cause an incorrect answer", Toast.LENGTH_SHORT).show();
+    }
+
+    protected void onDestroy(){
+        super.onDestroy();
+        Toast.makeText(getApplicationContext(),"onDestroy", Toast.LENGTH_SHORT).show();
     }
 }
