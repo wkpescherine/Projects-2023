@@ -105,6 +105,30 @@
             android:textColor="#555"
             android:onClick="clickToProfile"
             />
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#fff"
+            android:text="About"
+            android:fontFamily="@font/gloria_hallelujah"
+            android:textAlignment="center"
+            android:paddingTop="20dp"
+            android:backgroundTint="#ffa500"
+            android:textColor="#555"
+            android:onClick="clickToAbout"
+            />
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#fff"
+            android:text="Patch Notes"
+            android:fontFamily="@font/gloria_hallelujah"
+            android:textAlignment="center"
+            android:paddingTop="20dp"
+            android:backgroundTint="#ffa500"
+            android:textColor="#555"
+            android:onClick="clickToNotes"
+            />
     </LinearLayout>
 
     <Button

@@ -142,11 +142,6 @@ public class Challenge extends AppCompatActivity {
         startActivity(intent);
     }
 
-    protected void onStop(){
-        super.onStop();
-        Toast.makeText(getApplicationContext(),"onStop", Toast.LENGTH_SHORT).show();
-    }
-
     protected void onPause(){
         super.onPause();
         data.totalAsked += 1;
@@ -156,10 +151,5 @@ public class Challenge extends AppCompatActivity {
         checkTier();
         setDataUI();
         Toast.makeText(getApplicationContext(),"Leaving the app will cause an incorrect answer", Toast.LENGTH_SHORT).show();
-    }
-
-    protected void onDestroy(){
-        super.onDestroy();
-        Toast.makeText(getApplicationContext(),"onDestroy", Toast.LENGTH_SHORT).show();
     }
 }
