@@ -92,7 +92,16 @@ public class Challenge extends AppCompatActivity {
         if(symbolValue == 3){ boundValue = data.divBoundValue;}
         int rndNum1 = rnd.nextInt(boundValue)+1;
         int rndNum2 = rnd.nextInt(boundValue)+1;
+        if(symbolValue == 1){
+            rndNum2 = rnd.nextInt(rndNum1)+1;
+        }
         solution = solve.basicFormulas(symbolUsed, rndNum1, rndNum2);
+        if(symbolValue == 3){
+             solution = rnd.nextInt(boundValue)+1;
+             rndNum2 = rnd.nextInt(boundValue)+1;
+             rndNum1 = (int) (rndNum2 * solution);
+
+        }
         sym.setText(symbolUsed);
         num1.setText(String.valueOf(rndNum1));
         num2.setText(String.valueOf(rndNum2));

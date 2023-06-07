@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         if(filename.isEmpty()){
             SharedPreferences.Editor editor = sp.edit();
             editor.putString("grade", "k");
+            editor.putInt("version", 340);
             editor.putInt("tier", 1);
             editor.putInt("totalSolved", 0);
             editor.putInt("totalAsked", 0);
@@ -34,10 +36,19 @@ public class MainActivity extends AppCompatActivity {
             editor.putInt("HighestTier", 1);
             editor.commit();
         }
+        checkVersion();
     }
 
     public void clickToStart(View v){
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
+    }
+
+    public void checkVersion(){
+        SharedPreferences sp = getSharedPreferences("PAMM", MODE_PRIVATE);
+        int currentVersion = sp.getInt("version", 0);
+        if(currentVersion == 340){
+            Toast.makeText(getApplicationContext(),"Version up to Date", Toast.LENGTH_SHORT).show();
+        }
     }
 }
