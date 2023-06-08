@@ -28,6 +28,20 @@
         android:text="@string/About_Section1"
         android:textColor="#ffa500"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/About_Section2"
+        android:textColor="#ffa500"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/About_Section3"
+        android:textColor="#ffa500"
+        />
 
     <Button
         android:layout_width="match_parent"
