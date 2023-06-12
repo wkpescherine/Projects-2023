@@ -13,7 +13,7 @@ void main() {
         backgroundColor: Colors.grey[800],
       ),
       body: const Center(
-        child: Text("Test Here"),
+        child: Text("Text Here"),
       ),
     ),
   ));
