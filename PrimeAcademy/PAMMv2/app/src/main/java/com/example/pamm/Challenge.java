@@ -142,14 +142,14 @@ public class Challenge extends AppCompatActivity {
         startActivity(intent);
     }
 
-    protected void onPause(){
-        super.onPause();
-        data.totalAsked += 1;
-        TextView response = findViewById(R.id.cresponse);
-        response.setText("No answer due to leaving app");
-        data.solvedAnswers -= 1;
-        checkTier();
-        setDataUI();
-        Toast.makeText(getApplicationContext(),"Leaving the app will cause an incorrect answer", Toast.LENGTH_SHORT).show();
-    }
+    //protected void onPause(){
+    //    super.onPause();
+    //    data.totalAsked += 1;
+    //   TextView response = findViewById(R.id.cresponse);
+    //    response.setText("No answer due to leaving app");
+    //    data.solvedAnswers -= 1;
+    //    checkTier();
+    //    setDataUI();
+    //    Toast.makeText(getApplicationContext(),"Leaving the app will cause an incorrect answer", Toast.LENGTH_SHORT).show();
+    //}
 }

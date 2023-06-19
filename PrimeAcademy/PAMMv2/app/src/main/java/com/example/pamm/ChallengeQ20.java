@@ -10,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -152,4 +153,14 @@ public class ChallengeQ20 extends AppCompatActivity {
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }
+
+    //protected void onPause(){
+    //    super.onPause();
+    //    data.totalAsked += 1;
+    //    data.q20Asked += 1;
+    //    TextView response = findViewById(R.id.cresponse);
+    //    response.setText("No answer due to leaving app");
+    //    setDataUI();
+    //    Toast.makeText(getApplicationContext(),"Leaving the app will cause an incorrect answer", Toast.LENGTH_SHORT).show();
+    //}
 }
