@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="IRONMAN"
         android:textColor="#fff"
-        android:textSize="80dp"
+        android:textSize="64dp"
         android:layout_marginTop="200dp"
         android:textAlignment="center"
         android:gravity="center_horizontal" />
@@ -54,7 +54,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="version 2"
+        android:text="version 3.2"
         android:textColor="#fff"
         android:textSize="8dp"
         android:layout_marginTop="10dp"
