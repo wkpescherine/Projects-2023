@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         if(filename.isEmpty()){
             SharedPreferences.Editor editor = sp.edit();
             editor.putString("grade", "k");
-            editor.putInt("version", 340);
+            editor.putInt("version", 390);
             editor.putInt("tier", 1);
             editor.putInt("totalSolved", 0);
             editor.putInt("totalAsked", 0);
@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickToStart(View v){
-        checkVersion();
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }
@@ -49,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sp2 = getSharedPreferences("PAMM",MODE_PRIVATE);
         int currentVersion;
         currentVersion = sp2.getInt("version", 1);
-        if(currentVersion == 340){
+        if(currentVersion == 390){
             Toast.makeText(getApplicationContext(),"Version up to Date", Toast.LENGTH_SHORT).show();
         }else{
             SharedPreferences.Editor editor2 = sp2.edit();
-            editor2.putInt("version", 340);
+            editor2.putInt("version", 390);
             editor2.commit();
         }
     }

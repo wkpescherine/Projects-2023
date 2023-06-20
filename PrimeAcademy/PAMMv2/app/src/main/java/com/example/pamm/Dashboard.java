@@ -48,7 +48,6 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void clickPracticeQuestions(View v){
-        //Toast.makeText(getApplicationContext(),"Currently unavailble", Toast.LENGTH_SHORT).show();
         Data.challengeTier = "Practice";
         Intent intent = new Intent(this, Practice.class);
         startActivity(intent);
