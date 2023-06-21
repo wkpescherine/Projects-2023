@@ -28,7 +28,7 @@
             android:background="#fff"
             android:gravity="center"
             android:hint="EnterUsername"
-            android:layout_margin="10dp"/>
+            android:layout_margin="5dp"/>
         <EditText
             android:id="@+id/confirmUser"
             android:layout_width="150dp"
@@ -36,21 +36,34 @@
             android:background="#fff"
             android:gravity="center"
             android:hint="Confirm Username"
-            android:layout_margin="10dp"/>
+            android:layout_margin="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <EditText
+            android:id="@+id/createPass"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:hint="Enter Password"/>
+        <EditText
+            android:id="@+id/confirmPass"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:hint="Confirm Password"/>
     </LinearLayout>
 
     <EditText
-        android:id="@+id/createPass"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:background="#fff"
-        android:layout_margin="10dp"
-        android:layout_gravity="center"
-        android:hint="Enter Password"/>
-
-    <EditText
         android:id="@+id/createEmail"
-        android:layout_width="300dp"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:background="#fff"
         android:layout_margin="10dp"
@@ -62,19 +75,19 @@
         android:layout_height="wrap_content"
         android:gravity="center">
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Create"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:onClick="onCreate"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Exit"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:onClick="backToMain"/>
     </LinearLayout>
 
