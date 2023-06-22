@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,8 +38,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Login(View v){
-        Intent intent = new Intent(this, Dashboard.class);
-        startActivity(intent);
+        EditText userEmail = findViewById(R.id.mainUserEmail);
+        EditText password = findViewById(R.id.mainPass);
+        SharedPreferences sp2 = getSharedPreferences("IRONMAN",MODE_PRIVATE);
+        SharedPreferences.Editor editor2 = sp2.edit();
+        String savedUser = sp2.getString("Username", "None");
+        String savedEmail = sp2.getString("Email", "None");
+        String savedPassword = sp2.getString("Password", "None");
+        if((savedUser.equals(userEmail)|| savedEmail.equals(userEmail)) && savedPassword.equals(password)){
+            Intent intent = new Intent(this, Dashboard.class);
+            startActivity(intent);
+        }
     }
 
     public void Create(View v){

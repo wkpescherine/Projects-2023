@@ -19,12 +19,16 @@ public class Create extends AppCompatActivity {
         getSupportActionBar().hide();
     }
 
-    public void onCreate(View v){
+    public void Create(View v){
         EditText username = findViewById(R.id.createUser);
+        EditText confirmUser = findViewById(R.id.confirmUser);
         EditText password = findViewById(R.id.createPass);
+        EditText confirmPass = findViewById(R.id.confirmPass);
         EditText email = findViewById(R.id.createEmail);
-        Intent intent = new Intent(this, Dashboard.class);
-        startActivity(intent);
+        if(username.equals(confirmUser) && password.equals(confirmPass) && email.length()>0){
+            Intent intent = new Intent(this, Dashboard.class);
+            startActivity(intent);
+        }
     }
 
     public void backToMain(View v){

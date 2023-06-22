@@ -80,7 +80,7 @@
             android:text="Create"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:onClick="onCreate"/>
+            android:onClick="Create"/>
 
         <Button
             android:layout_width="150dp"

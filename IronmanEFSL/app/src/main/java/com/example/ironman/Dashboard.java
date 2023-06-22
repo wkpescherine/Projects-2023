@@ -22,4 +22,9 @@ public class Dashboard extends AppCompatActivity {
         Intent intent = new Intent(this, NBAList.class);
         startActivity(intent);
     }
+
+    public void Logout(View v){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 }
