@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putInt("HighestTier", 1);
             editor.commit();
         }
-        checkVersion();
+        //checkVersion();
     }
 
     public void clickToStart(View v){
