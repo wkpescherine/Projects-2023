@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             editor.putString("Email", "NONE");
             editor.putInt("Silver", 0);
             editor.putInt("Gold", 0);
-            editor.putInt("Platnium", 1);
+            editor.putInt("Platnium", 0);
             editor.commit();
         }
     }
@@ -40,24 +40,39 @@ public class MainActivity extends AppCompatActivity {
     public void Login(View v){
         EditText userEmail = findViewById(R.id.mainUserEmail);
         EditText password = findViewById(R.id.mainPass);
+        String userEmailStr = userEmail.getText().toString();
+        String passwordStr = password.getText().toString();
         SharedPreferences sp2 = getSharedPreferences("IRONMAN",MODE_PRIVATE);
-        SharedPreferences.Editor editor2 = sp2.edit();
+        //SharedPreferences.Editor editor2 = sp2.edit();
         String savedUser = sp2.getString("Username", "None");
         String savedEmail = sp2.getString("Email", "None");
         String savedPassword = sp2.getString("Password", "None");
-        if((savedUser.equals(userEmail)|| savedEmail.equals(userEmail)) && savedPassword.equals(password)){
+        if((savedUser.equals(userEmailStr)|| savedEmail.equals(userEmailStr)) && savedPassword.equals(passwordStr)){
             Intent intent = new Intent(this, Dashboard.class);
             startActivity(intent);
         }
     }
 
     public void Create(View v){
-        Intent intent = new Intent(this, Create.class);
-        startActivity(intent);
+        SharedPreferences spCreate = getSharedPreferences("IRONMAN",MODE_PRIVATE);
+        String ifActive = spCreate.getString("Active", "None");
+        if(ifActive.equals("NONE")){
+            Intent intent = new Intent(this, Create.class);
+            startActivity(intent);
+        }
     }
 
-    public void Guest(View v){
-        Intent intent = new Intent(this, Dashboard.class);
-        startActivity(intent);
+    public void Reset(){
+        String filename = "IRONMAN";
+        SharedPreferences spReset = getSharedPreferences(filename,MODE_PRIVATE);
+        SharedPreferences.Editor editorReset = spReset.edit();
+        editorReset.putString("Account", "NONE");
+        editorReset.putString("Username", "NONE");
+        editorReset.putString("Password", "NONE");
+        editorReset.putString("Email", "NONE");
+        editorReset.putInt("Silver", 0);
+        editorReset.putInt("Gold", 0);
+        editorReset.putInt("Platnium", 0);
+        editorReset.commit();
     }
 }

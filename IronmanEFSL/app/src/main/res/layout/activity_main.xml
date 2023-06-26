@@ -65,21 +65,11 @@
         <Button
             android:layout_width="96dp"
             android:layout_height="wrap_content"
-            android:onClick="Guest"
+            android:onClick="Reset"
             android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:text="Guest" />
+            android:text="Reset"
+            android:layout_margin="2dp"/>
     </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="version 0.5.0"
-        android:textColor="#fff"
-        android:textSize="8dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
-        />
 
     <TextView
         android:layout_width="match_parent"
@@ -87,4 +77,14 @@
         android:text="WARP Technology @2023"
         android:gravity="center"
         android:textColor="#fff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="version 0.7.0"
+        android:textColor="#fff"
+        android:textSize="8dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        />
 </LinearLayout>
