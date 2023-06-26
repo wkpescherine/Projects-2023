@@ -1,5 +1,6 @@
 package com.example.pamm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,13 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 
 public class Dashboard extends AppCompatActivity {
     Data data = new Data();
@@ -30,6 +38,14 @@ public class Dashboard extends AppCompatActivity {
         Data.highestTier = sp.getInt("HighestTier", 0);
         setDashDataUI();
 
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {
+            }
+        });
+
+        AdView adView = new AdView(this);
+        adView.setAdSize(AdSize.BANNER);
     }
 
     public void clickToChallenge(View v){
