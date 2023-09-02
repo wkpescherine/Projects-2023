@@ -1,14 +1,11 @@
-import React from 'react';
-
-import Navbar from "../components/navbar"
+import React, {useEffect} from 'react';
 
 function School(props){
     return (
         <div>
             <div style={{backgroundColor:"#999999", padding: 5}}>
-                <h1>{props.data}</h1>
+                <h1>{props.school}</h1>
             </div>
-            <Navbar />
         </div>
     );
 }

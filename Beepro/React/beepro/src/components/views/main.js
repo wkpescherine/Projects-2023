@@ -2,6 +2,7 @@ import React from 'react';
 
 import Beepro from "./beepro"
 import School from "./school"
+//import Navbar from '../components/navbar';
 
 function Main (){
     const queryParameters = new URLSearchParams(window.location.search)
@@ -17,6 +18,7 @@ function Main (){
                 store === "active" &&
                 <School data={school}/>
             }
+            
         </div>
     );
 }
