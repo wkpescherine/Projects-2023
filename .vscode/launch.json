@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "UNCHAINED",
+            "request": "launch",
+            "mainClass": "Unchained.v0.UNCHAINED",
+            "projectName": "Projects-2023_a7b05a2a"
+        },
+        {
+            "type": "java",
             "name": "Robo2",
             "request": "launch",
             "mainClass": "Robo2",
