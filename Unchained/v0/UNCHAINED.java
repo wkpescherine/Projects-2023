@@ -4,23 +4,20 @@ import javax.swing.*;
 import java.awt.*;
 
 public class UNCHAINED {
-    JFrame window = new JFrame("Unchained v0.2");
-    JPanel startGUI = new JPanel();
-    JButton start = new JButton("START");
-    JButton load = new JButton("LOAD");
+    MainScreen main = new MainScreen();
+
+    JFrame window = new JFrame("Unchained v0.3");
+    JPanel container = new JPanel();
 
     UNCHAINED(){
-        startGUI.add(start);
-        startGUI.add(load);
-        startGUI.setBackground(Color.BLACK);
-        startGUI.setPreferredSize(new Dimension(100,400));
-        start.setAlignmentX(Component.CENTER_ALIGNMENT);
-        start.setAlignmentY(Component.CENTER_ALIGNMENT);
+        container.setPreferredSize(new Dimension(880,680));
+        container.setBounds(-40, -40, 880, 680);
+        container.setBackground(Color.RED);
 
-        window.getContentPane().add(startGUI);
-        window.setLayout(new BoxLayout(window.getContentPane(),BoxLayout.LINE_AXIS));
-	    window.add(startGUI);
-        window.setLayout(new FlowLayout());
+        container.add(main.main);
+
+        window.add(container);	
+        window.setLayout(null);
         window.setSize(800, 600);
 		window.getContentPane().setBackground(Color.BLACK);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
