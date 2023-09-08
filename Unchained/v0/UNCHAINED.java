@@ -6,7 +6,7 @@ import java.awt.*;
 public class UNCHAINED {
     MainScreen main = new MainScreen();
 
-    JFrame window = new JFrame("Unchained v0.3");
+    JFrame window = new JFrame("Unchained v0.3.1");
     JPanel container = new JPanel();
 
     UNCHAINED(){
