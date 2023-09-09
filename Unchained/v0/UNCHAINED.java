@@ -2,8 +2,9 @@ package Unchained.v0;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class UNCHAINED {
+public class UNCHAINED implements ActionListener{
     MainScreen main = new MainScreen();
     SavedScreen save = new SavedScreen();
 
@@ -12,6 +13,17 @@ public class UNCHAINED {
 
     UNCHAINED(){
         renderScreen();
+
+        main.load.addActionListener(this);
+        save.back.addActionListener(
+            new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    gameState.gameScreenState= "MAIN";
+                    renderScreen();
+                }
+            }
+        );
+
         container.setPreferredSize(new Dimension(880,680));
         container.setBounds(-40, -40, 880, 680);
         container.setBackground(Color.RED);
@@ -41,5 +53,10 @@ public class UNCHAINED {
         if(gameState.gameScreenState.equals("LOAD")){
             save.save.setVisible(true);
         }
+    }
+
+    public void actionPerformed(ActionEvent e){
+        gameState.gameScreenState= "LOAD";
+        renderScreen();
     }
 }

@@ -1,18 +1,14 @@
 package Unchained.v0;
 
-import java.awt.event.*;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
-public class MainScreen implements ActionListener{
+public class MainScreen {
     JPanel main = new JPanel();
     JButton start = new JButton("Start");
     JButton load = new JButton("Load");
 
     MainScreen(){
-        load.addActionListener(this);
-
         main.setVisible(false);
         main.setLayout(null);
 
@@ -26,9 +22,5 @@ public class MainScreen implements ActionListener{
         
         main.add(start);
         main.add(load);
-    }
-
-    public void actionPerformed(ActionEvent e){
-        gameState.gameScreenState= "LOAD";
     }
 }
