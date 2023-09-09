@@ -7,15 +7,49 @@ import java.awt.event.*;
 public class UNCHAINED implements ActionListener{
     MainScreen main = new MainScreen();
     SavedScreen save = new SavedScreen();
+    CharScreen toon = new CharScreen();
+    GameScreen game = new GameScreen();
 
-    JFrame window = new JFrame("Unchained v0.5");
+    JFrame window = new JFrame("Unchained v0.6.5");
     JPanel container = new JPanel();
 
     UNCHAINED(){
         renderScreen();
 
         main.load.addActionListener(this);
+        main.start.addActionListener(
+            new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    gameState.gameScreenState= "CHAR";
+                    renderScreen();
+                }
+            }
+        );
         save.back.addActionListener(
+            new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    gameState.gameScreenState= "MAIN";
+                    renderScreen();
+                }
+            }
+        );
+        toon.back.addActionListener(
+            new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    gameState.gameScreenState= "MAIN";
+                    renderScreen();
+                }
+            }
+        );
+        toon.begin.addActionListener(
+            new ActionListener(){
+                public void actionPerformed(ActionEvent e){
+                    gameState.gameScreenState= "GAME";
+                    renderScreen();
+                }
+            }
+        );
+        game.exit.addActionListener(
             new ActionListener(){
                 public void actionPerformed(ActionEvent e){
                     gameState.gameScreenState= "MAIN";
@@ -30,6 +64,8 @@ public class UNCHAINED implements ActionListener{
 
         container.add(main.main);
         container.add(save.save);
+        container.add(toon.toon);
+        container.add(game.game);
 
         window.add(container);	
         window.setLayout(null);
@@ -47,11 +83,19 @@ public class UNCHAINED implements ActionListener{
     public void renderScreen(){
         main.main.setVisible(false);
         save.save.setVisible(false);
+        toon.toon.setVisible(false);
+        game.game.setVisible(false);
         if(gameState.gameScreenState.equals("MAIN")){
             main.main.setVisible(true);
         }
         if(gameState.gameScreenState.equals("LOAD")){
             save.save.setVisible(true);
+        }
+        if(gameState.gameScreenState.equals("CHAR")){
+            toon.toon.setVisible(true);
+        }
+        if(gameState.gameScreenState.equals("GAME")){
+            game.game.setVisible(true);
         }
     }
 
