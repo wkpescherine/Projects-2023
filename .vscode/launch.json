@@ -3,6 +3,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "PlayTracker",
+            "request": "launch",
+            "mainClass": "src.Main.PlayTracker",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "UNCHAINED",
+            "request": "launch",
+            "mainClass": "Unchained.v0.UNCHAINED",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "UNCHAINED",
             "request": "launch",
             "mainClass": "Unchained.v0.UNCHAINED",
