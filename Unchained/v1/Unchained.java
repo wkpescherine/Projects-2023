@@ -3,7 +3,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Unchained {
-    JFrame window = new JFrame("Unchained v1.1");
+    JFrame window = new JFrame("Unchained v1.1.1");
 
     Unchained() {
         window.setLayout(null);
