@@ -1,23 +1,21 @@
-package Unchained.v0;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class UNCHAINED implements ActionListener {
-    MainScreen main = new MainScreen();
+public class Unchained implements ActionListener {
+    MainScreen start = new MainScreen();
     SavedScreen save = new SavedScreen();
     CharScreen toon = new CharScreen();
     GameScreen game = new GameScreen();
 
-    JFrame window = new JFrame("Unchained v0.7");
+    JFrame window = new JFrame("Unchained v0.8.0");
     JPanel container = new JPanel();
 
-    UNCHAINED() {
+    Unchained() {
         renderScreen();
 
-        main.load.addActionListener(this);
-        main.start.addActionListener(
+        start.load.addActionListener(this);
+        start.start.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         gameState.gameScreenState = "CHAR";
@@ -57,7 +55,7 @@ public class UNCHAINED implements ActionListener {
         container.setBounds(-40, -40, 880, 680);
         container.setBackground(Color.RED);
 
-        container.add(main.main);
+        container.add(start.main);
         container.add(save.save);
         container.add(toon.toon);
         container.add(game.game);
@@ -71,17 +69,17 @@ public class UNCHAINED implements ActionListener {
         window.setResizable(false);
     }
 
-    public static void main(String args[]) {
-        UNCHAINED unchained = new UNCHAINED();
+    public static void main(String arp[]) {
+        Unchained unchained = new Unchained();
     }
 
     public void renderScreen() {
-        main.main.setVisible(false);
+        start.main.setVisible(false);
         save.save.setVisible(false);
         toon.toon.setVisible(false);
         game.game.setVisible(false);
         if (gameState.gameScreenState.equals("MAIN")) {
-            main.main.setVisible(true);
+            start.main.setVisible(true);
         }
         if (gameState.gameScreenState.equals("LOAD")) {
             save.save.setVisible(true);
