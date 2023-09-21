@@ -3,6 +3,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Unchaiend",
+            "request": "launch",
+            "mainClass": "Unchaiend"
+        },
+        {
+            "type": "java",
             "name": "Unchained",
             "request": "launch",
             "mainClass": "Unchained",

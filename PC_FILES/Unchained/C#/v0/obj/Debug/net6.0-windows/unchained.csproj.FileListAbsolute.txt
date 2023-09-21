@@ -1,0 +1,15 @@
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\obj\Debug\net6.0-windows\unchained.csproj.AssemblyReference.cache
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\obj\Debug\net6.0-windows\unchained.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\obj\Debug\net6.0-windows\unchained.AssemblyInfoInputs.cache
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\obj\Debug\net6.0-windows\unchained.AssemblyInfo.cs
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\obj\Debug\net6.0-windows\unchained.csproj.CoreCompileInputs.cache
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\bin\Debug\net6.0-windows\unchained.exe
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\bin\Debug\net6.0-windows\unchained.deps.json
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\bin\Debug\net6.0-windows\unchained.runtimeconfig.json
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\bin\Debug\net6.0-windows\unchained.dll
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\bin\Debug\net6.0-windows\unchained.pdb
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\obj\Debug\net6.0-windows\unchained.dll
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\obj\Debug\net6.0-windows\refint\unchained.dll
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\obj\Debug\net6.0-windows\unchained.pdb
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\obj\Debug\net6.0-windows\unchained.genruntimeconfig.cache
+C:\Users\wkpes\Desktop\projects2023\Projects-2023\PC_FILES\Unchained\C#\v0\obj\Debug\net6.0-windows\ref\unchained.dll
