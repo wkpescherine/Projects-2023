@@ -5,7 +5,7 @@ import java.io.ObjectInputFilter.Config;
 import javax.swing.*;
 
 public class Unchained implements ActionListener {
-    JFrame window = new JFrame("Unchained v0.2.5");
+    JFrame window = new JFrame("Unchained v0.2.5.1");
     Start start = new Start();
     Saved saved = new Saved();
     Game game = new Game();
