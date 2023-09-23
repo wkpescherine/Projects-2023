@@ -5,7 +5,7 @@ import java.io.ObjectInputFilter.Config;
 import javax.swing.*;
 
 public class Unchained implements ActionListener {
-    JFrame window = new JFrame("Unchained v0.2.5.1");
+    JFrame window = new JFrame("Unchained v0.2.5.3");
     Start start = new Start();
     Saved saved = new Saved();
     Game game = new Game();
@@ -103,7 +103,7 @@ public class Unchained implements ActionListener {
             create.create.setVisible(true);
         }
         if (GameConfig.state.equals("GAME")) {
-            create.create.setVisible(true);
+            game.game.setVisible(true);
         }
     }
 

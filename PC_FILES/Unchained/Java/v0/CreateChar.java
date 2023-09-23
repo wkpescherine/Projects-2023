@@ -14,7 +14,7 @@ public class CreateChar {
         play.setBounds(505, 350, 100, 50);
 
         create.add(play);
-        create.add(exit)
+        create.add(exit);
         create.setLayout(null);
         create.setPreferredSize(new Dimension(1000, 750));
     }
