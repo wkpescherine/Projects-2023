@@ -1,13 +1,13 @@
 import java.awt.*;
-//import java.awt.event.*;
+import java.awt.event.*;
+import java.io.ObjectInputFilter.Config;
+
 import javax.swing.*;
 
-public class Unchained {
-    JFrame window = new JFrame("Unchained v0.1.1");
+public class Unchained implements ActionListener {
+    JFrame window = new JFrame("Unchained v0.2.3");
     Start start = new Start();
-    Load load = new Load();
-
-    String state = "LOAD";
+    Saved saved = new Saved();
 
     Unchained() {
         renderScreen();
@@ -16,11 +16,33 @@ public class Unchained {
         // Will just use this as the main interface for the screen loading
 
         start.start.setBounds(0, 0, 1000, 750);
+        start.begin.addActionListener(this);
+        start.saved.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        GameConfig.state = "SAVE";
+                        renderScreen();
+                    }
+                });
 
-        load.load.setBounds(0, 0, 1000, 750);
+        saved.saved.setBounds(0, 0, 1000, 750);
+        saved.back.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        GameConfig.state = "MAIN";
+                        renderScreen();
+                    }
+                });
+        saved.load.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        GameConfig.state = "GAME";
+                        renderScreen();
+                    }
+                });
 
         window.add(start.start);
-        window.add(load.load);
+        window.add(saved.saved);
         window.setLayout(null);
         window.getContentPane().setBackground(Color.BLACK);
         window.setSize(1000, 750);
@@ -35,12 +57,17 @@ public class Unchained {
 
     public void renderScreen() {
         start.start.setVisible(false);
-        load.load.setVisible(false);
-        if (state.equals("START")) {
+        saved.saved.setVisible(false);
+        if (GameConfig.state.equals("MAIN")) {
             start.start.setVisible(true);
         }
-        if (state.equals("LOAD")) {
-            load.load.setVisible(true);
+        if (GameConfig.state.equals("SAVE")) {
+            saved.saved.setVisible(true);
         }
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        GameConfig.state = "CREATE";
+        renderScreen();
     }
 }
