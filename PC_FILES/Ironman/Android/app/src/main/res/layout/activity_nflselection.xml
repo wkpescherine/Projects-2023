@@ -17,12 +17,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fantasy Tournament Live"
+        android:text="Fantasy Ironman Tournament Live"
         android:layout_margin="3dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Fantasy Tournament CPU"
+        android:text="Fantasy Ironman Tournament CPU"
         android:layout_margin="3dp"/>
     <Button
         android:layout_width="match_parent"
@@ -33,6 +33,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ironman Tournament CPU"
+        android:layout_margin="3dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Real Ironman Tournament Live"
+        android:layout_margin="3dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Real Ironman Tournament CPU"
         android:layout_margin="3dp"/>
 
     <LinearLayout
