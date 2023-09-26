@@ -16,7 +16,7 @@
             android:name=".Marketplace"
             android:exported="false" />
         <activity
-            android:name=".NFLSelection"
+            android:name=".Selection"
             android:exported="false" />
         <activity
             android:name=".Dashboard"

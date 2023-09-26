@@ -22,8 +22,8 @@ public class Dashboard extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void clickLeague(){
-        Intent intent = new Intent(this, NFLSelection.class);
+    public void clickSelection(){
+        Intent intent = new Intent(this, Selection.class);
         startActivity(intent);
     }
 }

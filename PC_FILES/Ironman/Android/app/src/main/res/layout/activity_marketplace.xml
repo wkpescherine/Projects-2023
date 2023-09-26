@@ -83,8 +83,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dashboard"
-            android:onClick="clickDashboard"
+            android:text="Back to Selection"
+            android:onClick="clickToSelection"
             android:layout_gravity="bottom"/>
     </LinearLayout>
 

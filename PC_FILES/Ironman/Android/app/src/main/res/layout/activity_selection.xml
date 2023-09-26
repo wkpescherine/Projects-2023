@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NFLSelection"
+    tools:context=".Selection"
     android:orientation="vertical"
     android:background="#000">
 
@@ -18,32 +18,38 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Fantasy Ironman Tournament Live"
-        android:layout_margin="3dp"/>
+        android:layout_margin="3dp"
+        android:onClick="clickMarketplace"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Fantasy Ironman Tournament CPU"
-        android:layout_margin="3dp"/>
+        android:layout_margin="3dp"
+        android:onClick="clickMarketplace"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ironman Tournament Live"
-        android:layout_margin="3dp"/>
+        android:layout_margin="3dp"
+        android:onClick="clickMarketplace"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Ironman Tournament CPU"
-        android:layout_margin="3dp"/>
+        android:layout_margin="3dp"
+        android:onClick="clickMarketplace"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Real Ironman Tournament Live"
-        android:layout_margin="3dp"/>
+        android:layout_margin="3dp"
+        android:onClick="clickMarketplace"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Real Ironman Tournament CPU"
-        android:layout_margin="3dp"/>
+        android:layout_margin="3dp"
+        android:onClick="clickMarketplace"/>
 
     <LinearLayout
         android:layout_width="match_parent"
