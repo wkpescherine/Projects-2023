@@ -27,12 +27,14 @@
             android:layout_margin="15dp"
             android:layout_width="180dp"
             android:layout_height="300dp"
+            android:id="@+id/nba"
             android:src="@drawable/nbalogo"
             android:onClick="clickSelection"/>
         <ImageView
             android:layout_margin="15dp"
             android:layout_width="180dp"
             android:layout_height="300dp"
+            android:id="@+id/nfl"
             android:src="@drawable/nfllogo"
             android:onClick="clickSelection"/>
     </LinearLayout>

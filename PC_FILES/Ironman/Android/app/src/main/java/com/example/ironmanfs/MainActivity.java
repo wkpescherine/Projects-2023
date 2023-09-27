@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar().hide();
+        //getSupportActionBar().hide();
         checkPref();
     }
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void clickLogin(){
+    public void clickLogin(View v){
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }
