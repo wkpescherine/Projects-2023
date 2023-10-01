@@ -40,4 +40,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Dashboard.class);
         startActivity(intent);
     }
+
+    public void clickCreate(View v){
+        Intent intent = new Intent(this, Create.class);
+        startActivity(intent);
+    }
 }
