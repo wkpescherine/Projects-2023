@@ -41,4 +41,11 @@ public class Selection extends AppCompatActivity {
         Intent intent = new Intent(this, Marketplace.class);
         startActivity(intent);
     }
+
+    public void clickGameArea(View v){
+        if(GameConfig.league.equals("nfl")){
+            Intent intent = new Intent(this, NFLGameArea.class);
+            startActivity(intent);
+        }
+    }
 }

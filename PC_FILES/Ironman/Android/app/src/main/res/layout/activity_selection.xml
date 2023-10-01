@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:text="Ironman Tournament CPU"
         android:layout_margin="3dp"
-        android:onClick="clickMarketplace"/>
+        android:onClick="clickGameArea"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
