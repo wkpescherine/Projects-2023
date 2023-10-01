@@ -27,7 +27,8 @@
         android:orientation="horizontal"
         android:layout_margin="15dp">
         <TextView
-            android:layout_width="50dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="#aae"
             android:textSize="10dp"
@@ -35,40 +36,40 @@
             android:textAlignment="center"
             android:layout_margin="5dp"/>
         <TextView
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"            android:layout_height="wrap_content"
             android:background="#fff"
             android:textSize="10dp"
             android:text="Current #"
             android:textAlignment="center"
             android:layout_margin="5dp"/>
         <TextView
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"            android:layout_height="wrap_content"
             android:background="#aae"
             android:textSize="10dp"
             android:text="Waiting #"
             android:textAlignment="center"
             android:layout_margin="5dp"/>
         <TextView
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"            android:layout_height="wrap_content"
             android:background="#aae"
             android:textSize="10dp"
             android:text="Max #"
             android:textAlignment="center"
             android:layout_margin="5dp"/>
         <TextView
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"            android:layout_height="wrap_content"
             android:background="#fff"
             android:textSize="10dp"
             android:text="Starts"
             android:textAlignment="center"
             android:layout_margin="5dp"/>
         <TextView
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_width="0dp"            android:layout_height="wrap_content"
             android:background="#fff"
             android:textSize="10dp"
             android:text="Status"
