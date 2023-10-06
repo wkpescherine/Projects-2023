@@ -34,6 +34,9 @@
         android:layout_margin="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/editUsername"
+        android:hint="Enter Username"
+        android:textAlignment="center"
         android:background="#fff"/>
 
     <TextView
@@ -48,6 +51,9 @@
         android:layout_margin="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/editPassword"
+        android:hint="Enter Password"
+        android:textAlignment="center"
         android:background="#fff"/>
 
     <TextView
@@ -62,6 +68,9 @@
         android:layout_margin="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/editEmail"
+        android:hint="Enter Email"
+        android:textAlignment="center"
         android:background="#fff"/>
 
 
