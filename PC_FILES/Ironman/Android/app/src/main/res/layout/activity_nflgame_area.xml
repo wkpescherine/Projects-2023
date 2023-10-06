@@ -58,7 +58,8 @@
         android:layout_height="50dp"
         android:layout_margin="5dp"
         android:id="@+id/play_action_area"
-        android:background="#fff"/>
+        android:background="#fff"
+        android:orientation="vertical"/>
 
     <TextView
         android:layout_width="match_parent"
