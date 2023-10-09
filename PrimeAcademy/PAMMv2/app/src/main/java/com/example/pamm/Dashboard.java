@@ -37,15 +37,6 @@ public class Dashboard extends AppCompatActivity {
         Data.q20HighestScore = sp.getInt("Q20HighScore", 0);
         Data.highestTier = sp.getInt("HighestTier", 0);
         setDashDataUI();
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
-        AdView adView = new AdView(this);
-        adView.setAdSize(AdSize.BANNER);
     }
 
     public void clickToChallenge(View v){
