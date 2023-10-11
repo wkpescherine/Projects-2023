@@ -1,9 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Notes">
+    tools:context=".Notes"
+    android:orientation="vertical"
+    android:background="@drawable/chalkboard">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notes"
+        android:fontFamily="@font/gloria_hallelujah"
+        android:layout_gravity="center_horizontal"
+        android:textSize="48dp"
+        android:textColor="#ffa500"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ffa500"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/Notes_Section1"
+        android:textColor="#ffa500"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/Notes_Section2"
+        android:textColor="#ffa500"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"        android:text="@string/Notes_Section3"
+        android:textColor="#ffa500"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="backToDashboard"
+            android:layout_gravity="bottom"
+            android:text="Back to Dashboard"
+            android:fontFamily="@font/gloria_hallelujah"
+            android:backgroundTint="#ffa500"
+            android:textColor="#555"/>
+    </LinearLayout>
+
+</LinearLayout>

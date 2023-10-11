@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">PAMM</string>
+    <string name="About_Section1">\t\t Welcome to Prime Academy Math Master. Where we offer you a chance to practice your math skills along various educational levels.</string>
+    <string name="About_Section2">Grade Challenge \n \t\t The Grade challenge is your basic game challenge. Which gets progessively more difficult with each tier. Every 10 tiers you are moved up a grade. Your Highest grade will then be used as the Cap in the Practice Challenge. \n\t\t\ You can be lowered a grade also if you are at the start of a new grade, and answer incorrectly and the start of the new grade. You can also be dropped in tier if you fail to answer a correctly at the start of a tier.</string>
+    <string name="About_Section3">20 Questions \n \t\t The 20 question is a scored challeneg that takes a very high levle of possible values and gives you 20 random questions. Some of which can be very easy to very hard. Based on this you are then given a high score which is tracked for future attempts</string>
+    <string name="About_Section4">Practice \n \t\t The Practice challenge is has previously mentioned about based on your highest tier completed. This allows you to move up or down the tiers. And will give you a new formula to solve. Functions same as the grade challenge but does not get added to your answers total, or increase tiers/grades</string>
+    <string name="Notes_Section1">Version 0.39.0 - June 18th 2023</string>
+    <string name="Notes_Section2">\u25cf Current Tier Cap is 70</string>
+    <string name="Notes_Section3">\u25cf Current Grade Cap is 6th</string>
 </resources>
